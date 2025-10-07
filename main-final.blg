@@ -1,0 +1,17 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is '/Users/anthonyfraga/Documents/school/master/Mémoire de stage - Introduction à la topologie algébrique/main-final.blg'
+[30] biber-darwin:340> INFO - === Tue Oct  7, 2025, 11:15:55
+[106] Biber.pm:420> INFO - Reading '/Users/anthonyfraga/Documents/school/master/Mémoire de stage - Introduction à la topologie algébrique/main-final.bcf'
+[140] Biber.pm:994> INFO - Found 4 citekeys in bib section 0
+[146] Biber.pm:4463> INFO - Processing section 0
+[151] Biber.pm:4654> INFO - Looking for bibtex file 'ref.bib' for section 0
+[152] bibtex.pm:1713> INFO - LaTeX decoding ...
+[154] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[181] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[181] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[181] Biber.pm:4283> INFO - Sorting list 'ynt/global//global/global/global' of type 'entry' with template 'ynt' and locale 'fr-FR'
+[181] Biber.pm:4289> INFO - No sort tailoring available for locale 'fr-FR'
+[184] bbl.pm:676> INFO - Writing '/Users/anthonyfraga/Documents/school/master/MÃ©moire de stage - Introduction Ã  la topologie algÃ©brique/main-final.bbl' with encoding 'UTF-8'
+[185] bbl.pm:779> INFO - Output to /Users/anthonyfraga/Documents/school/master/MÃ©moire de stage - Introduction Ã  la topologie algÃ©brique/main-final.bbl
+[185] Biber.pm:131> WARN - ISBN '0-521-79160-X; 0-521-79540-0' in entry 'Hatcher' is invalid - run biber with '--validate_datamodel' for details.
+[185] Biber.pm:133> INFO - WARNINGS: 1

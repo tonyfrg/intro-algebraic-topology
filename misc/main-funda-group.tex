@@ -1,0 +1,404 @@
+\documentclass[hidelinks, 10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage[french]{babel}
+\usepackage{algorithm2e}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{stmaryrd}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{tikz}
+\input{environnement}
+\input{new-command}
+
+\title{\textbf{Le groupe fondamental}}
+\author{Anthony Fraga}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+\section{Préliminaires}
+Tout d'abord, il nous faut introduire quelques notions sur les chemins et les lacets, ainsi que sur les homotopies.
+
+\begin{definition}[Lacet]
+Soit $X$ un espace topologique. Pour deux points $x_0,x_1\in X$, un \emph{chemin} entre ces deux points est une fonction $f:[0,1]\rightarrow X$ continue, et qui vérifie $f(0)=x_0$ et $f(1)=x_1$.
+
+Un \emph{lacet} est un chemin ayant le même point au départ et à l'arrivée. Autrement dit, pour $x_0\in X$, un lacet ayant pour base $x_0$ est une fonction continue $f:[0,1]\rightarrow X$ tel que $f(0)=f(1)=x_0$.
+\end{definition}
+
+\begin{exemple}
+\begin{enumerate}
+    \item Soit $n\in \mathbb{N}$. Pour tout $X_0,X_1\in\mathbb{R}^n$, il existe un chemin  $f:[0,1]\rightarrow\mathbb{R}^n$ définit pour tout $s\in[0,1]$ par $f(s)=(1-s)X_0+sX_1$. Plus généralement, nous pouvons définir un tel chemin dans tout espace connexe
+    \item Dans $\mathbb{R}^2$, la fonction $f:[0,1]\rightarrow\mathbb{R}^2$ définit pour tout $t\in[0,1]$ par $f(s)=e^{2i\pi s}$ est un lacet pour le point $(1,0)$. 
+\end{enumerate}
+\end{exemple}
+Il existe énormément de lacet sur les espaces, même une infinité. Mais beaucoup sont similaires, prennent à peu près le même chemin. Nous pourrions les considérer comme identique. C'est le but des homotopies, qui vont nous permettre par la suite de considérer un lacet pour tout ceux qui lui sont semblable.
+
+\begin{definition}[Homotopie]
+Soit $X$ un espace topologique, et soit $x_0$ un point de cet espace. On dit que deux lacet $f_0$ et $f_1$ de base $x_0$ sont homotopes s'il existe $(f_t)$ une famille de lacets tel que : \begin{itemize}
+    \item la fonction $F:(t,s)\mapsto f_t(s)$ est continue en $t$ ;
+    \item $f_t(0)=x_0=f_t(1)$ pour tout $t\in[0,1]$. 
+\end{itemize}Dans ce cas, on note $f_0\simeq f_1$.
+\end{definition}
+
+\begin{exemple}
+Dans $\mathbb{R}^n$, nous pouvons toujours trouver une homotopie entre deux lacets $f_0$ et $f_1$. En effet, la fonction $F(t,s)=(1-t)f_0(s)+tf_1(s)$ permet de relier les deux lacets, de manière linéaire.
+\end{exemple}
+
+\begin{proposition}
+La relation d'homotopie entre deux lacets, notée $\simeq$, est une relation d'équivalence.
+\end{proposition}
+\begin{proof}
+Soit $X$ un espace, et $x_0\in X$.\begin{enumerate}
+    \item Soit $f$ un lacet. La fonction lié à l'homotopie identité, $F(t,s)=f(s)$ est continue en $t$, et vérifie $f_0=f$ et $f_1=f$. En plus, on a $f_t(0)=f(0)=x_0$ et $f_t(1)=f(1)=x_0$.
+    \item Supposons $f\simeq g$. En notant $F:(t,s)\mapsto f_t(s)$ la fonction associée à l'homotopie entre $f$ et $g$ (c'est à dire $f_0=f$ et $f_1=g$), on a $G:(t,s)\mapsto F(1-t,s)$ une homotopie entre $g$ et $f$. En effet, en notant $G(t,s)=g_t(s)$, on a bien : $g_0=g,g_1=f$ ; $g_t(0)=f_{1-t}(0)=x_0$, et de même $g_t(1)=x_0$ ; sans oublier que $G$ est continue par continuité de $F$. Ainsi, $g\simeq f$.
+    \item Supposons $f\simeq g$ et $g\simeq h$. En notant respectivement les homotopies $F:(t,s)\mapsto f_t(s)$ et $G:(t,s)\mapsto g_t(s)$ les homotopies entre $f$ et $g$ et entre $g$ et $h$, il nous faut montrer qu'il existe une homotopie entre $f$ et $h$. Soit $H:[0,1]^2\rightarrow X$, définit de la manière suivante : \[\forall (t,s)\in[0,1]^2,\quad H(t,s)=h_t(s):=\left\{\begin{matrix}
+f_{2t}(s)&0\leq t\leq \frac{1}{2}\\ 
+g_{2t-1}(s)&\frac{1}{2}\leq t\leq 1
+\end{matrix}\right.\]Sachant que $f_1=g=g_0$, $H$ est bien continue en $\frac{1}{2}$. De plus, $h_0=f_0=f$ et $h_1=g_{2-1}=h$. Enfin, $h_t(0)=x_0$ car et $h_t(1)=x_0$ est clair au vu de la définition ($f_{2t}(0)=x_0=f_{2t}(1)$ et $g_{2t-1}(0)=x_0=g_{2t-1}(1)$). Ce qui nous permet donc de conclure que $f\simeq h$, car $h_t$ est bien une homotopie entre les deux.
+\end{enumerate}
+Nous pouvons en conclure que la relation $\simeq$ est une équivalence.
+\end{proof}
+
+Nous allons pouvoir alors considérer les classes d'équivalences d'homotopies de lacets, plutôt que les lacets en tant que tel. Désormais, nous allons munir les lacets d'une loi interne.
+
+
+
+\section{Groupe fondamental}
+
+\subsection{La loi de composition}
+Nous pouvons définir la concaténation de chemin comme une loi sur ces éléments, et en particulier sur les lacets.
+\begin{definition}
+On considère la loi $\cdot$ qui, pour $f,g$ deux chemins tels que $f(1)=g(0)$, nous donne un chemin obtenu par la concaténation des deux. Autrement dit, on obtient : \[f\cdot g=\left\{\begin{matrix}
+f(2s)&0\leq s\leq \frac{1}{2}\\ 
+g(2s-1)&\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\]En particulier, cette loi nous donne un magma sur l'ensemble des lacets de même base.
+\end{definition}
+
+\begin{proposition}
+Soit $f,g$ deux lacets de même base $x_0\in X$. On a $[f\cdot g]=[f]\cdot[g]$. Autrement dit, la LCI $\cdot$ est compatible avec la relation d'équivalence d'homotopie.
+\end{proposition}
+\begin{proof}
+Pour rappel, pour montrer qu'une loi est compatible avec une relation d'équivalence, nous pouvons montrer que pour tout lacets (de même base) $f,f,g,g'$, on a :\[\big(f\simeq f', g\simeq g'\big)\Longrightarrow f\cdot g\simeq f'\cdot g'\] Soit $f,f',g,g'$ des lacets de même base $x_0\in X$, tels que $f\simeq f'$ et $g\simeq g'$. Il existe alors deux homotopies homotopies $F:(t,s)\mapsto f_t(s)$ avec $f_0=f$ et $f_1=f'$, et $G:(t,s)\mapsto g_t(s)$ avec $g_0=g$ et $g_1=g'$. On souhaite avoir une homotopie entre $f\cdot g$ et $f'\cdot g'$. Tout d'abord, rappelons ce que sont ces deux lacets.
+
+On a : \[(f\cdot g)(s)=\left\{\begin{matrix}
+f(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+g(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\qquad (f'\cdot g')(s)=\left\{\begin{matrix}
+f'(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+g'(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\]Montrons que la fonction $H:(s,t)=h_t(s):=(f_t\cdot g_t)(s)$ est une homotopie entre $f\cdot g$ et $f'\cdot g'$.\begin{enumerate}
+    \item On a $h_0=f_0\cdot g_0=f\cdot g$ et $h_1=f_1\cdot g_1=f'\cdot g'$.
+    \item $h_t(s)=(f_t\cdot g_t)(s)=\left\{\begin{matrix}
+f_t(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+g_t(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.$ est continue en $t$, puisque $f_t$ et $g_t$ le sont.
+\item $h_t(0)=(f_t\cdot g_t)(0)=f_t(0)=x_0$ et $h_t(1)=(f_t\cdot g_t)(1)=g_t(1)=x_0$.
+\end{enumerate}On en conclut alors que $f\cdot g$ et $f'\cdot g'$ sont homotopes, et donc que la loi $\cdot$ est compatible avec la relation d'homotopie. Ainsi, on peut alors passer aux classes d'équivalences et dire que $[f]\cdot[g]=[f\cdot g]$.
+\end{proof}
+
+\subsection{Le groupe}
+\begin{theorem}
+Soit $X$ un espace et $x_0\in X$. Le groupe fondamental de base $x_0$, que l'on note $\grf{X,x_0}$, est l'ensemble des classes d'équivalences des lacets de base $x_0$. Cet ensemble, muni de la loi $\cdot$ sur les lacets, est un groupe.
+\end{theorem}
+
+\begin{proof}
+Soit $X$ un espace et $x_0\in X$. Pour montrer que $\grf{X,x_0}$ est un groupe, il nous faut montrer l'existence d'un élément neutre pour la loi $\cdot$, ainsi que l'existence d'un inverse pour tout élément, ainsi que l'associativité.\begin{enumerate}
+    \item Soit $e:s\in[0,1]\mapsto x_0\in X$. Montrons que $[e]$ est élément neutre pour la loi $\cdot$.
+
+    Soit $f$ un lacet de base $x_0$, montrons que $[f]\cdot[e]=[f]$, ou bien $[f\cdot e]=[f]$. Pour se faire, montrons qu'il existe une homotopie entre $f\cdot e$ et $f$. Premièrement, nous avons : \[(f\cdot e)(s)=\left\{\begin{matrix}
+f(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+e(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.=\left\{\begin{matrix}
+f(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+x_0&\text{sinon}
+\end{matrix}\right.\]On considère la fonction $F:(t,s)\mapsto f_t(s)$ qui est définit par : \[\forall t\in[0,1],\quad f_t(s)=\left\{\begin{matrix}
+f(2s-t)&\text{si } 0\leq s\leq \frac{1}{2}(1+t)\\ 
+x_0&\text{sinon}
+\end{matrix}\right.\]Montrons que ceci est une homotopie entre $f\cdot e$ et $f$.\begin{itemize}
+    \item On a $f_0=f\cdot e$ et $f_1=f$ (puisque $\frac{1}{2}(1+t)$ vaut 1 pour $t=1$). De plus, pour $s=\frac{1}{2}(1+t)$, on a bien $f(2s-t)=f(1+t-t)=f(1)=x_0$, ce qui montre la continuité du lacet en $\frac{1}{2}(1+t)$.
+    \item $F$ est continue en $t$.
+    \item Pour $t\in[0,1]$, $f_t(0)=f(0)=x_0$ et $f_t(1)=x_0$ (condition sinon, ou $f_1(1)$).
+\end{itemize}
+Ainsi, $[e]$ est bien élément neutre pour la loi $\cdot$.
+\item Soit $\alpha\in\grf{X,x_0}$. Montrons qu'il existe $\beta\in\grf{X,x_0}$ tel que $\alpha\cdot\beta=[e]$. Soit $f$ un représentant de la classe $\alpha$. Montrons qu'il existe $g$ un représentant de la classe $\beta$ tel que $f\cdot g\simeq e$.
+
+On considère $\overline{f}:s\mapsto f(1-s)$, de telle sorte que $f\cdot \overline{f}$ soit défini ainsi : \[(f\cdot\overline{f})(s)=\left\{\begin{matrix}
+f(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+\overline{f}(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.=\left\{\begin{matrix}
+f(2s)&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+f(2-2s)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\]Nous pouvons ainsi considérer $G:(t,s)\mapsto g_t(s)$, définit par : \[g_t(s)=\left\{\begin{matrix}
+f(2s(1-t))&\text{si } 0\leq s\leq \frac{1}{2}\\ 
+f\big((2-2s)(1-t)\big)&\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\]Montrons que ceci est bien une homotopie entre $f\cdot\overline{f}$ et $e$.\begin{itemize}
+    \item $g_0=f\cdot\overline{f}$, et $g_1=f(0)=x_0=e$, puisque $1-t$ s'annule.
+    \item $G$ est bien continue en $t$.
+    \item pour tout $t\in[0,1]$, on a $g_t(0)=f(0)=g_t(1)$, et $f(0)=x_0$.
+\end{itemize}
+La fonction $g$ est donc bien une homotopie. On peut alors dire que $[f\cdot \overline{f}]=[e]$. Nous venons de montrer que tout élément admet un inverse.
+\item Soit $f,g,h\in\grf{X,x_0}$. Montrons que $[f]\cdot\big([g]\cdot[h]\big)=\big([f]\cdot[g]\big)\cdot[h]$. Autrement dit, montrons que $[f]\cdot[g\cdot h]=[f\cdot g]\cdot[h]$, ou bien encore que $f\cdot(g\cdot h)\simeq(f\cdot g)\cdot h$. Ces deux lacets sont définis ainsi : \[\begin{split}
+f\cdot(g\cdot h)(s)&=\left\{\begin{matrix}
+f(2s) & \text{si }0\leq s\leq\frac{1}{2}\\ 
+(g\cdot h)(2s-1) & \text{si }\frac{1}{2}\leq s\leq1
+\end{matrix}\right.\\
+&=\left\{\begin{matrix}
+f(2s) & \text{si }0\leq s\leq\frac{1}{2}\\ 
+g(4s-2) & \text{si }\frac{1}{2}\leq s\leq\frac{3}{4}\\ 
+h(4s-3) & \text{si }\frac{3}{4}\leq s\leq1
+\end{matrix}\right.\\
+(f\cdot g)\cdot h(s)&=\left\{\begin{matrix}
+(f\cdot g)(2s) & \text{si }0\leq s\leq\frac{1}{2}\\ 
+h(2s-1) & \text{si }\frac{1}{2}\leq s\leq1
+\end{matrix}\right.\\
+&=\left\{\begin{matrix}
+f(4s) & \text{si }0\leq s\leq\frac{1}{4}\\ 
+g(4s-1) & \text{si }\frac{1}{4}\leq s\leq\frac{1}{2}\\ 
+h(2s-1) & \text{si }\frac{1}{2}\leq s\leq1
+\end{matrix}\right.
+\end{split}\]Nous devons montrer qu'il existe une homotopie permettant de passer de l'une à l'autre. Soit $\mathcal{H}:(t,s)\mapsto H_t(s)$ la fonction définie par : \[H_t(s)=\left\{\begin{matrix}
+f(2s(t+1)) &\text{si }0\leq s\leq\frac{1}{4}(2-t) \\ 
+g(4s-(2-t)) &\text{si }\frac{1}{4}(2-t)\leq s\leq\frac{1}{4}(3-t) \\ 
+h(4s-3-t(2s-2)) & \text{si }\frac{1}{4}(3-t)\leq s\leq 1
+\end{matrix}\right.\]On a bien $H_0(s)=f\cdot(g\cdot h)(s)$ et $H_1(s)=(f\cdot g)\cdot h(s)$. De plus, $\mathcal{H}$ est continue en $t$ (linéaire). Enfin, on a bien $H_t(0)=f(0)=x_0=h(1)=H_t(1)$. Ce qui fait de $H_t$ une homotopie entre les deux lacets. On en déduit alors que $f\cdot (g\cdot h)\simeq (f\cdot g)\cdot h$.
+
+Finalement, on a bien $f\cdot(g\cdot h)\simeq(f\cdot g)\cdot h$, ce qui nous permet de dire que la loi $\cdot$ est associative.
+\end{enumerate}
+On en conclut alors que $(\grf{X,x_0},\cdot)$ est un groupe.
+\end{proof}
+
+\begin{remark}
+L'idée derrière l'inverse est celle d'un lacet qui parcourt le même chemin dans le sens inverse. Il est homotopiquement équivalent au neutre par le fait que l'on puisse se ramener au point $x_0$ en "tirant" sur le lacet. On ne lui fait plus parcourir la boucle entièrement. Par exemple pour $t=\frac{1}{2}$, on lui fait faire que mi-parcourt avant de faire chemin arrière, par rapport au chemin de base. En continuant ainsi jusqu'au bout, on se ramène à un point.
+
+Pour l'associativité, l'idée est que la classe d'équivalence ne s'occupe pas du temps $s$ pour parcourir un lacet. Dans la preuve, nous montrons que nous pouvons basculer d'une timeline à une autre sans problème.
+\end{remark}
+
+\begin{remark}
+Ce groupe n'est pas forcément abélien. En effet, pour deux lacets quelconques $f,g$ de même base, il n'existe pas forcément d'homotopie entre $[f\cdot g]$ et $[g\cdot f]$.
+\end{remark}
+
+Le problème d'un tel groupe est qu'il dépend pour le moment du point de base. En exemple, nous pouvons penser à l'ensemble $\mathbb{R}^2\setminus\s{1}$, qui n'aura pas le même groupe fondamental si la base ce situe à l'intérieur du cercle (groupe trivial), ou bien à l'extérieur (isomorphe à $\mathbb{Z}$). Nous allons dans un premier temps réduire ce problème en liant les groupes avec des bases pouvant être reliées.
+\begin{theorem}
+Soit $x_0,x_1\in X$ tel qu'il existe un chemin reliant les deux points. Alors les groupes $\grf{X,x_0}$ et $\grf{X,x_1}$ sont isomorphes.
+\end{theorem}
+\begin{proof}
+Nous voulons montrer qu'il existe un isomorphisme entre les groupes $\grf{X,x_0}$ et $\grf{X,x_1}$. Pour se faire, nous allons définir une application sur les lacets de base $x_0$ vers le groupe $\grf{X,x_1}$, bien définie pour l'équivalence d'homotopie. Ensuite, nous montrerons que lorsque l'on passe l'application au quotient, nous obtenons un morphisme entre les deux groupes. Enfin, nous montrerons que ce morphisme est à la fois injectif et surjectif, et donc que l'on obtient bien un isomorphisme.
+
+Soit $h$ le chemin reliant les points $x_0$ et $x_1$, c'est à dire avec $h(0)=x_0$ et $h(1)=x_1$. On peut également définir le chemin inverse $\overline{h}:[0,1]\mapsto h(1\!-\!t)$, qui vérifie $\overline{h}(0)=x_1$ et $\overline{h}(1)=x_0$.
+
+En notant $L(x_1)$ l'ensemble des lacets ayant pour base $x_1$, considérons l'application $\varphi:L(x_1)\rightarrow\grf{X,x_0}$, qui est définie par : \[\forall f\in L(x_1),\quad \varphi(f)=[h\cdot f\cdot\overline{h}]\]Montrons que cette application est bien définie. Dans un premier temps, nous avons $h\cdot f\cdot\overline{h}(0)=h(0)=x_0$, $h\cdot f\cdot\overline{h}(1)=x_0$, ce qui nous permet de dire que $[h\cdot f\cdot\overline{h}]\in\grf{X,x_0}$. 
+
+Dans un second temps, on considère $f_0,f_1\in L(x_1)$, tel que $f_0\simeq f_1$. Soit $f_t$ l'homotopie entre les deux lacets, montrons que $H:(t,s)\mapsto h_t(s):=h\cdot f_t\cdot\overline{h}(s)$ est une homotopie entre $h\cdot f_0\cdot\overline{h}$ et $h\cdot f_1\cdot\overline{h}$.
+
+Nous avons $h_0=h\cdot f_0\cdot\overline{h}$ et $h_1=h\cdot f_1\cdot\overline{h}$. De plus, $h_t(0)=h\cdot f_t\cdot\overline{h}(0)=h(0)=x_0$ et $h_t(1)=h\cdot f_t\cdot\overline{h}(1)=\overline{h}(1)=x_0$. Enfin, $H$ est continue en $t$, puisque $F:(t,s)\mapsto f_t(s)$ l'est également.
+
+Nous en concluant alors que $\varphi$ est bien définie pour la relation d'équivalence d'homotopie. D'après le théorème fondamental sur les applications quotients, il existe une unique application $\overline{\varphi}:\grf{X,x_1}\rightarrow\grf{X,x_0}$ définit par : \[\forall [f]\in \grf{X,x_1},\quad \overline{\varphi}([f])=[h\cdot f\cdot\overline{h}]\]Montrons désormais que cette application est un morphisme. Soit $\alpha,\beta\in\grf{X,x_1}$. Montrons que $\overline{\varphi}(\alpha\cdot\beta)=\overline{\varphi}(\alpha)\cdot\overline{\varphi}(\beta)$.
+
+Autrement dit, pour $f,g$ deux représentants respectifs de $\alpha$ et $\beta$, montrons que $[h\cdot(f\cdot g)\cdot\overline{h}]=[h\cdot f\cdot\overline{h}]\cdot[h\cdot g\cdot\overline{h}]$. Or, on a : \[\begin{split}
+[h\cdot f\cdot\overline{h}]\cdot[h\cdot g\cdot\overline{h}]&=[h\cdot f\cdot\overline{h}\cdot h\cdot g\cdot\overline{h}]\\
+&=[h\cdot f\cdot g\cdot\overline{h}]\quad
+\end{split}\]Du fait que $[\overline{h}\cdot h]=[e]$, on obtient alors que $\overline{\varphi}([f]\cdot[g])=\overline{\varphi}([f])\cdot\overline{\varphi}([g])$.
+
+Enfin, montrons que ce morphisme est bijectif, autrement dit que c'est un isomorphisme. Pour se faire, nous allons montrer qu'il est injectif et surjectif.\begin{itemize}
+    \item Soit $[f]\in\grf{X,x_1}$. On a les implications suivantes : \[\begin{split}
+        \overline{\varphi}([f])=[e_{x_0}]&\Longrightarrow [h\cdot f\cdot\overline{h}]=[e_{x_0}]\\
+        &\Longrightarrow [h]\cdot[f]\cdot[\overline{h}]=[e_{x_0}]\\
+        &\Longrightarrow [h][f]=[h]\\
+        &\Longrightarrow [f]=[e_{x_1}]
+    \end{split}\]On en déduit alors que $\overline{\varphi}$ est injectif.
+    \item Soit $[g]\in\grf{X,x_0}$. Montrons que l'on a $\overline{\varphi}([\overline{h}\cdot g\cdot h])=[g]$. On a : \[\begin{split}
+        \overline{\varphi}([\overline{h}\cdot g\cdot h])&=[h\cdot(\overline{h}\cdot g\cdot h)\cdot\overline{h}]\\
+        &=[(h\cdot\overline{h})\cdot g\cdot h\cdot\overline{h}]\\
+        &=[g]
+    \end{split}\]Ainsi, nous pouvons en déduire que pour tout élément de $\grf{X,x_0}$, il existe un antécédent dans $\grf{X,x_1}$. Nous en déduisons alors que le morphisme est surjectif.
+\end{itemize}
+Finalement, $\overline{\varphi}$ est un isomorphisme entre $\grf{X,x_1}$ et $\grf{X,x_0}$.
+\end{proof}
+
+\begin{corollary}
+Pour un espace connexe par arc, il existe un unique groupe fondamental, à isomorphisme près.
+\end{corollary}
+\begin{proof}
+Avec le théorème précèdent, nous pouvons toujours relier deux points entre eux dans l'espace. Alors, chaque groupe fondamental sont isomorphes entre eux.
+\end{proof}
+\section{Propriétés}
+\subsection{Espaces homéomorphes}
+
+\begin{proposition}
+Soit $f:X\rightarrow Y$ un homéomorphisme. Pour $x_0\in X$, les groupes $\grf{X,x_0}$ et $\grf{Y,f(x_0)}$ sont isomorphes.
+\end{proposition}
+\begin{proof}
+Avec les mêmes notations que l'énoncé, on considère l'application $\varphi:\grf{X,x_0}\mapsto\grf{Y,f(x_0)}$ définie par : \[\forall[l]\in\grf{X,x_0}, \varphi([l])=[f(l)]\] Montrons que cette application est un isomorphisme de groupe.
+
+\bigskip Dans un premier temps, montrons que cette application est bien définie.
+
+Soit $l:s\in[0,1]\mapsto l(s)\in X$, avec $l(0)=x_0=l(1)$. En définissant $f(l):s\in[0,1]\mapsto f(l(s))$, par continuité de $f$, on a bien $f(l)$ un lacet de $Y$, qui vérifie également $f(l(0))=f(x_0)=f(l(1))$.
+
+De plus, pour deux lacets sur $X$ homotopiquement équivalent $l$ et $l'$, on a $f(l)$ et $f(l')$ qui sont homotopiquement équivalent sur $Y$. En effet, en définissant $H:(t,s)\mapsto h_t(s)$ l'homotopie entre $l$ et $l'$, l'application $H':(t,s)\mapsto f(h_t(s))$ est une homotopie entre $f(l)$ et $f(l')$ : on a $H'(0,s)=f(l)$ et $H'(1,s)=f(l')$, et $f(h_t)$ est continue en $t$ grâce à la continuité de $f$. Enfin, on a bien $f(h_t(0))=f(x_0)=f(h_t(1))$. Ce qui nous permet de dire que l'application $\varphi$ existe, et est bien définie.
+
+\bigskip Dans un second temps, montrons que l'application est un morphisme. Soit $l,l'$ deux lacets de base $x_0$ sur $X$. Nous avons ainsi : \[f(l\cdot l')=f\left(\left\{\begin{matrix}
+l(2s) &\text{si }0\leq s\leq\frac{1}{2} \\ 
+l'(2s-1) &\text{si }\frac{1}{2}\leq s\leq1
+\end{matrix}\right.\right)=\left\{\begin{matrix}
+f(l(2s)) &\text{si }0\leq s\leq\frac{1}{2} \\ 
+f(l'(2s-1)) &\text{si }\frac{1}{2}\leq s\leq1
+\end{matrix}\right.=f(l)\cdot f(l')\] On obtient dès lors que : \[\begin{split}
+    \varphi\big([l]\cdot[l']\big)&=\varphi\big([l\cdot l']\big)\\
+    &= [f(l\cdot l')]\\
+    &= [f(l)\cdot f(l')]\\
+    &=[f(l)]\cdot[f(l')]\\
+    &=\varphi([l])\cdot\varphi([l'])
+\end{split}\]Ce qui nous permet de dire que c'est bien un morphisme.
+
+\bigskip Dans un dernier temps, montrons que c'est un isomorphisme. Nous considérons alors $\overline{\varphi}:\grf{Y,f(x_0)}\rightarrow\grf{X,x_0}$ définit par : \[\forall[l]\in\grf{Y,f(x_0)},\quad \overline{\varphi}([l])=[f^{-1}l]\]De la même manière que pour $\varphi$, l'application $\overline{\varphi}$ est un morphisme de groupe.
+
+Montrons dès lors que ces morphismes sont réciproques l'un à l'autre : \[\begin{split}
+    \forall[l]\in\grf{X,x_0},\quad \overline{\varphi}\circ\varphi([l])&=\overline{\varphi}\big([f(l)]\big)\\
+    &=\big[f^{-1}(f(l))\big]\\
+    &=[l]\\
+    \forall[l]\in\grf{Y,f(x_0)},\quad\varphi\circ\overline{\varphi}([l])&=\varphi\big([f^{-1}(l)]\big)\\
+    &=\big[f(f^{-1}(l))\big]\\
+    &=[l]
+\end{split}\]Nous pouvons alors en conclure que les deux groupes $\grf{X,x_0}$ et $\grf{Y,f(x_0)}$ sot isomorphes.
+\end{proof}
+
+\section{Exemples}
+\subsection{Groupe fondamental dans un espace convexe}
+Comme premier exemple de calcul de groupe fondamental, nous avons choisi un cas connu.
+
+\begin{proposition}
+Soit $n\in\bb{N}$. On a $\grf{\bb{R}^n,x_0}\cong\{1\}$. On dit que le groupe fondamental de $\bb{R}^n$ est \emph{trivial}.
+\end{proposition}
+\begin{proof}
+Comme $\bb{R}^n$ est connexe, nous savons qu'il n'existe qu'un groupe fondamental, indépendant de la base. Nous choisirons alors l'origine du repère, que l'on notera $0:=0_{\bb{R}^n}$. Montrons alors que tout lacet de base $0$ est homotope au lacet neutre $e_0$.
+
+Soit $f_0$ un lacet de base $0$. Nous pouvons considérer l'application $F:(t,s)\mapsto f_t(s)=(1-t)f_0(s)$, qui vérifie $F(0,s)=f_0(s)$ et $F(1,s)=e_0(s)$. Cette application constitue bien une homotopie, puisqu'elle est continue en $t$ par linéarité, et que $f_t(0)=(1-t)f_0(0)=0=(1-t)f_0(1)=f_t(1)$ et pour tout $t\in[0,1]$.
+
+\bigskip Nous pouvons alors en conclure que pour tout lacet $f$, on a $[f]=[e]$. Autrement dit, $\grf{\bb{R}^n,x_0}=[e]$, le groupe fondamental est trivial.
+\end{proof}
+\begin{remark}
+Cette propriété est vraie pour tout espace convexe, car nous pouvons obtenir une homotopie "linéaire" comme dans la preuve ci-dessus.
+\end{remark}
+
+\subsection{Groupe fondamental du cercle}
+
+\paragraph{Idée} Dans le cercle, on a des lacets qui font le tour, d'autres qui le font plusieurs fois, dans un sens comme dans l'autre, et d'autres qui ne font pas de tour. En comprenant que l'on ne peut pas passer d'un lacet faisant un tour en un qui fait deux fois le tour, on peut alors facilement se convaincre que les classes d'homotopies des lacets sont définies uniquement par rapport à leur nombre de tour qu'ils font autour du cercle. C'est en ce sens que l'on obtient alors que le groupe fondamental du cercle est isomorphe à $(\bb{Z},+)$.
+
+Cette conception à beau être intuitive et logique, il se trouve qu'en réalité la démonstration est bien plus dure que cela n'y paraît. Entre autre, elle fait appel aux notions de revêtement, outil essentiel de la topologie algébrique.
+
+\subsubsection{Les revêtements}
+
+\begin{definition}
+Un revêtement de l'espace $X$ est un espace $\Tilde{X}$, ainsi qu'une application $p:\Tilde{X}\rightarrow X$ qui l'implique l'existe d'un recouvrement ouvert $(\mathcal{U}_i)_{i\in I}$ de $X$ tel que $\forall i\in I, p^{-1}(\mathcal{U}_i)=\bigsqcup_{j\in J} p^{-1}(\mathcal{V}_{ij})$, qui induis pour tout $j\in J$ un homéomorphisme local $p:\mathcal{V}_{ij}\rightarrow\mathcal{U}_i$.
+\end{definition}
+
+On admet le lemme suivant, qui induit les deux corollaires qui suivent, comme étant des cas particuliers.
+
+\begin{lemma}\label{lemma:relevement}
+Étant donné une application $F:X\times[0,1]\rightarrow\s{1}$ et une application~$\Tilde{F}:X\times\{0\}\rightarrow\bb{R}$ relevant $F|_{X\times\{0\}}$, il existe une unique application~$\Tilde{F}:X\times[0,1]\rightarrow\bb{R}$ relevant $F$ et qui restreinte à $X\times\{0\}$ correspond à l'application donnée.
+\end{lemma}
+\begin{proof}
+L'espace $\s{1}$ est compact, il existe alors un recouvrement ouvert~$(\mathcal{U}_i)_{i\in I}$. En reprenant les notations de l'énoncé, la continuité de $F$ implique que pour chaque $(x_0,t)\in X\times[0,1]$, il existe un voisinage $N_t\times[a_t,b_t]$ de $(x_0,t)$ tel que $F(N_t\times[a_t,b_t])\subset U_i$ pour un certain $i$ dans $I$.
+
+\bigskip Soit $x_0\in X$. La compacité de $\{x_0\}\times[0,1]$ implique alors l'existence d'un recouvrement ouvert $N_t\times[a_t,b_t]$ fini. Dans ce cas, nous pouvons nous intéresser à un voisinage $N\in(N_t)$, et à une partition de [0,1], que l'on note $$0=t_0<\cdots<t_m=1$$de telle sorte que  $\forall i\in\llbracket0,m-1\rrbracket,\exists\, l\in I$ tel que $F(N\times[t_i,t_{i+1}])\subset U_l$, que l'on notera $U_i$ par simplification.
+
+\bigskip Par récurrence, supposons que l'application $\Tilde{F}$ ait été définie sur $N\times[0,t_i]$. Par définition du revêtement, nous savons qu'il existe un ouvert $\Tilde{U}_i\subset\bb{R}$ tel que la projection $p:\Tilde{U}_i\to U_i$ soit un homéomorphisme, vérifiant $\Tilde{F}(x_0,t_i)\in\Tilde{U}_i$. En notant la réunion $A=(N\times\{t_i\})\cap\Tilde{F}|_{N\times\{t_i\}}\inv(\Tilde{U}_i)$, on obtient alors $\Tilde{F}(A)\subset\Tilde{U}_i$. Dès lors, on peut définir $\Tilde{F}$ sur $[t_i,t_{i+1}]$ par la composition $p\inv\circ F$.
+
+\bigskip Par récurrence sur $i\in\llbracket0,m-1\rrbracket$, on arrive à construire $\Tilde{F}$ sur $N\times[0,1]$. Pour montrer que l'on peut le construire sur tout $X$ en réitérant le procédé, nous devons d'abord montrer l'unicité de $\Tilde{F}$. Pour cette partie, nous considérons l'ensemble $\{x_0\}\times[0,1]$ avec $x_0\in X$. Comme le singleton n'intervient pas dans la démonstration, nous l'omettrons.
+
+\bigskip Supposons $\Tilde{F}$ et $\Tilde{F}'$ deux relèvements de $F:[0,1]\to\s{1}$ tel que $\Tilde{F}(0)=\Tilde{F}'(0)$. Comme précédemment, on sait qu'il existe une partition $0=t_0<\cdots<t_m=1$ tel que chaque intervalle $[t_i,t_{i+1}]$ soit contenu dans un certain $U_i$.
+
+Par récurrence, supposons que $\Tilde{F}([0,t_i])=\Tilde{F}'([0,t_i])$. Comme $[t_i,t_{i+1}]$ est un intervalle connexe, alors par continuité on sait que $\Tilde{F}'([t_i,t_{i+1}]$ est inclut dans un seul $\Tilde{U}_i$ tel que $p:\Tilde{U}_i\to U_i$ est un homéomorphisme.
+
+On a en particulier $\Tilde{F}(t_i)=\Tilde{F}'(t_i)$, et par injectivité de $p$ sur $\Tilde{U}_i$, et du fait que $p\Tilde{F}=p\Tilde{F}'$, on sait également que $\Tilde{F}([t_i,t_{i+1}])$ est inclut dans $\Tilde{U}_i$. Mais par injectivité on a alors $\Tilde{F}([t_i,t_{i+1}])=\Tilde{F}'([t_i,t_{i+1}])$.
+
+\bigskip Finalement, on obtient par récurrence que $\Tilde{F}=\Tilde{F}'$ sur [0,1]. Ainsi, par unicité du revêtement sur $\{x_0\}\times[0,1]$, on peut alors construire une application $\Tilde{F}$ sur chaque ouvert $N\times[0,1]$ de manière unique, de telle sorte que chaque chevauchement d'ouvert définisse la même application. Cela veut alors dire que l'on peut définir correctement l'application $\Tilde{F}$ sur $X\times[0,1]$. Étant une application continue sur chaque $N\times[0,1]$, $\Tilde{F}$ est continue sur $X\times[0,1]$.
+\end{proof}
+
+
+\begin{corollary}\label{coro:point}
+Pour chaque chemin $f:[0,1]\rightarrow\s{1}$ commençant en $x_0\in\s{1}$, et pour chaque $\Tilde{x}_0\in p^{-1}(x_0)$, il existe un unique relèvement $\Tilde{f}:[0,1]\rightarrow\bb{R}$ commençant en $\Tilde{x}_0$.
+\end{corollary}
+\begin{proof}
+Cas particulier du lemme \ref{lemma:relevement} où $X$ est réduit à un point.
+\end{proof}
+\begin{corollary}\label{coro:homotopie}
+Pour chaque homotopie $f_t:[0,1]\rightarrow\s{1}$ de chemins partant de $x_0$ et pour chaque $\Tilde{x}_0\in p^{-1}(x_0)$, il existe un unique relèvement d'homotopie~$\Tilde{f}:[0,1]\rightarrow\bb{R}$ de chemin partant de $\Tilde{x}_0$.
+\end{corollary}
+\begin{proof}
+Cas particulier du lemme \ref{lemma:relevement} où $X=[0,1]$.
+\end{proof}
+
+\subsubsection{Groupe fondamental}
+
+On redéfinit tout d'abord le cercle par $\mathcal{S}^1=\{z\in\bb{C},|z|=1\}$. Ensuite, on considère l'application $p:\bb{R}\rightarrow\s{1}$, qui à $\theta\in\bb{R}$ envoie $p(\theta)=e^{2i\pi\theta}$. On s'intéresse dans ce cas au groupe fondamental de $\mathcal{S}^1$ pour la base $x_0=(1,0)$. 
+
+Dans la suite, tout les lacets considérés sont de base $x_0$, nous omettrons alors de le préciser. De même, afin d'alléger les notations , nous ne noterons pas le $\circ$ de la composition d'applications.
+
+\begin{theorem}
+Le groupe fondamental du cercle $\grf{\s{1},x_0}$ est isomorphe au groupe additif des entiers relatifs $\bb{Z}$.
+\end{theorem}
+\begin{proof}
+On considère, pour $n\in\bb{N}$, le chemin $\Tilde{w}_n\!:\!s\!\in\![0,1]\mapsto ns\!\in\!\bb{R}$, de telle sorte que $w_n=p\Tilde{w}_n$ soit un lacet de $\s{1}$. En effet, la composition des deux applications donne $w_n:s\in[0,1]\mapsto e^{2i\pi ns}$, dont on remarque que $w_n(0)\!=\!x_0\!=\!w_n(1)$.
+
+\bigskip On définit l'application $\phi:\bb{Z}\rightarrow\grf{\s{1},x_0}$, qui à $n\in\bb{Z}$ renvoie la classe d'homotopie de $p\Tilde{f}$, pour $\Tilde{f}$ un chemin entre $0$ et $n$ dans $\bb{R}$. Il existe une homotopie linéaire entre les chemins $\Tilde{f}$ et $\Tilde{w}_n$, définie par $\Tilde{h}_t:s\mapsto (1-t)\Tilde{f}(s)+t\Tilde{w}_n(s)$.
+
+Montrons que l'application $h_t=p\Tilde{h}_t$ est une homotopie, permettant alors d'assigner à chaque valeur $n\in\bb{Z}$ la classe d'homotopie $[w_n]$. On a : \[h_t=p\Tilde{h}_t=p\left((1-t)\Tilde{f}+t\Tilde{w}_n\right)\]Autrement dit, $h_0=p\Tilde{f}=f$ et $h_1=p\Tilde{w}_n=w_n$, ce qui fait bien une homotopie sur $\s{1}$.
+
+\bigskip Montrons alors que cette application est un morphisme de groupe. Soit $m,n\in\bb{Z}$. En considérant la translation $\tau_m:x\mapsto x+m$, montrons que  $\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)$ est un chemin allant de 0 à $m+n$ : \[\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)(s)=\left\{\begin{matrix}
+\Tilde{w}_m(2s) &\text{si }0\leq s\leq\frac{1}{2} \\ 
+\tau_m\Tilde{w}_n(2s-1) &\text{si }\frac{1}{2}\leq s\leq 1
+\end{matrix}\right.\]Puisque $\tau_m\Tilde{w}_n(0)=0+m=\Tilde{w}_m(1)$, les deux chemins se recollent en $m$. De plus, on a $\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)(0)=0$ et $\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)(1)=m+n$. On en conclut alors que $\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)$ est un chemin allant de 0 à $m+n$.
+
+En remarquant que $p(\tau_m\Tilde{w}_n)=p\Tilde{w}_n=w_n$, on obtient $p\left(\Tilde{w}_m\cdot(\tau_m\Tilde{w}_n)(s)\right)=w_m\cdot w_n$. Ainsi, on peut alors dire que $\phi(m+n)=[w_m\cdot w_n]=[w_m]\cdot[w_n]$.
+
+\bigskip Il nous reste à montrer que l'application $\phi$ est bien un isomorphisme.\begin{itemize}
+    \item Montrons tout d'abord qu'elle est injective. On a: \[\begin{split}
+    \forall m,n\in\bb{Z},\quad\phi(m)=\phi(n)&\Longrightarrow[w_m]=[w_n]\\
+    &\Longrightarrow w_m\simeq w_n
+    \end{split}\]Ainsi, pour $m,n\in\bb{Z}$ tel que $\phi(m)=\phi(n)$, il existe une homotopie $f_t$ telle que $f_0=w_m$ et $f_1=w_n$. 
+    
+    Or, par le corollaire \ref{coro:homotopie}, il existe un relèvement $\Tilde{f}_t$ de l'homotopie $f_t$ de point de départ 0. Par l'unicité du corollaire \ref{coro:point}, on obtient alors que $\Tilde{f}_0=\Tilde{w}_m$ et $\Tilde{f}_1=\Tilde{w}_n$. Pour rappel, une homotopie conserve le même point de départ est d'arrivée pour tout $t$. Alors $\Tilde{f}_0(1)=\Tilde{w}_m(1)=m$ et $\Tilde{f}_1(1)=\Tilde{w}_n(1)=n$ sont égaux. On en conclut alors que $m=n$, et donc que $\phi$ est injective.
+    \item Montrons désormais qu'elle est surjective. Soit $f$ un lacet dans $\s{1}$, qui est représentant de l'élément $\alpha\in\grf{\s{1},x_0}$. Avec le corollaire \ref{coro:point}, on a un relèvement $\Tilde{f}$ commençant en 0. 
+    
+    Comme $p\Tilde{f}(1)=f(1)=(1,0)$, on en déduit que $\Tilde{f}(1)=n\in\bb{Z}$, puisque $p\inv(1,0)=\bb{Z}$. Par extension, on en conclut que $\phi(n)=[p\Tilde{f}]=[f]=\alpha$. Ainsi, l'application est bien surjective.
+\end{itemize}
+On en conclut alors que les groupes $\bb{Z}$ et $\grf{\s{1},x_0}$ sont isomorphes.
+\end{proof}
+
+Cette démonstration nous montre que ce n'est pas simple de démontrer des isomorphes avec le groupe fondamental. Pour éviter à avoir à répéter un tel cheminement pour tout espace qui nous intéresse, nous utilisons plutôt des théorème et construction qui nous permette de revenir au groupe fondamental du cercle. Le théorème qui suit en est l'exemple parfait.
+
+\section{Théorème de Van Kampen}
+
+Le théorème de Van Kampen (XXième siècle) est un théorème clé dans le calcul de groupes fondamentaux. Il permet, en décomposant notre espace $X$ en plusieurs sous espaces $A_i$, de décrire le groupe fondamental de $X$ en fonction de ceux des $A_i$.
+
+Pour comprendre cela, nous allons commencer par un exemple
+
+\begin{exemple}
+Le produit $\vee$ entre deux ensemble définit une union entre eux en un unique point. Le produit $\s{1}\vee\s{1}$ nous donne deux cercles avec un point en commun, comme un $\infty$.
+
+$$\begin{tikzpicture}
+    \draw (-1,0) circle (1);
+    \draw[->] (-1+1,0) arc (0:120:1) node[above left] {a};
+    \draw (1,0) circle (1);
+    \draw[->] (1+1,0) arc (0:-50:1) node[below right] {b};
+\end{tikzpicture}$$ En prenant chaque cercle séparément, nous avons vu que leur groupe fondamental est isomorphe à $\bb{Z}$. On pourrait alors penser que le groupe ici serait $\bb{Z}\times\bb{Z}$. En réalité, c'est plus compliqué que cela.
+
+En notant $a$ le lacet qui fait un tour dans le cercle à gauche, et $b$ pour celui à droite, on remarque que les lacets $ab$ et $ba$ ne sont pas homotopes. Le raisonnement est identique que pour le cercle : les lacets $a$ et $a^2$ ne sont pas homotopes. En revanche, le lacet $a$ composé avec le lacet $a$ est bien homotope au lacet $a^2$. De même pour $b$. Et c'est donc ainsi que l'on obtient que les éléments du groupe fondamental sont de la forme $a^{\alpha_1}b^{\beta_1}a^{\alpha_2}\cdots a^{\alpha_k}b^{\beta_k}$, alors $\alpha_i,\beta_i\in\bb{Z}$.
+
+\bigskip Cela vient du fait que l'intersection entre les deux cercles se fait en un point. Si on prend l'intersection en tant qu'ouvert, cela donne une forme de \emph{X}. Cette forme est contractile (se rétracte en un point), qui permet d'avoir une liaison entre les deux générateurs.
+
+Finalement, on note : \[\grf{\s{1}\vee\s{1}}=\bb{Z}\ast\bb{Z}\]où l'opérateur $\ast$ correspond au produit libre.
+\end{exemple}
+
+\subsection{Première approche}
+
+\end{document}

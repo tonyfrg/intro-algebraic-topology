@@ -1,0 +1,117 @@
+\documentclass[hidelinks, 10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+\usepackage{algorithm2e}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{stmaryrd} %rr/ll brackets
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{dsfont}\let\mathbb\mathds
+\usepackage[all]{xy}
+\input{environnement}
+\input{new-command}
+
+\title{\textbf{Le théorème de Van Kampen}}
+\author{Anthony Fraga}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Produit libre}
+\begin{definition}
+Soient $G$ et $H$ deux groupes. On définit le produit libre comme étant l'ensemble suivant : \[G\ast H=\left\{\prod_{i=0}^n(g_i)(h_i),\forall i\in\llbracket0,n\rrbracket, g_k\in G, h_k\in H, n\in\bb{N}\right\}\]
+\end{definition}
+
+\begin{proposition}
+Le produit libre de deux groupes est un groupe, avec l'opération de concaténation, dans lequel on supprime les éléments neutres, et on compose deux éléments du groupes ensemble (c'est à dire $(h_1)(h_2)=(h_1h_2)$, en effectuant le produit dans $H$, idem pour $G$).
+\end{proposition}
+\begin{proof}
+Soient $G$ et $H$ deux groupes. Montrons que $G\ast H$ est un groupe. Pour $a,b\in G\ast H$, l'élément $ab$ correspondant à la concaténation de $a$ et $b$ appartient à $G\ast H$. En effet, si l'élément $a$ est de longueur $n$ et $b$ de longueur $m$, alors $ab$ est de longueur $n+m\in\bb{N}$.
+\begin{itemize}
+    \item L'élément vide (c'est à dire $n=0$), noté $\varepsilon$, est l'élément neutre de la concaténation : $\forall a\in G\ast H, \varepsilon a=a\varepsilon=a$.
+    \item Soit $a=\prod_{i=0}^n(g_i)(h_i)$. Pour $\overline{a}=\prod{i=0}^n(h_{n-i}\inv)(g_{n-i}\inv)\in G\ast H$, on a bien : \[\begin{split}
+    a\overline{a}&=(g_1)(h_1)\cdots(g_n)(h_n)(h_n\inv)(g_n\inv)\cdots(h_1\inv)(g_1\inv)\\
+    &=(g_1)(h_1)\cdots(g_n)(h_nh_n\inv)(g_n\inv)\cdots(h_1\inv)(g_1\inv)\\
+    &=(g_1)(h_1)\cdots(g_n)(g_n\inv)\cdots(h_1\inv)(g_1\inv)\\
+    &=\vdots \hspace{2cm} \vdots\hspace{2cm} \vdots\\
+    &= (g_1)(g_1\inv)\\
+    &=\varepsilon
+    \end{split}\]De même, $\overline{a}a=\varepsilon$. Autrement dit, il existe un inverse pour chaque élément de $G\ast H$.
+    \item L'associativité est vraie, puisque la relation de concaténation est associative également.
+\end{itemize}
+On en conclut alors que $G\ast H$ est bien un groupe.
+\end{proof}
+
+\begin{remark}
+Il existe deux morphismes injectifs naturels vers ce groupe : $i_G:G\rightarrow G\ast H$ et $i_H:H\rightarrow G\ast H$ ; on injecte chaque $g\in G$ (resp. $h\in H$) dans le produit libre le mot $(g)$ (resp. $(h)$).
+
+\[\xymatrix{
+  H \ar[d]^{i_H}\\
+  H\ast G\\
+  G \ar[u]_{i_G}}
+\]
+
+Ces morphismes sont naturels dans le sens où s'il existe un groupe $L$ avec deux morphismes $f_g:G\rightarrow L$ et $f_H:H\rightarrow L$, alors il existe un unique morphisme $f:G\ast H\rightarrow L$ permettant de commuter le diagramme suivant : 
+
+\[\xymatrix{
+H \ar[d]_{i_H}\ar[rd]^{f_H}\\
+H\ast G\ar@{.>}[r]^f& L\\
+G \ar[u]^{i_G}\ar[ru]_{f_G}
+}\]
+\end{remark}
+
+\subsection{Produit libre amalgamé}
+\begin{definition}
+Soient $G,H$ deux groupes. Soient $K$ un groupe, avec deux morphismes $j_H:K\rightarrow H$ et $j_G:K\rightarrow G$. On définit le \emph{produit amalgamé} $$G\underset{K}{\ast}H$$ comme étant le quotient du produit libre $G\ast H$ par le sous-groupe distingué engendré par les éléments de la forme $i_Gj_G(x)i_Hj_H(x)\inv$.
+\end{definition}
+\begin{remark}
+L'idée du quotient est d'identifier les éléments venant de $K$, par $G$ ou par $H$.
+\end{remark}
+On arrive alors à la propriété universelle du produit libre amalgamé, nécessaire pour définir le morphisme de Van-Kempen.
+
+\begin{proposition}\label{prop:univ-prod-amal}
+On considère trois groupes $G,H,K$, munis de deux morphismes~$j_G:K\to G$ et $j_H:K\to H$. On peut alors formé le groupe libre amalgamé $G\underset{K}{\ast}H$.
+
+Soit un groupe $L$, et deux morphismes $f_G:G\to L$ et $f_H:H\to L$, tels que~$f_G\circ j_G=f_H\circ j_H$. Alors, il existe un unique morphisme $f:G\underset{K}{\ast}H\to L$ faisant commuter le diagramme qui suit :
+
+\[\xymatrix{
+&G \ar[d]_{\overline{i}_G}\ar[rd]^{f_G}\\
+K\ar[ru]^{j_G}\ar[rd]_{j_H} &G\underset{K}{\ast}H\ar@{.>}[r]^f& L\\
+&H \ar[u]^{\overline{i}_H}\ar[ru]_{f_H}
+}\]avec $\overline{i}_G$ la composée naturelle $G\to G\ast H\to G\underset{K}{\ast}H$.
+\end{proposition}
+
+\section{Théorème}
+\subsection{Premier cas : simplement connexe}
+\begin{definition}
+Un espace topologique est dit \emph{connexe par arc} s'il existe toujours un chemin entre deux points de l'espace.
+
+Un espace topologique est dit \emph{simplement connexe} s'il est connexe par arc et si tout lacet est homotope à un point. autrement dit, son groupe fondamental est trivial.
+\end{definition}
+
+\begin{exemple}
+Le cercle $\s{1}$ est connexe par arc, mais pas simplement connexe, alors que la sphère $\s{2}$ est simplement connexe.
+\end{exemple}
+
+Dans un premier temps, nous allons voir un cas particulier du théorème.
+\begin{proposition}\label{prop:van-kempen-simply}
+Soient $A$ et $B$ deux ouverts d'un espace topologique, tel que $A\cap B$ soit simplement connexe. Alors on a l'égalité sur les groupe fondamentaux suivant : \[\grf{A\cup B}=\grf{A}\ast\grf{B}\]
+\end{proposition}
+
+
+Désormais, nous allons voir le théorème dans sa version générique.
+\begin{theorem}[Van Kampen]\label{th:van-kempen}
+Soit $A$ et $B$ deux ouverts d'un espace topologique tels que $A\cap B$ connexe par arc. On a : \[\grf{A\cup B}=\grf{A}\underset{\grf{A\cap B}}{\ast}\grf{B}\]où $\underset{\grf{A\cap B}}{\ast}$ correspond au produit amalgamé.
+\end{theorem}
+
+\begin{remark}
+L'on remarque bien que le théorème \ref{th:van-kempen} implique la proposition \ref{prop:van-kempen-simply}. Par définition, un espace simplement connexe possède un groupe fondamental trivial. En reprenant les notation de la définition, cela veut dire que $K=\{1\}$, ce qui nous donne les morphismes : \[j_G:K=\{1\}\mapsto\{1_G\}\subset G\qquad j_H:K=\{1\}\mapsto\{1_H\}\subset H\]Ce qui implique donc que les composées $i_Gj_G$ et $i_Hj_H$ s'injecte uniquement sur le neutre $1_{G\ast H}$. Cela nous permet de dire que le sous-groupe distingué engendré par $i_Gj_G(i_Hj_H)\inv$ est réduit à l'élément neutre. 
+
+On en déduit alors que le passage au quotient nous donne le produit libre (quotienter par un sous-groupe trivial revient à ne pas quotienter).
+\end{remark}
+\end{document}

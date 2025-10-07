@@ -1,0 +1,308 @@
+\chapter{Calculs avec l'homologie simpliciale}\label{chap:annexe-simp-homo}
+
+Dans cette première annexe, nous allons voir comment nous utilisons l'homologie simpliciale en pratique. Nous avons déjà traiter l'exemple du cercle dans la section \ref{sect:simpl-homology}. Nous nous intéresserons dans un premier temps aux espaces formé d'un polygone fondamental carré : le tore de dimension 2, le plan projectif réel, la bouteile de Klein, le ruban de Möbius. Par la suite, nous intéresserons au calcul de la sphère de dimensions 2. Après cela, nous montrerons avec l'exemple du tore à 2 trous et de la sphère de dimension quelconque que cet outils de calcul devient vite exhaustif pour des espaces plus compliqués.
+
+\section{Polygones fondamentaux}
+
+\subsection{C'est carré !}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\begin{tikzpicture}[scale=.6]
+% fond gris
+\fill[gray!30] (0,0) -- (4,0) -- (0,4) -- cycle;
+\fill[gray!30] (6,4) -- (6,0) -- (2,4) -- cycle;
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    %A
+    \draw[postaction={decorate}, red] (0,0)--(4,0) node[midway, above] {$a_1$};
+    \draw[postaction={decorate}, blue] (0,0)--(0,4) node[midway, right] {$b_1$};
+    \draw[postaction={decorate}, brown] (4,0) -- (0,4)node[midway, below]{$c_1$};
+    %B
+    \draw[postaction={decorate}, red] (2,4)--(6,4)node[midway, below] {$a_2$};
+    \draw[postaction={decorate}, blue] (6,0)--(6,4) node[midway, left] {$b_2$};
+    \draw[postaction={decorate}, brown] (6,0) -- (2,4)node[midway, above]{$c_2$};
+\end{scope}
+    \filldraw[] (6,0) circle(1pt) node[right]{$v_0'$};
+    \filldraw[] (4,0) circle(1pt) node[above]{$v_1$};
+    \filldraw[] (0,4) circle(1pt) node[left]{$v_2$};
+    \filldraw[] (2,4) circle(1pt) node[above right]{$v_1'$};
+    \filldraw[] (6,4) circle(1pt) node[right]{$v_2'$};
+    \filldraw[] (0,0) circle(1pt) node[left]{$v_0$};
+    \filldraw[gray] (1,1) circle(0pt) node[]{$A$};
+    \filldraw[gray] (5,3) circle(0pt) node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale sans identifications}
+\label{tkz:simplicial-torus-before}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\begin{tikzpicture}[scale=.6]
+% fond gris
+\fill[gray!30] (0,0) rectangle (4,4);
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (0,4)--(4,4)node[midway, below] {$a$};
+    \draw[postaction={decorate}, red] (0,0)--(4,0) node[midway, above] {$a$};
+    \draw[postaction={decorate}, blue] (0,0)--(0,4) node[midway, right] {$b$};
+    \draw[postaction={decorate}, blue] (4,0)--(4,4) node[midway, left] {$b$};
+    \draw[postaction={decorate}, brown] (4,0) -- (0,4)node[midway, below]{$c$};
+\end{scope}
+    \filldraw[] (4,0) circle(1pt) node[right]{$v$};
+    \filldraw[] (0,4) circle(1pt) node[left]{$v$};
+    \filldraw[] (4,4) circle(1pt) node[right]{$v$};
+    \filldraw[] (0,0) circle(1pt) node[left]{$v$};
+    \filldraw[gray] (1,1) circle(0pt) node[]{$A$};
+    \filldraw[gray] (3,3) circle(0pt) node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale du tore}
+\label{tkz:simplicial-torus}
+\end{subfigure}
+\end{figure}
+
+\phantom{}
+
+\begin{exemple}
+Nous commençons par le tore de dimension 2, que l'on appellera tore, et notera $T^2$. Nous reprenons la structure simpliciale que nous avons proposé dans la section \ref{sect:simplices}. A partir des deux 2-simplexes $A=[v_0,v_1,v_2]$ et $B=[v_0',v_1',v_2']$ (voir figure \ref{tkz:simplicial-torus-before}), nous avons procédé à plusieurs identifications sur les sommets et les côtés afin d'aboutir à la structure simpliciale du tore \ref{tkz:simplicial-torus}. Voici un exemple d'identifications effectués : \begin{itemize}
+    \item Sur les sommets, tout les points sont identifiés entre eux, ne faisant qu'un, noté $v$ ;
+    \item Sur les côtés : $a_1\approx a_2$, $b_1\approx b_2$ et $c_1\approx c_2$, leurs identifications sont notés respectivement~$a,b,c$.
+\end{itemize}
+Nous avons alors la chaîne de complexes simpliciaux suivante : \[\begin{tikzcd}
+\Delta_2(T^2)=\langle A,B\rangle\cong\bb{Z}^2\arrow[r]&\Delta_1(T^2)=\langle a,b,c\rangle\cong\bb{Z}^3\arrow[r]&\Delta_0(T^2)=\langle v\rangle\cong\bb{Z}.
+\end{tikzcd}\]Nous pouvons ainsi procédé aux calculs des bordures. Pour cela, deux méthodes similaires sont possibles. La première étant de considérer les identifications établis, la deuxième étant de voir les identifications ensuite, et d'appliquer la formule de la bordure automatiquement.
+
+Pour la première méthode, on considère que le sens de rotation est trigonométrique (le signe du simplexe tournant dans ce sens est positif, sinon négatif), de telle sorte que l'on ait les bordures~$\partial_2(A)=c-b+a$ et~${\partial_2(B)=-c+b-a}$. Comme les 1-simplexes ont le même point au départ et à l'arrivée, on a~${\partial_1(a)=\partial_1(b)=\partial_1(c)=v-v=0}$. Enfin, nous avons $\partial_0(v)=0$.
+
+\bigskip Pour le calcul de l'homologie, nous pouvons commencer par voir que $\im\partial_3=0$. En remarquant que $\partial_2(A)=-\partial_2(B)$, nous avons ${\partial_2(A-B)=\partial_2(A)-\partial_2(B)=0}$, ce qui nous permet d'obtenir~${\ker\partial_2=\langle A-B\rangle}$. Ainsi, le groupe d'homologie $\homsimp_2(T^2)=\ker\partial_2/\im\partial_3=\langle A-B\rangle\cong \bb{Z}$. 
+
+Pour le seconde groupe, nous pouvons dans un premier temps voir $\im\partial_2=\langle a-b+c\rangle$, ainsi que~$\ker\partial_1=\langle a,b,c\rangle$. Nous obtenons alors le groupe d'homologie suivant :  $$\homsimp_2(T^2)=\langle a,b,c\rangle/\langle a-b+c\rangle=\langle a,b,c|a+c=b\rangle=\langle a,a+c,c\rangle=\langle a,c\rangle\cong \bb{Z}^2.$$
+
+Pour le premier groupe d'homologie, il est immédiat : $\homsimp_0(T^2)=\langle v\rangle/\{0\}=\langle v\rangle\cong \bb{Z}$.
+
+Finalement, nous obtenons la séquence de groupe d'homologies suivante : \[\begin{tikzcd}
+    0\arrow[r]&\bb{Z}\arrow[r]&\bb{Z}^2\arrow[r]&\bb{Z}\arrow[r]&0.
+\end{tikzcd}\]
+
+Pour la second méthode, nous calculons les bordures de la manière suivante : \begin{itemize}
+    \item Pour les 2-simplexes : $\partial_2(A)=\partial([v_0,v_1,v_2])=[v_1,v_2]-[v_0,v_2]+[v_0,v_1]=c_1-b_1+a_1$, et de même $\partial_2(B)=[v_1',v_2']-[v_0',v_2']+[v_0',v_1']=c_2-b_2+a_2$ ;
+    \item Pour le simplexe $A$ : $\partial_1(a_1)=\partial([v_0,v_1])=v_1-v_0$, $\partial_1(b_1)=v_2-v_0$ et ${\partial_1(c_1)=v_2-v_1}$. Nous obtenons les résultats identiques pour le simplexe $B$ ;
+    \item Pour les 0-simplexes, toutes leurs images sont nulles.
+\end{itemize}
+Pour le calcul du groupe d'homologie, nous procédons aux identifications énoncées, de telle sorte que nous retombons sur les résultats données plus haut.
+\end{exemple}
+
+\begin{wrapfigure}{r}{0.4\linewidth}
+\centering
+\begin{tikzpicture}[scale=0.8]
+    % fond gris
+    \fill[gray!30] (0,0) rectangle (4,4);
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (0,4)--(4,4)node[midway, below] {$a$};
+    \draw[postaction={decorate}, red] (4,0)--(0,0) node[midway, above] {$a$};
+    \draw[postaction={decorate}, blue] (0,4)--(0,0) node[midway, right] {$b$};
+    \draw[postaction={decorate}, blue] (4,0)--(4,4) node[midway, left] {$b$};
+    \draw[postaction={decorate}, brown] (4,0) -- (0,4)node[midway, below]{$c$};
+\end{scope}
+    \filldraw[] (4,0) circle(1pt) node[right]{$v_0$};
+    \filldraw[] (0,4) circle(1pt) node[left]{$v_0$};
+    \filldraw[] (4,4) circle(1pt) node[right]{$v_1$};
+    \filldraw[] (0,0) circle(1pt) node[left]{$v_1$};
+    \filldraw[gray] (1,1) circle(0pt) node[]{$A$};
+    \filldraw[gray] (3,3) circle(0pt) node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale du plan projectif réel}
+\label{tkz:simplicial-proj}
+\end{wrapfigure}
+Nous allons par la suite ne plus donner les identifications effectués sur la structure simpliciale, elles sont semblable à celle donnée dans l'exemple précédent.
+
+\begin{exemple}
+Désormais, nous allons nous intéresser au calcul du plan projectif réel $\realproj^2$. En considérant la structure de la figure \ref{tkz:simplicial-proj}, nous avons la chaîne de complexes simpliciaux suivante : 
+\[\footnotesize
+\begin{tikzcd}
+0\arrow[r]&\langle A,B\rangle\arrow[r]&\langle a,b,c\rangle\arrow[r]&=\langle v_0,v_1\rangle\arrow[r]&0.
+\end{tikzcd}
+\]
+
+Pour les calculs des bordures, nous considérons le sens trigonométrique. Ainsi, nous avons $\partial_2(A)=c+b-a$ et~$\partial_2(B)=-c+b-a$. Ensuite, nous avons $\partial_1(a)=v_1-v_0$, ainsi que $\partial_1(b)=v_1-v_0$ et $\partial_1(c)=v_1-v_1=0$.
+
+\bigskip Pour les calculs des groupes d'homologies, nous pouvons facilement voir qu'il n'existe pas de combinaisons linéaires des images de bordures de $A$ et $B$ donnant 0. Autrement dit nous avons l'implication~$\partial_2(\alpha A+\beta B)=0\Rightarrow \alpha=\beta=0$, permettant de dire que $\ker\partial_2=0$. Nous pouvons en déduire $\homsimp_2(\realproj^2)=0$. Nous pouvons également facilement trouver le résultat qui suit : $$\homsimp_0(\realproj^2)=\langle v_0,v_1\rangle/\langle v_1-v_0\rangle=\langle v_0,v_1|v_0=v_1\rangle\cong\bb{Z}.$$Enfin, nous avons $\im\partial_2=\langle c+b-a,c-b+a\rangle$ et $\ker\partial_1=\langle c, b-a\rangle$. Cela nous permet de calculer le groupe d'homologie suivant : \[\homsimp_1(\realproj^2)=\langle c, b-a\rangle/\langle c+b-a,c-b+a\rangle=\langle c,b-a|c=a-b,c=b-a\rangle.\]Sur la dernière égalité, nous avons $c=-c$, ce qui se traduit algébriquement par $\langle c\rangle=\bb{Z}_2$. Nous en déduisons alors que $\homsimp_1(\realproj^2)=\bb{Z}_2$.
+\end{exemple}
+
+\begin{wrapfigure}{r}{.3\textwidth}
+\centering
+\begin{tikzpicture}[scale=.8]
+    % fond gris
+    \fill[gray!30] (0,0) rectangle (4,4);
+    %flèche du haut
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (0,4)--(4,4)node[midway, below] {$a$};
+    \draw[postaction={decorate}, red] (4,0)--(0,0) node[midway, above] {$a$};
+    \draw[postaction={decorate}, blue] (0,0)--(0,4) node[midway, right] {$b$};
+    \draw[postaction={decorate}, blue] (4,0)--(4,4) node[midway, left] {$b$};
+    \draw[postaction={decorate}, brown] (4,0) -- (0,4)node[midway, below]{$c$};
+\end{scope}
+    \filldraw[] (4,0) circle(1pt) node[right]{$v$};
+    \filldraw[] (0,4) circle(1pt) node[left]{$v$};
+    \filldraw[] (4,4) circle(1pt) node[right]{$v$};
+    \filldraw[] (0,0) circle(1pt) node[left]{$v$};
+    \filldraw[gray] (1,1) circle(0pt) node[]{$A$};
+    \filldraw[gray] (3,3) circle(0pt) node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale de la bouteille de Klein}
+\label{tkz:klein-bottle-simp}
+\end{wrapfigure}
+
+\phantom{}
+
+\begin{exemple}
+Pour la bouteille de Klein, notée $K$, nous considérons la structure simpliciale proposée sur la figure \ref{tkz:klein-bottle-simp}. Nous obtenons alors le complexe de chaînes simpliciales suivant : 
+\[\footnotesize
+\begin{tikzcd}
+0\arrow[r]&\langle A,B\rangle\arrow[r]&\langle a,b,c\rangle\arrow[r]&\langle v\rangle\arrow[r]&0.
+\end{tikzcd}
+\]Pour les calculs de bordures, nous avons $\partial_2(A)=c-b-a$ et~${\partial_2(B)=b-c-a}$. Également, comme il n'y a qu'un seul 0-simplexe, nous avons $\partial_1=0$.
+
+Pour les groupes d'homologies, nous avons~${\homsimp_0(K)=\langle v\rangle\cong\bb{Z}}$. Ensuite, nous avons~${\ker\partial_2=0}$, pour la même raison que le plan projectif. Enfin, nous avons le groupe d'homologie simpliciale suivant : \[\begin{split}
+\homsimp_1(K)&=\langle a,b,c|b-c-a=0,c-b-a=0\rangle\\
+&=\langle a,b,c|a=b-c,a=c-b\rangle\\
+&=\langle b,c|b-c=c-b\rangle\\
+&=\langle b,c-b|2(c-b)=0\rangle\\
+&\cong \bb{Z}\oplus\bb{Z}_2.
+\end{split}\]
+\end{exemple}
+
+\begin{wrapfigure}{r}{.3\textwidth}
+\centering
+\begin{tikzpicture}[scale=.8]
+    % fond gris
+    \fill[gray!30] (0,0) rectangle (4,4);
+    %flèche du haut
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (0,4)--(4,4)node[midway, below] {$a$};
+    \draw[postaction={decorate}, red] (4,0)--(0,0) node[midway, above] {$a$};
+    \draw[postaction={decorate}] (0,0)--(0,4) node[midway, right] {$b_1$};
+    \draw[postaction={decorate}] (4,0)--(4,4) node[midway, left] {$b_2$};
+    \draw[postaction={decorate}, brown] (4,0) -- (0,4)node[midway, below]{$c$};
+\end{scope}
+    \filldraw[] (4,0) circle(1pt) node[right]{$v_0$};
+    \filldraw[] (0,4) circle(1pt) node[left]{$v_0$};
+    \filldraw[] (4,4) circle(1pt) node[right]{$v_1$};
+    \filldraw[] (0,0) circle(1pt) node[left]{$v_1$};
+    \filldraw[gray] (1,1) circle(0pt) node[]{$A$};
+    \filldraw[gray] (3,3) circle(0pt) node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale du ruban de Möbius}
+\label{tkz:mobius-strip-simp}
+\end{wrapfigure}
+
+\phantom{}
+
+\begin{exemple}
+Pour le ruban de Möbius $M$, nous avons les deux faces $b_1$ et $b_2$ qui ne sont pas identifiées entre elles, ce qui change par rapport aux exemples précédents. Pour la chaîne de complexe cellulaire, nous avons alors : \[\footnotesize
+\begin{tikzcd}
+0\arrow[r]&\langle A,B\rangle\arrow[r]&\langle a,b_1,b_2,c\rangle\arrow[r]&\langle v_0, v_1\rangle\arrow[r]&0.
+\end{tikzcd}
+\]Pour les calculs de bordures, nous avons d'un côté $\partial_2(A)=c-b_1-a$ et~$\partial_2(B)=-c+b_2-a$, et de l'autre $\partial_1(a)=v_1-v_0=\partial_1(b_2)$, ainsi que~$\partial_1(b_1)=v_0-v_1$ et $\partial_1(c)=0$. Nous avons toujours $\partial_0=0$.
+
+Cela nous donne donc les résultats suivants sur les groupes d'homologies. Tout d'abord, $\homsimp_2(M)=0$ du fait que les images sont linéairement indépendantes. Ensuite, nous avons $\homsimp_0\cong\bb{Z}$ par le même calcul que pour du plan projectif. Enfin, nous avons les calculs suivants pour le groupe d'homologie $\homsimp_1$ : \[\begin{split}
+\homsimp_1(M)&=\langle c,a+b_1,a-b_2\rangle/\langle c-b_1-a,c-b_2+a\rangle\\
+&=\langle c,a+b_1,a-b_2|c-b_1-a=0,c-b_2+a=0\rangle\\
+&=\langle c,a+b_1,a-b_2|c=b_1+a,c=b_2-a\rangle\\
+&\cong \bb{Z}
+\end{split}\]Vu que les trois générateurs sont "liés", ils ne forment qu'un, d'où l'isomorphisme avec $\bb{Z}$.
+\end{exemple}
+
+\newpage
+\subsection{Si c'est rond}
+Dans cette partie, nous allons calculer l'homologie simpliciale de la sphère $\s{2}$, que l'on appellera sphère.
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{.45\linewidth}
+\centering
+\begin{tikzpicture}[scale=.8]
+\fill[gray!30] (0,0)--(4,0)--(2,3)-- cycle ;
+\fill[gray!30] (4,1)--(8,1)--(6,4)-- cycle ;
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (0,0)--(4,0)node[midway, above] {$e_1$};
+    \draw[postaction={decorate}, blue] (4,0)--(2,3) node[midway, left] {$e_2$};
+    \draw[postaction={decorate}, brown] (0,0)--(2,3) node[midway, right] {$e_3$};
+    \draw[postaction={decorate}, red] (4,1)--(8,1) node[midway, below left] {$f_1$};
+    \draw[postaction={decorate}, blue] (8,1) -- (6,4)node[midway, left]{$f_2$};
+    \draw[postaction={decorate}, brown] (4,1)--(6,4)node[midway, right]{$f_3$};
+\end{scope}
+\filldraw[] (0,0) circle(1pt)node[left]{$\Tilde{v}_0$};
+\filldraw[] (4,0) circle(1pt)node[right]{$\Tilde{v}_1$};
+\filldraw[] (2,3) circle(1pt)node[above left]{$\Tilde{v}_2$};
+\filldraw[] (4,1) circle(1pt)node[below right]{$\Tilde{w}_0$};
+\filldraw[] (8,1) circle(1pt)node[right]{$\Tilde{w}_1$};
+\filldraw[] (6,4) circle(1pt)node[above left]{$\Tilde{w}_2$};
+\filldraw[] (2,1) circle(0pt)node[]{$T$};
+\filldraw[] (6,2) circle(0pt)node[]{$B$};
+\end{tikzpicture}
+\caption{\centering Structure simpliciale de la sphère $\s{2}$}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\linewidth}
+\centering
+\begin{tikzpicture}
+\filldraw[gray!15] (0,0) circle(2);
+\draw[] (0,0) circle(2);
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (-2,0).. controls(-1,-.2)..(0,-.3)node[midway, below] {$a$};
+    \draw[postaction={decorate}, blue] (0,-.3).. controls(1,-.2)..(2,0)node[midway, below] {$b$};
+    \draw[postaction={decorate}, dashed, brown] (-2,0).. controls(0,0.4)..(2,0)node[midway, above] {$c$};
+\end{scope} 
+\filldraw[] (-2,0) circle(1pt) node[left]{$v_0$};
+\filldraw[] (0,-.3) circle(1pt) node[below]{$v_1$};
+\filldraw[] (2,0) circle(1pt) node[right]{$v_2$};
+\filldraw[] (0,1) circle(0) node[right]{$T$};
+\filldraw[] (0,-1) circle(0) node[right]{$B$};
+\end{tikzpicture}
+\caption{Sphère structuré à base de simplexes}
+\label{tkz:sphere2-simp}
+\end{subfigure}
+\caption{La sphère $\s{2}$ et sa structure simpliciale}
+\label{fig:sphere2-simp}
+\end{figure}
+
+\begin{exemple}
+La structure simpliciale de la sphère que nous utilisons ici part de deux 2-simplexes $T$ et~$B$, auquel nous identifions les sommets et côtés deux à deux, avec sons correspondant dans l'ordre du simplexe. Intuitivement, le premier simplexe $T$ recouvre l'hémisphère nord et le second recouvre l'hémisphère sud, et leurs cotés forment un cercle, l'équateur. Avec les notations utilisés dans les figures ci-dessus \ref{fig:sphere2-simp}, les identifications sont données de façon implicite par les couleurs ou par leur indices.
+
+Pour les calculs de bordures, nous avons tout d'abord $\partial_2(T)=\partial_2(B)=b-c+a$, ensuite nous avons~${\partial_1(a)=v_1-v_0}$, $\partial_1(b)=v_2-v_1,\partial_1(c)=v_2-v_0$, et enfin $\partial_0=0$. Cela nous donne donc les résultats suivants pour l'homologie :
+\begin{itemize}
+    \item $\homsimp_0(\s{2})=\langle v_0,v_1,v_2|v_0=v_1=v_2\rangle\cong\bb{Z}$;
+    \item $\homsimp_2(\s{2})=\langle T-B\rangle\cong\bb{Z}$;
+    \item Pour trouver un élément de $\ker\partial_1$, nous allons chercher à trouver une solution de l'équation~${\partial_1(\alpha a+\beta b+\gamma c)=0}$. Cela nous donne $(\beta+\gamma)v_2+(\alpha-\beta)v_1-(\alpha+\gamma)v_0=0$, en calculant l'image de la bordure. Or, il n'existe aucune combinaison donnant un tel résultat, ce qui veut donc dire que le noyau est trivial. Ainsi, nous obtenons $\homsimp_1(\s{2})=0$.
+\end{itemize}
+\end{exemple}
+
+
+\section{Limitations de l'homologie simpliciale}
+%2-tore
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[scale=.6]
+\fill[gray!30] (2,0)--(4,0)--(6,2)--(6,4)--(4,6)--(2,6)--(0,4)--(0,2)-- cycle ;
+\begin{scope}[thick,decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}] 
+    \draw[postaction={decorate}, red] (2,0)--(4,0)node[midway, above] {$a$};
+    \draw[postaction={decorate}, blue] (4,0)--(6,2) node[midway, above left] {$b$};
+    \draw[postaction={decorate}, red] (6,4)--(6,2) node[midway, left] {$a$};
+    \draw[postaction={decorate}, blue] (4,6)--(6,4) node[midway, below left] {$b$};
+    \draw[postaction={decorate}, brown] (4,6) -- (2,6)node[midway, below]{$c$};
+    \draw[postaction={decorate}, DarkGreen] (2,6)--(0,4)node[midway, below right]{$d$};
+    \draw[postaction={decorate}, brown](0,2)--(0,4)node[midway, right]{$c$};
+    \draw[postaction={decorate}, DarkGreen](2,0)--(0,2)node[midway, above right]{$d$};
+    \draw[postaction={decorate}](2,0)--(6,2);
+    \draw[postaction={decorate}](2,0)--(6,4);
+    \draw[postaction={decorate}](2,0)--(4,6);
+    \draw[postaction={decorate}](2,0)--(2,6);
+    \draw[postaction={decorate}](2,0)--(0,4);
+\end{scope}
+\end{tikzpicture}
+\caption{\centering Structure simpliciale du 2-tore}
+\label{tkz:2-torus-simp}
+\end{wrapfigure}
+
+Lorsque nous nous intéressons à des espaces avec des polygones fondamentaux plus sophistiqués, tel que le 2-tore sur la figure \ref{tkz:2-torus-simp}, la structure simpliciale devient assez rapidement énorme. Dans notre cas, nous avons six 2-simplexes, treize 1-simplexes et un 0-simplexe, pour un seul trou en plus ! Nous pouvons très bien conjecturer le fait que ce nombre grandis de plus en plus en fonction du nombre de trous. Pour des espaces encore plus complexes, tel que le tore de dimension supérieure, ou bien les espace projectifs, cela semble être encore plus compliqué. C'est en ce sens que l'homologie cellulaire est plus utile en pratique, elle ne demande pas de structure aussi explicite et longue.
+
+\bigskip En plus de cela, l'homologie simpliciale de la sphère de dimension supérieure à deux devient vite complexe (même si nous connaissons le résultat), du fait qu'il faut démontrer que les groupes d'homologies autres que 0 et la dimension de la sphère sont triviaux.

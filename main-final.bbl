@@ -1,0 +1,158 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{MacLane}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=d35756c9f39a938d9533376dfaa5ad43}{%
+           family={Mac\bibnamedelima Lane},
+           familyi={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Saunders},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, New York}%
+      }
+      \strng{namehash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{fullhash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{fullhashraw}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{bibnamehash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{authorbibnamehash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{authornamehash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{authorfullhash}{d35756c9f39a938d9533376dfaa5ad43}
+      \strng{authorfullhashraw}{d35756c9f39a938d9533376dfaa5ad43}
+      \field{labelalpha}{Mac98}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{0-387-98403-8}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Categories for the working mathematician}
+      \field{volume}{5}
+      \field{year}{1998}
+      \field{pages}{xii+314}
+      \range{pages}{-1}
+    \endentry
+    \entry{Hatcher}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press, Cambridge}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhashraw}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{labelalpha}{Hat02}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-521-79160-X; 0-521-79540-0}
+      \field{title}{Algebraic topology}
+      \field{year}{2002}
+      \field{pages}{xii+544}
+      \range{pages}{-1}
+    \endentry
+    \entry{homeoImpossible}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=032506269711efbf3c9b7d5d85a58324}{%
+           family={Zielinski},
+           familyi={Z\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{fullhash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{fullhashraw}{032506269711efbf3c9b7d5d85a58324}
+      \strng{bibnamehash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{authorbibnamehash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{authornamehash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{authorfullhash}{032506269711efbf3c9b7d5d85a58324}
+      \strng{authorfullhashraw}{032506269711efbf3c9b7d5d85a58324}
+      \field{labelalpha}{Zie14}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.LO}
+      \field{eprinttype}{arXiv}
+      \field{title}{The complexity of the homeomorphism relation between compact metric spaces}
+      \field{year}{2014}
+      \verb{eprint}
+      \verb 1409.5523
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1409.5523
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1409.5523
+      \endverb
+    \endentry
+    \entry{Homeo-article}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0740d00d7ae2694431b87058b79f77f1}{%
+           family={Fraga},
+           familyi={F\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{fullhash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{fullhashraw}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{bibnamehash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{authorbibnamehash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{authornamehash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{authorfullhash}{0740d00d7ae2694431b87058b79f77f1}
+      \strng{authorfullhashraw}{0740d00d7ae2694431b87058b79f77f1}
+      \field{labelalpha}{Fra24}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{math.AT}
+      \field{eprinttype}{arXiv}
+      \field{title}{Cellular complexes and embeddings into Euclidean spaces: Möbius strip, torus, and projective plane}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2408.14882
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2408.14882
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2408.14882
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

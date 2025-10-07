@@ -1,0 +1,53 @@
+\chapter{Introduction à la théorie des catégories}\label{chap:categories}
+
+Intuitivement, la théorie des catégories a pour but d'être une théorie très vague et globale, permettant de trouver des résultats universels. Nous nous éloignons de toutes restrictions, de tout axiomes et propriétés à vérifier, pour pouvoir englober tout types de contenant. Nous pouvons ainsi considérer les espaces topologiques de la même manière que les groupes. C'est avec cette idée de généralisation que l'on a pu construire de si bons outils de topologie algébriques. Le lecteur souhaitant plus de détails sur la théorie des catégories est invité à lire \cite{MacLane}.
+
+\begin{definition}
+Une \emph{catégorie} $\mathcal{C}$ consiste en trois choses : \begin{itemize}[label=$\bullet$]
+    \item Une collection d'\emph{objets} $Ob(\mathcal{C})$ ;
+    \item Pour tout couple $(X,Y)$ d'objets, les ensembles $Mor(X,Y)$ appelés \emph{morphismes}, ainsi que le morphisme \emph{identité} $id_X=id\in Mor(X,X)$ pour tout $X\in Ob(\mathcal{C})$ ;
+    \item Une fonction de \emph{composition de morphismes} : $Mor(X,Y)\times Mor(Y,Z)\to Mor(X,Z)$ pour tout triplet $(X,Y,Z)\in Ob(\mathcal{C})^3$, satisfaisant l'axiome $f\circ id=id\circ f=f$, et $(f\circ g)\circ h=f\circ(g\circ h)$, pour les morphismes adéquats.
+\end{itemize}
+\end{definition}
+
+Selon les auteurs, les morphismes sont également appelés flèches, et noté $f:X\to Y$ plutôt que $f\in Mor(X,Y)$.
+
+\begin{exemple}Nous pouvons citer quelques exemples de catégories, en lien ou non avec la topologie algébrique, pour montrer à quel point cette notion peut englober de concepts mathématiques.
+\begin{enumerate}
+    \item Nous pouvons considérer les espaces topologiques comme une catégories. Les objets peuvent être simplement des espaces topologiques $(X,\mathcal{T})$. Les morphismes peuvent être les applications continues, ou bien l'on peut se restreindre aux homéomorphismes, ou encore aux homotopies. Dans les trois cas, les axiomes sont vérifiées et le morphisme identité existe.
+    \item L'ensemble des groupes peut être une catégorie, avec les groupes comme objets et les morphismes de groupes étant des morphismes. Le sous-ensemble des groupes abéliens forme également une catégorie.
+
+    De manière plus générale, l'ensemble des modules sur un corps fixe représentent une catégorie.
+    \item Un groupe peut être vue comme une catégorie, avec un seul objet et les morphismes étant les éléments ce groupe. Nous pouvons même voir les monoïdes (magma unitaire et LCI transitive) en tant que catégories, si l'on souhaite voir plus large.
+    \item Étant donné un corps $K$, l'ensemble des matrices sur $K$ forme une catégorie, avec les objets étant des entiers, et $Mor(n,m)$ l'ensemble des matrices de taille $n\times m$.
+\end{enumerate}
+Plein d'autres exemples de catégories sont donnés \cite{Hatcher} page 163.
+\end{exemple}
+
+\begin{definition}\label{def:functor}
+Un \emph{foncteur} $F$ allant d'une catégorie $\mathcal{C}$ à une catégorie $\mathcal{D}$ envoie chaque objet~${X\in Ob(\mathcal{C})}$ un objet $F(X)\in Ob(\mathcal{D})$, ainsi que, pour tout couple $(X,Y)\in Ob(\mathcal{C})^2$, chaque morphisme $f\in Mor(X,Y)$ est envoyé vers~${F(f)\in Mor(F(X),F(Y)}$, et tel qu'il vérifie $F(id)=id$.
+
+On dit d'un foncteur $F$ qu'il est \emph{covariant} s'il vérifie $F(f\circ g)=F(f)\circ F(g)$. S'il vérifie $F(f\circ g)=F(g)\circ F(f)$, alors on dit qu'il est \emph{contravariant}.
+\end{definition}
+
+\begin{exemple}
+Le groupe fondamental est un foncteur entre la catégories des espaces pointés avec les applications continues, que l'on note $Top_\ast$, vers la catégories des groupes, noté $Grp$. De même, les groupes d'homologie sont des foncteurs entre la catégorie $Top$ des espaces topologies vers la catégories des groupes abéliens $Ab$.
+\end{exemple}
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\centering
+\begin{tikzcd}
+F(X)\arrow[r,"F(f)"]\arrow[d,"T_X"]&F(Y)\arrow[d,"T_Y"]\\
+G(X)\arrow[r,"G(f)"]&G(Y).
+\end{tikzcd}
+\end{wrapfigure}
+
+Il existe un dernier concept, permettant de passer d'un foncteur à un autre.
+
+\begin{definition}
+Une \emph{transformation naturelle} $T$ entre deux foncteurs $F,G:\mathcal{C}\to\mathcal{D}$ assigne un morphisme $T_X:F(X)\to G(X)$ à chaque objet $X\in Ob(\mathcal{C})$, de telle sorte que le diagramme ci-contre commute, pour tout morphisme $f\in Mor(X,Y)$.
+\end{definition}
+
+\begin{exemple}
+L'abélianisation est une transformation naturelle entre le groupe fondamental et le groupe d'homologie $H_1$.
+\end{exemple}

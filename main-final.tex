@@ -1,0 +1,68 @@
+\documentclass[hidelinks, 8pt, oneside]{book}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{wrapfig} %figures sur le côté
+\usepackage[utf8]{inputenc} %
+\usepackage[T1]{fontenc} % for french police
+\usepackage[french]{babel} %french version
+\usepackage{comment} %ajout de commentaires
+\usepackage{algorithm2e} %for algorithms
+\usepackage{amsmath,amsthm,amssymb} %symboles maths
+\usepackage{upgreek} %lettres grecs up
+\usepackage{stmaryrd} % llbracket rrbracket
+\usepackage{caption} 
+\usepackage{subcaption} %subfigure
+\usepackage{hyperref}
+\usepackage{float} %H
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry} %pour régler les marges
+\usepackage{enumitem} %personalisation des enumerations
+\usepackage{tikz} %figures tikz
+\usepackage{tikz-cd} %pour diagrammes
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{adjustbox}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usepackage{xcolor} %for colors
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{ref.bib}
+
+\input{environnement}
+\input{new-command}
+
+\title{\Huge \textbf{Mémoire de stage - Introduction à la topologie algébrique}\\
+[2cm]
+\Large Anthony Fraga\vspace*{10\baselineskip}}
+\author{\\
+Encadrant : Cyrille Chenavier}
+\date{Juin-août 2024}
+
+\begin{document}
+
+\maketitle
+{\footnotesize \tableofcontents}
+
+\chapter{Introduction}\label{chp:intro}
+\input{chapters/chap1/introduction}
+\input{chapters/chap1/notations}
+\input{chapters/chap1/preliminaries}
+\chapter{Le groupe fondamental}\label{chp:homotopy}
+\input{chapters/chap2 homotopies/part1}%groupe fonda
+\input{chapters/chap2 homotopies/part2}%gfd s^1, van kampen
+\input{chapters/chap2 homotopies/part3}%reveêtement et galois
+\chapter{Homologie : enfin abélien !}\label{chp:homology}
+\input{chapters/chap3 homologies/part1}
+\input{chapters/chap3 homologies/part2}
+
+\appendix
+\input{chapters/annexes/simplicial-computation}
+\input{chapters/annexes/categories}
+%\input{chapters/annexes/other-ref}
+
+\printbibliography
+\end{document}
