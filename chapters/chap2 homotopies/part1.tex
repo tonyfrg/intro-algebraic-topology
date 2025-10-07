@@ -38,12 +38,10 @@ Un lacet est un chemin, il possède donc également une direction, allant de $\g
 En considérant le cercle $\s{1}$ dans le plan complexe, le chemin défini par $t\mapsto e^{2i\pi t}$ est un lacet ayant pour point de base~$(1,0)$.
 \end{exemple}
 
-L'exemple suivant est important, car introduit le concept de \emph{polygone fondamental}, omniprésent en topologie algébrique, et par conséquent dans ce mémoire. Cette représentation est dite intrinsèque, car ne dépend d'aucun espace environnant. Celle-ci est aux antipodes de leurs plongements dans certains espaces euclidiens $\bb{R}^n$, même s'il existe un homéomorphisme entre les deux représentations \cite{Homeo-article}.
+L'exemple suivant est important, car introduit le concept de \emph{polygone fondamental}, omniprésent en topologie algébrique, et par conséquent dans ce mémoire. Cette représentation est dite intrinsèque, car ne dépend d'aucun espace environnant. Celle-ci est aux antipodes de leurs plongements dans certains espaces euclidiens~$\bb{R}^n$, même s'il existe un homéomorphisme entre les deux représentations \cite{Homeo-article}.
 
 \begin{exemple}
 La figure \ref{tkz:mobius} est la représentation du polygône fondamental du ruban de Mobiüs, un carré avec une identification de deux côtés opposés via une torsion (les deux flèches vont dans deux sens différents).
-
-Pour le ruban de Mobiüs, son polygone fondamental \ref{tkz:mobius} est un carré auquel on a identifié deux côtés opposés dans le sens contraire : le côté du haut et celui du bas ne forment qu'un. Autrement dit, si l'on considère l'espace non quotienté étant $[-1,1]^2$, alors les points $[x,-1]$ et $[-x,1]$ sont identiques une fois l'identification effectuée.
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.45\linewidth}
@@ -76,14 +74,14 @@ Pour le ruban de Mobiüs, son polygone fondamental \ref{tkz:mobius} est un carr�
     %carré
     \draw[black, line width=.0mm] (0,0) rectangle (4,4);
     
-    %gamma
+    %gamma'
     \draw[thick, black, ->] (3,0) -- (2.5,1);
-    \draw[thick, black] (2.5,1) -- (2,2) node[near start, left] {$\gamma$};
+    \draw[thick, black] (2.5,1) -- (2,2) node[near start, left] {$\gamma'$};
     \draw[thick, black, ->] (2,2) -- (1.5,3);
     \draw[thick, black] (1.5,3) -- (1,4);
 
-    %gamma'
-    \draw[thick, ->] (3.4, 2) arc[start angle=0, end angle=360, radius=0.7] node[right] {$\gamma'$};
+    %gamma
+    \draw[thick, ->] (3.4, 2) arc[start angle=0, end angle=360, radius=0.7] node[right] {$\gamma$};
     % Point at (2,2)
     \filldraw[black] (2,2) circle (2pt) node[right] {$x_0$};
 \end{tikzpicture}
@@ -91,12 +89,13 @@ Pour le ruban de Mobiüs, son polygone fondamental \ref{tkz:mobius} est un carr�
 \label{tkz:mobius-loops}
 \end{subfigure}
 \end{figure}
-En revenant sur notre exemple du ruban de Mobiüs, nous pouvons dessiner plusieurs lacets sur celui-ci. Nous pouvons naturellement penser à tous les lacets sur le carré de base, comme le lacet $\gamma'$ sur la figure \ref{tkz:mobius-loops}. Avec l'identification effectuée, il existe aussi des lacets qui passe "au travers" le côté nommé $A$, comme le lacet $\gamma$.
+
+Nous pouvons imaginer plusieurs sortes de lacets, illustrés dans la figure \ref{tkz:mobius-loops} : ceux qui restent dans l'intérieur du carré (comme le lacet $\gamma$), et ceux qui utilise l'identification $A$ des côtés (comme le lacet $\gamma'$).
 \end{exemple}
 
 \subsection{Homotopie}\label{sec:homotopy}
 
-L'homotopie est la formalisation de l'idée de la déformation d'objets, en particuliers des chemins et lacets sur un espace.
+L'homotopie est la formalisation de l'idée de la déformation d'objets, en particuliers des chemins et lacets sur un espace. L'idée du raccoursissement de lacet devient ainsi représentable topologiquement parlant.
 
 \begin{definition}\label{def:homotopy-paths}
 Soit $X$ un espace topologique, et soient $x_0, x_1$ deux points de cet espace. Une \emph{homotopie} entre deux chemins $\gamma_0$ et $\gamma_1$ d'extrémités $x_0$ et $x_1$ est une application $\Gamma:[0,1]^2\to X$, définie par $\Gamma(t,s)=\gamma_t(s)$, continue en $t$ et telle que, pour tout $t\in[0,1]$, $\gamma_t(0)=x_0$ et $\gamma_t(1)=x_1$.
