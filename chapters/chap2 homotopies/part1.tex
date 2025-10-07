@@ -90,7 +90,7 @@ La figure \ref{tkz:mobius} est la représentation du polygône fondamental du ru
 \end{subfigure}
 \end{figure}
 
-Nous pouvons imaginer plusieurs sortes de lacets, illustrés dans la figure \ref{tkz:mobius-loops} : ceux qui restent dans l'intérieur du carré (comme le lacet $\gamma$), et ceux qui utilise l'identification $A$ des côtés (comme le lacet $\gamma'$).
+Nous pouvons tracer une infinité de lacet sur le ruban, mais deux grandes "familles" en ressortent, illustrés dans la figure \ref{tkz:mobius-loops} : les lacets qui restent dans l'intérieur du carré (comme le lacet $\gamma$), et les lacets qui utilisent l'identification $A$ des côtés (comme le lacet $\gamma'$).
 \end{exemple}
 
 \subsection{Homotopie}\label{sec:homotopy}
@@ -98,7 +98,7 @@ Nous pouvons imaginer plusieurs sortes de lacets, illustrés dans la figure \ref
 L'homotopie est la formalisation de l'idée de la déformation d'objets, en particuliers des chemins et lacets sur un espace. L'idée du raccoursissement de lacet devient ainsi représentable topologiquement parlant.
 
 \begin{definition}\label{def:homotopy-paths}
-Soit $X$ un espace topologique, et soient $x_0, x_1$ deux points de cet espace. Une \emph{homotopie} entre deux chemins $\gamma_0$ et $\gamma_1$ d'extrémités $x_0$ et $x_1$ est une application $\Gamma:[0,1]^2\to X$, définie par $\Gamma(t,s)=\gamma_t(s)$, continue en $t$ et telle que, pour tout $t\in[0,1]$, $\gamma_t(0)=x_0$ et $\gamma_t(1)=x_1$.
+Soient $x_0, x_1$ deux points de l'espace $X$, et soient $\gamma_0$ et $\gamma_1$ deux chemins partageant les mêmes extrémités $x_0$ et $x_1$. Une \emph{homotopie} entre $\gamma_0$ et $\gamma_1$ est une application $\Gamma:[0,1]^2\to X$, définie par $\Gamma(t,s)=\gamma_t(s)$, continue en $t$ et telle que, pour tout $t\in[0,1]$, $\gamma_t(0)=x_0$ et $\gamma_t(1)=x_1$.
 
 Intuitivement, cela revient à dire qu'il existe une famille $\gamma_t$ de chemin fixant les extrémités, et continue en $t$. Nous disons alors que $\gamma_0$ est homotope à $\gamma_1$, ou bien que $\gamma_0$ et $\gamma_1$ sont homotopes, et l'on note $\gamma_0\simeq\gamma_1$.
 \end{definition}
@@ -135,27 +135,27 @@ Dans l'espace euclidien $\bb{R}^n$, il existe toujours une homotopie linéaire e
 
 Plutôt que de s'intéresser à l'ensemble des lacets, nous allons préférer les étudier à homotopie près. D'une part, il est possible dans certains cas de passer d'une infinité de lacets à un nombre fini de classes d'équivalences. Et d'autre part, les classes d'homotopie de lacets possèdent une structure naturelle de groupe. C'est ce que nous allons montrer par la suite.
 
-Intuitivement, les classes d'homotopies sont constitué d'objets, identiques à déformation continue près. Dans notre cas, ces objets sont des chemins, ou des lacets.
-
 \begin{proposition}
-La relation d'homotopie entre chemins est une relation d'équivalence. Nous noterons $[\gamma]$ la classe d'équivalence de $\gamma$ sous la relation d'homotopie, et nous appellerons la classe d'homotopie de $\gamma$.
+La relation d'homotopie entre chemins est une relation d'équivalence. Nous noterons $[\gamma]$ la classe d'équivalence de $\gamma$ sous la relation d'homotopie, et nous appellée \emph{classe d'homotopie} de $\gamma$.
 \end{proposition}
+
+En rappellant qu'une relation d'équivalence est définie comme étant réflexive, symétrique et associative, la démonstration consiste simplement à montrer successivement que les trois propriétés sont vérifiées par la relation d'homotopie.
 \begin{proof}
-Soit $X$ un espace. Pour montrer que la relation d'homotopie entre chemins est une relation d'équivalence, nous allons montrer successivement qu'elle est réflexive, symétrique, et associative.\begin{enumerate}
-    \item Soit $\gamma$ un chemin de $X$. La réflexivité est évidente, puisqu'il existe toujours l'homotopie constante $\gamma_t(s)=\gamma(s)$. Alors, $\gamma\simeq\gamma$.
-    \item Soient $\gamma\simeq\gamma'$ par l'homotopie $\gamma_t(s)$. L'homotopie inverse $\gamma_t'=\gamma_{1-t}$ va de $\gamma'=\gamma_1=\gamma_0'$ vers~$\gamma=\gamma_0=\gamma_1'$. Ainsi, nous avons $\gamma'\simeq\gamma$.
-    \item Soient $\gamma\simeq\gamma'$ et $\gamma'\simeq\gamma''$. En notant $\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$ et $\gamma_t'$ l'homotopie entre $\gamma'$ et~$\gamma''$, nous pouvons construire l'homotopie combinée suivante : \[\gamma''_t(s)= \left\{\begin{matrix}
+\textit{(Réfléxivité)} Pour tout chemin $\gamma$ sur $X$, il existe l'homotopie constante $\gamma_t(s)=\gamma(s)$. Nous en conluons que $\gamma\simeq\gamma$.
+
+\textit{(Symétrie)} Pour toute homotopie $\gamma_t(s)$ entre $\gamma$ et$\gamma'$, il est clair que l'homotopie $\gamma_{1-t}$ permet d'aller de $\gamma'$ vers $\gamma$. Nous en concluons que $\gamma'\simeq\gamma$.
+
+\textit{(Associativité)} Soient $\gamma\simeq\gamma'$ et $\gamma'\simeq\gamma''$. En notant $\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$ et $\gamma_t'$ l'homotopie entre $\gamma'$ et~$\gamma''$, nous pouvons intuitivement construire l'homotopie entre $\gamma$ et $\gamma''$ en concaténant les deux homotopies précédentes. Plus formellement, nous obtenons l'homotopie suivante : \[\gamma''_t(s)= \left\{\begin{matrix}
 \gamma_{2t}(s),&\text{si }t\in[0,\frac{1}{2}], \\
 \gamma'_{2t-1}(s),&\text{si }t\in[\frac{1}{2},1].
-\end{matrix}\right.\]L'homotopie est bien continue sur $[0,\frac{1}{2}]$ et $[\frac{1}{2},1]$ par définition des homotopies $\gamma_t$ et $\gamma'_t$, et également continue en $\frac{1}{2}$ puisque $\gamma_1=\gamma'=\gamma'_0$. L'homotopie $\gamma_t''$ va donc de $\gamma''_0=\gamma_0=\gamma$ vers~$\gamma''_1=\gamma'_1=\gamma''$, dont on peut en déduire $\gamma\simeq\gamma''$.
-\end{enumerate}
+\end{matrix}\right.\]Celle=ci est continue sur $[0,\frac{1}{2}]$ et $[\frac{1}{2},1]$ par définition des homotopies $\gamma_t$ et $\gamma'_t$, et en $\frac{1}{2}$ du fait que $\gamma_1=\gamma'=\gamma'_0$. L'homotopie $\gamma_t''$ va donc de $\gamma_0=\gamma$ vers~$\gamma'_1=\gamma''$. Nous en concluons ainsi que $\gamma\simeq\gamma''$.
 \end{proof}
 
-Tout ce que nous venons de voir ici s'applique évidement aux lacets, puisque ce sont des chemins.
+Les lacets étant des chemins, nous pouvons considérer les classes d'homotopie de ceux-ci.
 
 \subsection{Loi de composition}
 
-Désormais, pour pouvoir parler de groupe, nous avons besoin d'un opérateur entre les classes d'homotopie. Nous allons alors partir d'une loi de composition interne (LCI) sur les chemins, qui soit compatible avec la relation d'équivalence d'homotopie.
+Désormais, pour pouvoir parler de groupe, nous avons besoin d'un opérateur entre les classes d'homotopie. Nous allons alors partir d'une loi de composition interne (LCI) sur les chemins qui soit compatible avec la relation d'équivalence d'homotopie.
 
 \begin{wrapfigure}{r}{0.3\textwidth}
     \centering
@@ -173,7 +173,7 @@ Désormais, pour pouvoir parler de groupe, nous avons besoin d'un opérateur ent
 
 \phantom{}
 \begin{definition}
-Pour $\gamma,\gamma'$ deux chemins sur un espace $X$ tels que~$\gamma(1)=\gamma'(0)$, nous pouvons définir le lacet $\gamma\cdot\gamma'$ comme étant le chemin résultat de la \emph{concaténation} de $\gamma$ et $\gamma'$. Autrement dit, on définit le chemin suivant : \[\gamma\cdot \gamma'(s)=\left\{\begin{matrix}
+Pour $\gamma,\gamma'$ deux chemins sur un espace $X$ tels que~$\gamma(1)=\gamma'(0)$, nous pouvons définir le lacet $\gamma\cdot\gamma'$ comme étant le chemin résultat de la \emph{concaténation} de $\gamma$ et $\gamma'$. Formellement, nous le définissons comme suit : \[\gamma\cdot \gamma'(s)=\left\{\begin{matrix}
 \gamma(2s)&\text{si }0\leq s\leq \frac{1}{2}\\ 
 \gamma'(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1.
 \end{matrix}\right.\]
@@ -181,14 +181,19 @@ Pour $\gamma,\gamma'$ deux chemins sur un espace $X$ tels que~$\gamma(1)=\gamma'
 En particulier pour les lacets avec le même point de base, la concaténation est une loi de composition interne.
 \end{definition}
 
-\begin{proposition}
-Soit $X$ un espace. La LCI de la concaténation de lacets est compatible avec la relation d'homotopie. Nous définissons ainsi une LCI sur les classes d'homotopies de lacets, tel que pour $\gamma$ et $\gamma'$ deux lacets ayant le même point de base, on ait $[\gamma][\gamma']=[\gamma\cdot\gamma']$
-\end{proposition}
-\begin{proof}
-Soit $X$ un espace. Soient $\gamma\simeq\gamma'$ et $\zeta\sim\zeta'$ quatres lacets ayant un même point de base $x_0\in X$. Pour vérifier que la LCI est compatible avec la relation d'homotopie, il nous suffit de montrer que $\gamma\cdot\zeta\simeq\gamma'\cdot\zeta'$.
+%En effet, la concaténation de deux lacets donne un lacet qui passera sur le point de base à mi-parcours. Nous pouvons visualler cela avec le chiffre 8, qui est concaténation d'un lacet supérieur et un lacet inférieur, où le point de base est le point d'intersection des deux lacets.
 
-Notons respectivement $\gamma_t$ et $\zeta_t$ les homotopies allant de $\gamma$ vers $\gamma'$ et de $\zeta$ vers~$\zeta'$. Nous pouvons construire la concaténation suivante : \begin{equation}\label{eq:homotopy-concatenate}
-\gamma_t\cdot\zeta_t(s)=\left\{\begin{matrix}
+\begin{proposition}
+La LCI de la concaténation de lacets est compatible avec la relation d'homotopie. Nous définissons ainsi une LCI sur les classes d'homotopie de lacets, tel que pour $\gamma$ et $\gamma'$ deux lacets ayant le même point de base, on ait $[\gamma][\gamma']=[\gamma\cdot\gamma']$
+\end{proposition}
+
+La démonstration consiste à vérifier si, pour deux paires de lacets homotopes, la concaténation d'éléments de chaque pair est homotope à la concaténation des deux autres. Pour cela, nous allons construire l'homotopie entre les deux concaténations, à partir des homotopies de base.
+
+\begin{proof}
+Soient $\gamma\simeq\gamma'$ et $\zeta\sim\zeta'$ quatres lacets ayant un même point de base $x_0\in X$. Nous allons montrer que $\gamma\cdot\zeta\simeq\gamma'\cdot\zeta'$, ce qui suffit pour démontrer la proposition.
+
+Notons respectivement $\gamma_t$ et $\zeta_t$ les homotopies allant de $\gamma$ vers $\gamma'$ et de $\zeta$ vers~$\zeta'$. Nous considérons l'application obtenue par concaténation de ces homotopies :$\tau_t=\gamma_t\cdot \zeta_t$. \begin{equation}\label{eq:homotopy-concatenate}
+\tau_t(s)=\gamma_t\cdot\zeta_t(s)=\left\{\begin{matrix}
 \gamma_t(2s)&\text{si }0\leq s\leq \frac{1}{2}\\ 
 \zeta_t(2s-1)&\text{si }\frac{1}{2}\leq s\leq 1.
 \end{matrix}\right.
@@ -236,7 +241,7 @@ Soit $X$ un espace et soit $x_0\in X$. Il suffit de montrer que~$\pi_1(X,x_0)$ v
     \end{enumerate} Ensuite, il est facile de vérifier la continuité en $t$, et que l'on a $\gamma_0=\gamma\cdot\overline{\gamma}$ et $\gamma_1=c$. Nous pouvons alors en déduire que cette application est une homotopie entre les lacets $\gamma\cdot\overline{\gamma}$ et $c$.
 
     \bigskip De manière similaire, nous pouvons démontrer qu'il existe une homotopie entre $\overline{\gamma}\cdot\gamma$ et~$c$. Nous pouvons alors conclure que $\gamma\cdot\overline{\gamma}\simeq c$ et $\overline{\gamma}\cdot\gamma\simeq c$, donc que $[\gamma][\overline{\gamma}]=[c]$, ainsi que $[\overline{\gamma}][\gamma]=c$.
-    \item Il nous reste à démontrer l'associativité. Soient $\alpha,\beta,\delta\in\pi_1(X,x_0)$, avec comme représentants respectifs~$\gamma,\zeta,\theta$ des classes d'homotopies. Montrons que l'on a~$\gamma\cdot(\zeta\cdot\theta)\simeq(\gamma\cdot\zeta)\cdot\theta$.
+    \item Il nous reste à démontrer l'associativité. Soient $\alpha,\beta,\delta\in\pi_1(X,x_0)$, avec comme représentants respectifs~$\gamma,\zeta,\theta$ des classes d'homotopie. Montrons que l'on a~$\gamma\cdot(\zeta\cdot\theta)\simeq(\gamma\cdot\zeta)\cdot\theta$.
 
     Tout d'abord, exprimons ces lacets de manière explicite : \[\begin{split}
     \gamma\cdot(\zeta\cdot\theta)(s)&=\left\{\begin{matrix}
@@ -267,7 +272,7 @@ Soit $X$ un espace et soit $x_0\in X$. Il suffit de montrer que~$\pi_1(X,x_0)$ v
         \item Pour $s=\frac{1}{4}(2-t)$, nous avons $\frac{4s}{2-t}=1$, ainsi que $4s-2+t=0$. On en déduit que $h_t$ est continue en ce point.
         \item Pour $s=\frac{1}{4}(3-t)$, nous avons l'égalité $4s=3-t$. Nous en déduisons d'une part que $4s-2+t=1$ et d'autre part que~${\frac{4s-4}{1+t}+1=\frac{3-t-4}{1+t}+1=-1+1=0}$, ce qui nous permet de conclure que $h_t$ est continue en ce point $s$.
         \item Nous avons $h_0=\gamma\cdot(\zeta\cdot\theta)$ et $h_1=(\gamma\cdot\zeta)\cdot\theta$, et $h_t$ est continue en $t$.
-    \end{itemize}Nous pouvons alors en conclure que $h_t$ est une homotopie entre les lacets~$\gamma\cdot(\zeta\cdot\theta)$ et $(\gamma\cdot\zeta)\cdot\theta$, ce qui nous permet de conclure que le produit sur les classes d'homotopies est associatif.
+    \end{itemize}Nous pouvons alors en conclure que $h_t$ est une homotopie entre les lacets~$\gamma\cdot(\zeta\cdot\theta)$ et $(\gamma\cdot\zeta)\cdot\theta$, ce qui nous permet de conclure que le produit sur les classes d'homotopie est associatif.
 \end{enumerate}Nous pouvons ainsi conclure que le groupe fondamental $\pi_1(X,x_0)$ est bien un groupe.
 \end{proof}
 
