@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.19)  7 OCT 2025 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.19)  9 OCT 2025 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1129,6 +1129,12 @@ Package pdftex.def Info: pictures/tore-intro.png  used on input line 13.
 
 [9]
 
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 151.
+
+
+
 [10]
 
 [11]
@@ -1136,30 +1142,32 @@ Package pdftex.def Info: pictures/tore-intro.png  used on input line 13.
 [12]
 
 [13] Excluding 'comment' comment.) (./chapters/chap2 homotopies/part2.tex
-<pictures/covering-map-circle.png, id=389, 278.2395pt x 389.35463pt>
+<pictures/covering-map-circle.png, id=378, 278.2395pt x 389.35463pt>
 File: pictures/covering-map-circle.png Graphic file (type png)
 <use pictures/covering-map-circle.png>
 Package pdftex.def Info: pictures/covering-map-circle.png  used on input line 11.
 (pdftex.def)             Requested size: 84.55403pt x 118.32225pt.
 
 
-[14 <./pictures/covering-map-circle.png (PNG copy)>]
+[14]
 
-[15]
+[15 <./pictures/covering-map-circle.png (PNG copy)>]
 
 [16]
-<pictures/TorusCircle_ManimCE_v0.18.1.png, id=417, 1284.8pt x 722.7pt>
+<pictures/TorusCircle_ManimCE_v0.18.1.png, id=409, 1284.8pt x 722.7pt>
 File: pictures/TorusCircle_ManimCE_v0.18.1.png Graphic file (type png)
 <use pictures/TorusCircle_ManimCE_v0.18.1.png>
 Package pdftex.def Info: pictures/TorusCircle_ManimCE_v0.18.1.png  used on input line 131.
 (pdftex.def)             Requested size: 234.8775pt x 132.10944pt.
 
 
-[17 <./pictures/TorusCircle_ManimCE_v0.18.1.png>]
+[17]
 
-[18]
+[18 <./pictures/TorusCircle_ManimCE_v0.18.1.png>]
 
 [19]) (./chapters/chap2 homotopies/part3.tex
+
+[20]
 <pictures/CoverCircle2_ManimCE_v0.18.1.png, id=451, 1284.8pt x 722.7pt>
 File: pictures/CoverCircle2_ManimCE_v0.18.1.png Graphic file (type png)
 <use pictures/CoverCircle2_ManimCE_v0.18.1.png>
@@ -1172,33 +1180,33 @@ Package pdftex.def Info: pictures/CoverCircle2_3_ManimCE_v0.18.1.png  used on in
 (pdftex.def)             Requested size: 169.1113pt x 95.1232pt.
 
 
-[20]
-
 [21 <./pictures/CoverCircle2_ManimCE_v0.18.1.png> <./pictures/CoverCircle2_3_ManimCE_v0.18.1.png>]
 Overfull \hbox (56.12428pt too wide) in paragraph at lines 83--84
 []\T1/cmr/m/n/10 Nous consi-dé-rons l'en-semble $[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 ^^M\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 ; ^^M[]\OMS/cmsy/m/n/10 g$ \T1/cmr/m/n/10 et l'ap-pli-ca-tion $[]$.
  []
 
 
+
+[22]
 Overfull \hbox (75.67717pt too wide) in paragraph at lines 93--94
 \OML/cmm/m/it/10 V[] \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 V[]$\T1/cmr/m/n/10 . Il existe, par dé-fi-ni-tion de la base de to-po-lo-gie de $\OML/cmm/m/it/10 X$\T1/cmr/m/n/10 , un ou-vert $\OML/cmm/m/it/10 U \OMS/cmsy/m/n/10 2 B[]$ \T1/cmr/m/n/10 tel que $[]$.
  []
 
 
 
-[22]
-
 [23]
-<pictures/CoverCircle2_2_ManimCE_v0.18.1.png, id=490, 912.40875pt x 315.42844pt>
+<pictures/CoverCircle2_2_ManimCE_v0.18.1.png, id=481, 912.40875pt x 315.42844pt>
 File: pictures/CoverCircle2_2_ManimCE_v0.18.1.png Graphic file (type png)
 <use pictures/CoverCircle2_2_ManimCE_v0.18.1.png>
 Package pdftex.def Info: pictures/CoverCircle2_2_ManimCE_v0.18.1.png  used on input line 143.
 (pdftex.def)             Requested size: 234.8775pt x 81.19604pt.
 
 
-[24 <./pictures/CoverCircle2_2_ManimCE_v0.18.1.png>] Excluding 'comment' comment.)
+[24 <./pictures/CoverCircle2_2_ManimCE_v0.18.1.png>]
 
-[25]
+[25] Excluding 'comment' comment.)
+
+[26]
 Chapitre 3.
 (./chapters/chap3 homologies/part1.tex
 
@@ -1215,22 +1223,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[26
+[27
 
 ]
 
-[27]
-
 [28]
+
+[29]
 Overfull \hbox (24.3788pt too wide) in paragraph at lines 249--250
 []\T1/cmr/m/n/10 Du fait que $\OML/cmm/m/it/10 @[] \OT1/cmr/m/n/10 = 0$\T1/cmr/m/n/10 , nous avons $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =[] @[]$\T1/cmr/m/n/10 . En dé-fi-nis-sant le mor-phisme $[]$
  []
 
 
 
-[29]
-
 [30]
+
+[31]
 Overfull \hbox (89.45763pt too wide) in paragraph at lines 308--309
 \T1/cmr/m/n/10 avec le rai-son-ne-ment sui-vant. Pour $\OML/cmm/m/it/10  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 un cycle, c'est à dire $\OML/cmm/m/it/10 @ \OT1/cmr/m/n/10 = 0$ \T1/cmr/m/n/10 nous avons $[]$.
  []
@@ -1247,7 +1255,7 @@ Overfull \hbox (32.55484pt too wide) in paragraph at lines 343--343
 
 
 
-[31]
+[32]
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 368.
 
@@ -1259,14 +1267,14 @@ LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 392
 
 
 
-[32]
+[33]
 Overfull \hbox (68.59453pt too wide) in paragraph at lines 425--426
 []\T1/cmr/m/n/10 On dé-montre ce ré-sul-tat en construi-sant deux ap-pli-ca-tions sur les chaînes : $[]$ et $[]$,
  []
 
 
 
-[33]
+[34]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 444.
 
@@ -1277,63 +1285,63 @@ Overfull \hbox (114.83531pt too wide) in paragraph at lines 467--467
 
 
 
-[34]
+[35]
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 491.
 
 
 
-[35]
+[36]
 Overfull \hbox (92.01828pt too wide) in paragraph at lines 520--520
 []\T1/cmr/m/n/10 D'un autre côté, nous avons le couple $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]; X[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 qui forme une bonne paire. Nous avons alors $[]$.
  []
 
 
 
-[36]
+[37]
 Overfull \hbox (22.82858pt too wide) in paragraph at lines 544--545
 \T1/cmr/m/n/10 sont des iso-mor-phismes. Le lemme des cinq nous per-met donc de conclure que le mor-phisme $[]$
  []
 
 
 
-[37]
+[38]
 
-[38]) (./chapters/chap3 homologies/part2.tex
+[39]) (./chapters/chap3 homologies/part2.tex
 
-[39]
-<pictures/ToreCW.png, id=637, 609.02531pt x 327.47343pt>
+[40]
+<pictures/ToreCW.png, id=633, 609.02531pt x 327.47343pt>
 File: pictures/ToreCW.png Graphic file (type png)
 <use pictures/ToreCW.png>
 Package pdftex.def Info: pictures/ToreCW.png  used on input line 21.
 (pdftex.def)             Requested size: 234.8775pt x 126.29503pt.
 
 
-[40 <./pictures/ToreCW.png>]
+[41 <./pictures/ToreCW.png>]
 Overfull \hbox (253.94688pt too wide) in paragraph at lines 90--91
 []\T1/cmr/m/n/10 On consi-dère deux ap-pli-ca-tions $\OT1/cmr/m/n/10 ^^H : \OMS/cmsy/m/n/10 S[] ! \OML/cmm/m/it/10 D[]; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; :::; x[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 7! \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; :::; x[]\OT1/cmr/m/n/10 )$\T1/cmr/m/n/10 , ainsi que $[]$.
  []
 
 
 
-[41] (./chapters/chap3 homologies/cell-homology.tex)
-
-[42]
+[42] (./chapters/chap3 homologies/cell-homology.tex)
 
 [43]
+
+[44]
 Underfull \hbox (badness 1603) in paragraph at lines 232--232
 \T1/cmr/m/it/10 ly-gone fon-da-men-tal re-pré-senté en cube : le tore à 3 di-men-
  []
 
 
 
-[44]) (./chapters/annexes/simplicial-computation.tex
+[45]) (./chapters/annexes/simplicial-computation.tex
 
-[45]
+[46]
 Annexe A.
 
 
-[46
+[47
 
 ]
 Overfull \hbox (2.85771pt too wide) in paragraph at lines 76--77
@@ -1345,7 +1353,7 @@ LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 120
 
 
 
-[47]
+[48]
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 159.
 
@@ -1359,7 +1367,7 @@ LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 201
 
 
 
-[48]
+[49]
 Overfull \hbox (5.41718pt too wide) in paragraph at lines 241--242
  [][] 
  []
@@ -1376,17 +1384,17 @@ Overfull \hbox (43.40657pt too wide) in paragraph at lines 274--275
 
 ) (./chapters/annexes/categories.tex
 
-[49]
+[50]
 Annexe B.
 
 
-[50
+[51
 
 ])
 
-[51]
+[52]
 
-[52
+[53
 
 ] (./main-final.aux)
  ***********
@@ -1394,24 +1402,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main-final.out' has not changed.
-(rerunfilecheck)             Checksum: CA346FAFBD42512FFE58D11A6A5CD979;7823.
+(rerunfilecheck)             Checksum: 28D3CFB16803D851C6BB1B7C9FC2FEA6;7866.
 Package logreq Info: Writing requests to 'main-final.run.xml'.
 \openout1 = `main-final.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49819 strings out of 473190
- 1125284 string characters out of 5715800
- 2223430 words of memory out of 5000000
+ 49812 strings out of 473190
+ 1125241 string characters out of 5715800
+ 2223436 words of memory out of 5000000
  72050 multiletter control sequences out of 15000+600000
  587011 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,23n,97p,1807b,2317s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,23n,97p,1822b,2317s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main-final.pdf (53 pages, 3766322 bytes).
+Output written on main-final.pdf (54 pages, 3766860 bytes).
 PDF statistics:
- 978 PDF objects out of 1000 (max. 8388607)
- 822 compressed objects within 9 object streams
- 293 named destinations out of 1000 (max. 500000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 286 named destinations out of 1000 (max. 500000)
  394 words of extra memory for PDF output out of 10000 (max. 10000000)
 

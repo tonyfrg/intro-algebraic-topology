@@ -18,55 +18,55 @@
 \contentsline {chapter}{\numberline {2}Le groupe fondamental}{8}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Un groupe fondamental ?}{8}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Homotopie}{9}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Loi de composition}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.2}Loi de composition interne}{10}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Propriétés élémentaires}{13}{subsection.2.1.3}%
-\contentsline {subsubsection}{Morphisme induit}{13}{section*.19}%
+\contentsline {subsubsection}{Morphisme induit}{14}{section*.19}%
 \contentsline {section}{\numberline {2.2}Mise en pratique}{14}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Revêtements, première partie}{14}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Le groupe fondamental du cercle}{16}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Version faible du théorème de Van Kampen}{18}{subsection.2.2.3}%
-\contentsline {subsubsection}{Applications}{18}{section*.23}%
+\contentsline {subsubsection}{Applications}{19}{section*.23}%
 \contentsline {subsection}{\numberline {2.2.4}Limitations du groupe fondamental}{20}{subsection.2.2.4}%
 \contentsline {subsubsection}{Groupes d'homotopies de dimensions supérieures}{20}{section*.26}%
-\contentsline {section}{\numberline {2.3}Revêtement, deuxième partie}{20}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Correspondance de Galois}{20}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.3}Revêtement, deuxième partie}{21}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Correspondance de Galois}{21}{subsection.2.3.1}%
 \contentsline {subsubsection}{Énonce du théorème}{21}{section*.29}%
-\contentsline {subsubsection}{Démonstration}{21}{section*.30}%
+\contentsline {subsubsection}{Démonstration}{22}{section*.30}%
 \contentsline {subsection}{\numberline {2.3.2}Transformation de deck}{24}{subsection.2.3.2}%
 \contentsline {subsubsection}{Propriétés sur les actions de groupes}{25}{section*.32}%
-\contentsline {chapter}{\numberline {3}Homologie : enfin abélien !}{26}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Homologie simpliciale : triangularisation}{26}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Des simplexes et des $\Delta $-complexes}{26}{subsection.3.1.1}%
-\contentsline {subsubsection}{L'homologie}{27}{section*.35}%
-\contentsline {subsection}{\numberline {3.1.2}Homologie}{28}{subsection.3.1.2}%
-\contentsline {subsubsection}{Application de l'homologie simpliciale}{28}{section*.36}%
-\contentsline {section}{\numberline {3.2}Homologie singulière : la théorie}{29}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Premières propriétés sur l'homologie singulière}{29}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Invariance par homotopie}{30}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Séquences exactes et homologie relative}{31}{subsection.3.2.3}%
-\contentsline {subsubsection}{Homologie relative}{31}{section*.37}%
-\contentsline {subsubsection}{Séquences exactes}{32}{section*.38}%
-\contentsline {subsection}{\numberline {3.2.4}Excision}{33}{subsection.3.2.4}%
-\contentsline {subsubsection}{Applications de l'excision}{34}{section*.39}%
-\contentsline {subsection}{\numberline {3.2.5}Simpliciale et singulière : même combat}{35}{subsection.3.2.5}%
-\contentsline {subsubsection}{Le lemme des cinq}{35}{section*.40}%
-\contentsline {subsubsection}{Démonstration du théorème}{36}{section*.41}%
-\contentsline {subsection}{\numberline {3.2.6}Abélianisation du groupe fondamental}{37}{subsection.3.2.6}%
-\contentsline {subsubsection}{Lien entre chemins et simplexes}{37}{section*.42}%
-\contentsline {subsubsection}{Isomorphisme}{38}{section*.44}%
-\contentsline {section}{\numberline {3.3}Homologie cellulaire : la pratique}{39}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Qu'est-ce qu'un complexe cellulaire ?}{39}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Le degré}{40}{subsection.3.3.2}%
-\contentsline {subsubsection}{Les degrés des principales applications}{40}{section*.47}%
-\contentsline {subsubsection}{Théorème de Brouwer}{41}{section*.48}%
-\contentsline {subsubsection}{Degré local : la solution}{41}{section*.49}%
-\contentsline {subsection}{\numberline {3.3.3}Homologie cellulaire}{42}{subsection.3.3.3}%
-\contentsline {subsubsection}{Et le degré ?}{43}{section*.51}%
-\contentsline {subsection}{\numberline {3.3.4}Quelques exemples}{43}{subsection.3.3.4}%
-\contentsline {subsubsection}{Autres résultats de l'homologie cellulaire}{45}{section*.53}%
-\contentsline {chapter}{\numberline {A}Calculs avec l'homologie simpliciale}{46}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Polygones fondamentaux}{46}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}C'est carré !}{46}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Si c'est rond}{49}{subsection.A.1.2}%
-\contentsline {section}{\numberline {A.2}Limitations de l'homologie simpliciale}{49}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Introduction à la théorie des catégories}{50}{appendix.B}%
+\contentsline {chapter}{\numberline {3}Homologie : enfin abélien !}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Homologie simpliciale : triangularisation}{27}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Des simplexes et des $\Delta $-complexes}{27}{subsection.3.1.1}%
+\contentsline {subsubsection}{L'homologie}{28}{section*.35}%
+\contentsline {subsection}{\numberline {3.1.2}Homologie}{29}{subsection.3.1.2}%
+\contentsline {subsubsection}{Application de l'homologie simpliciale}{29}{section*.36}%
+\contentsline {section}{\numberline {3.2}Homologie singulière : la théorie}{30}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Premières propriétés sur l'homologie singulière}{30}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Invariance par homotopie}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Séquences exactes et homologie relative}{32}{subsection.3.2.3}%
+\contentsline {subsubsection}{Homologie relative}{32}{section*.37}%
+\contentsline {subsubsection}{Séquences exactes}{33}{section*.38}%
+\contentsline {subsection}{\numberline {3.2.4}Excision}{34}{subsection.3.2.4}%
+\contentsline {subsubsection}{Applications de l'excision}{35}{section*.39}%
+\contentsline {subsection}{\numberline {3.2.5}Simpliciale et singulière : même combat}{36}{subsection.3.2.5}%
+\contentsline {subsubsection}{Le lemme des cinq}{36}{section*.40}%
+\contentsline {subsubsection}{Démonstration du théorème}{37}{section*.41}%
+\contentsline {subsection}{\numberline {3.2.6}Abélianisation du groupe fondamental}{38}{subsection.3.2.6}%
+\contentsline {subsubsection}{Lien entre chemins et simplexes}{38}{section*.42}%
+\contentsline {subsubsection}{Isomorphisme}{39}{section*.44}%
+\contentsline {section}{\numberline {3.3}Homologie cellulaire : la pratique}{40}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Qu'est-ce qu'un complexe cellulaire ?}{40}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Le degré}{41}{subsection.3.3.2}%
+\contentsline {subsubsection}{Les degrés des principales applications}{41}{section*.47}%
+\contentsline {subsubsection}{Théorème de Brouwer}{42}{section*.48}%
+\contentsline {subsubsection}{Degré local : la solution}{42}{section*.49}%
+\contentsline {subsection}{\numberline {3.3.3}Homologie cellulaire}{43}{subsection.3.3.3}%
+\contentsline {subsubsection}{Et le degré ?}{44}{section*.51}%
+\contentsline {subsection}{\numberline {3.3.4}Quelques exemples}{44}{subsection.3.3.4}%
+\contentsline {subsubsection}{Autres résultats de l'homologie cellulaire}{46}{section*.53}%
+\contentsline {chapter}{\numberline {A}Calculs avec l'homologie simpliciale}{47}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Polygones fondamentaux}{47}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}C'est carré !}{47}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Si c'est rond}{50}{subsection.A.1.2}%
+\contentsline {section}{\numberline {A.2}Limitations de l'homologie simpliciale}{50}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Introduction à la théorie des catégories}{51}{appendix.B}%

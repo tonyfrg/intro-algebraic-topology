@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main-final"] 1759829210.33172 "main-final.bcf" "main-final.bbl" "main-final" 1759829575.59335 0
-  "main-final.bcf" 1759829575.3191 109102 b849253441d0b02c2c8ac0cbf5291cf9 "pdflatex"
+["biber main-final"] 1759829210.33172 "main-final.bcf" "main-final.bbl" "main-final" 1759962774.10313 0
+  "main-final.bcf" 1759962773.94843 109102 b849253441d0b02c2c8ac0cbf5291cf9 "pdflatex"
   "ref.bib" 1759829076.675 1621 851440c10e2fc12239277267f2b19b11 ""
   (generated)
   "main-final.bbl"
   "main-final.blg"
   (rewritten before read)
-["pdflatex"] 1759829568.09578 "/Users/anthonyfraga/Documents/school/master/intro-algebraic-topology/main-final.tex" "main-final.pdf" "main-final" 1759829575.59377 0
+["pdflatex"] 1759962769.49325 "/Users/anthonyfraga/Documents/school/master/intro-algebraic-topology/main-final.tex" "main-final.pdf" "main-final" 1759962774.10335 0
   "/Users/anthonyfraga/Documents/school/master/intro-algebraic-topology/main-final.tex" 1759829076.65683 2090 8461f7dab7274f0e87b63b6a22ee519e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -326,19 +326,19 @@
   "chapters/chap1/introduction.tex" 1759829076.63696 5409 25c8d5af86f81329dac01a9f651ed35a ""
   "chapters/chap1/notations.tex" 1759829076.63706 1250 ffcba53a28e2d4c6563192c2a832e5d9 ""
   "chapters/chap1/preliminaries.tex" 1759829076.63726 11592 c1039a272c977449ac6a350c560b027b ""
-  "chapters/chap2 homotopies/part1.tex" 1759829567.8004 28571 c358e8a756203fdd4d493c0a0b1834f0 ""
+  "chapters/chap2 homotopies/part1.tex" 1759962764.62698 29915 59d9e348220bcd02944cdc196133a299 ""
   "chapters/chap2 homotopies/part2.tex" 1759829076.63773 30423 31444e51bba8ccc6122c359f124ce239 ""
   "chapters/chap2 homotopies/part3.tex" 1759829076.63788 22644 fc0ea463d18ce2b0e8797085b124df89 ""
   "chapters/chap3 homologies/cell-homology.tex" 1759829076.6381 382 96505509e6d4a3705e4a07e779967d2f ""
   "chapters/chap3 homologies/part1.tex" 1759829076.63831 60914 6b720a0567191146e84d966e79ee490c ""
   "chapters/chap3 homologies/part2.tex" 1759829076.63851 24750 cb36b970b58c44c7680ad356474fa9c3 ""
   "environnement.tex" 1759829076.63866 325 2b5483bd6ae3ae5ccd5f451f7a9b8ce2 ""
-  "main-final.aux" 1759829575.31077 22160 2bc1268c1d7afe1733e40ba44f36ef9d "pdflatex"
+  "main-final.aux" 1759962773.94385 22176 c2a5367a92fbc2c170b41210af48efd7 "pdflatex"
   "main-final.bbl" 1759829212.62625 5858 0010f84323d21ea3102201f673b1f53f "biber main-final"
-  "main-final.out" 1759829575.31518 7823 ca346fafbd42512ffe58d11a6a5cd979 "pdflatex"
-  "main-final.run.xml" 1759829575.32019 2345 d2ae9123cfc872bdb7f323829b544546 "pdflatex"
+  "main-final.out" 1759962773.94621 7866 28d3cfb16803d851c6bb1b7c9fc2fea6 "pdflatex"
+  "main-final.run.xml" 1759962773.94905 2345 d2ae9123cfc872bdb7f323829b544546 "pdflatex"
   "main-final.tex" 1759829076.65683 2090 8461f7dab7274f0e87b63b6a22ee519e ""
-  "main-final.toc" 1759829575.32027 5972 75f34fd3b4a08b5423e0f4439d507dc1 "pdflatex"
+  "main-final.toc" 1759962773.9491 5980 a72f7782aedca0248e1693c0a483e4c4 "pdflatex"
   "new-command.tex" 1759829076.65798 665 2726274e6f417db7844f436307af851b ""
   "pictures/CoverCircle2_2_ManimCE_v0.18.1.png" 1759829076.65859 31639 4b228244808ae25690a0e6711c588a78 ""
   "pictures/CoverCircle2_3_ManimCE_v0.18.1.png" 1759829076.65886 30423 e69ecd7a529396c36f09ce2cf75fe3a0 ""
