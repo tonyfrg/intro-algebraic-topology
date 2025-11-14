@@ -1,4 +1,4 @@
-Nous allons introduire le groupe fondamental, un outil de topologie algébrique, invariant par homéomorphisme. Intuitivement, nous pouvons le voir comme un outil permettant d'étudier le comportement des lacets (voir définition \ref{def:loops}) sur un espace pointé. Cet outil nous permettra de démontrer que la sphère et le tore ne sont pas homéomorphes : l'idée sous-jacente étant que les lacets de la sphère peuvent se contracter en un point (voir figure \ref{fig:lacet-sphere}), tandis que ceux du tore faisant le tour du "trou" en sont incapables (voir figure \ref{fig:lacet-tore}).
+Nous allons introduire le groupe fondamental, un outil de topologie algébrique, invariant par homéomorphisme. Intuitivement, nous pouvons le voir comme un outil permettant d'étudier le comportement des lacets (voir définition \ref{def:loops}) sur un espace pointé. Cet outil nous permettra de démontrer que la sphère et le tore ne sont pas homéomorphes : l'idée sous-jacente étant que les lacets de la sphère peuvent se contracter en un point (voir figure \ref{fig:lacet-sphere}), tandis que ceux du tore faisant le tour du "trou" en sont incapables (voir figure~\ref{fig:lacet-tore}).
 
 \begin{figure}[H]
 \centering
@@ -98,7 +98,7 @@ Nous pouvons tracer une infinité de lacet sur le ruban, mais deux grandes "fami
 L'homotopie est la formalisation de l'idée de la déformation d'objets, en particuliers des chemins et lacets sur un espace. Le concept de lacet qui se rétracte (présenté en introduction) devient cohérent d'un point de vue topologique.
 
 \begin{definition}\label{def:homotopy-paths}
-Soient $x_0, x_1$ deux points de l'espace $X$, et soient $\gamma_0$ et $\gamma_1$ deux chemins partageant les mêmes extrémités $x_0$ et $x_1$. Une \emph{homotopie} entre $\gamma_0$ et $\gamma_1$ est une application $\Gamma:[0,1]^2\to X$, définie par $\Gamma(t,s)=\gamma_t(s)$, continue en $t$ et telle que, pour tout $t\in[0,1]$, $\gamma_t(0)=x_0$ et $\gamma_t(1)=x_1$.
+Soient $x_0, x_1$ deux points de l'espace $X$, et soient $\gamma_0$ et $\gamma_1$ deux chemins partageant les mêmes extrémités $x_0$ et $x_1$. Une \emph{homotopie} entre $\gamma_0$ et $\gamma_1$ est une application $\Gamma:[0,1]^2\to X$, définie par~$\Gamma(t,s)=\gamma_t(s)$, continue en $t$ et telle que, pour tout $t\in[0,1]$, $\gamma_t(0)=x_0$ et $\gamma_t(1)=x_1$.
 
 Intuitivement, cela revient à dire qu'il existe une famille $\gamma_t$ de chemin fixant les extrémités, et continue en $t$. Nous disons alors que $\gamma_0$ est homotope à $\gamma_1$, ou bien que $\gamma_0$ et $\gamma_1$ sont homotopes, et l'on note $\gamma_0\simeq\gamma_1$.
 \end{definition}
@@ -136,7 +136,7 @@ Dans l'espace euclidien $\bb{R}^n$, il existe toujours une homotopie linéaire e
 Plutôt que de s'intéresser à l'ensemble des lacets, nous allons préférer les étudier à homotopie près. D'une part, il est possible dans certains cas de passer d'une infinité de lacets à un nombre fini de classes d'équivalences. Et d'autre part, les classes d'homotopie de lacets possèdent une structure naturelle de groupe. C'est ce que nous allons montrer par la suite.
 
 \begin{proposition}
-La relation d'homotopie entre chemins est une relation d'équivalence. Nous noterons $[\gamma]$ la classe d'équivalence de $\gamma$ sous la relation d'homotopie, et nous appellée \emph{classe d'homotopie} de $\gamma$.
+La relation d'homotopie entre chemins est une relation d'équivalence. Nous noterons~$[\gamma]$ la classe d'équivalence de $\gamma$ sous la relation d'homotopie, appellée \emph{classe d'homotopie} de $\gamma$.
 \end{proposition}
 
 En rappellant qu'une relation d'équivalence est définie comme étant réflexive, symétrique et associative, la démonstration consiste simplement à montrer successivement que les trois propriétés sont vérifiées par la relation d'homotopie.
@@ -145,7 +145,7 @@ En rappellant qu'une relation d'équivalence est définie comme étant réflexiv
 
 \textit{(Symétrie)} Pour toute homotopie $\gamma_t(s)$ entre $\gamma$ et$\gamma'$, il est clair que l'homotopie $\gamma_{1-t}$ permet d'aller de~$\gamma'$ vers $\gamma$. Nous en concluons que $\gamma'\simeq\gamma$.
 
-\textit{(Associativité)} Soient $\gamma\simeq\gamma'$ et $\gamma'\simeq\gamma''$. En notant $\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$ et $\gamma_t'$ l'homotopie entre $\gamma'$ et~$\gamma''$, nous pouvons  construire l'homotopie $\gamma''_t$ entre $\gamma$ et $\gamma''$, correspondant aux deux homotopies l'une après l'autre : \[\gamma''_t(s)= \left\{\begin{matrix}
+\textit{(Associativité)} Soient $\gamma\simeq\gamma'$ et $\gamma'\simeq\gamma''$. En notant $\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$ et $\gamma_t'$ l'homotopie entre~$\gamma'$ et $\gamma''$, nous pouvons  construire l'homotopie $\gamma''_t$ entre $\gamma$ et $\gamma''$, correspondant aux deux homotopies l'une après l'autre : \[\gamma''_t(s)= \left\{\begin{matrix}
 \gamma_{2t}(s),&\text{si }t\in[0,\frac{1}{2}], \\
 \gamma'_{2t-1}(s),&\text{si }t\in[\frac{1}{2},1].
 \end{matrix}\right.\]Celle-ci est continue par définition des deux autres homotopies, en particulier en $1\over 2$ du fait qu'elle se recoupe en le même chemin : $\gamma_1=\gamma'=\gamma'_0$. Nous en concluons que $\gamma\simeq\gamma''$.
@@ -250,7 +250,7 @@ Nous allons démontrer ce résultat de manière classique, en prouvant l'existan
 \begin{proof}
 On considère le groupe fondamental $\pi_1(X,x_0)$ pour un espace $X$ et un point $x_0\in X$. Nous avons déjà démontré dans le lemme précédent que le lacet constant est l'élément neutre.
 
-\bigskip \textit{(Inverse)} Soit $\alpha\in\pi_1(X,x_0)$ et soit $\gamma$ un lacet représentant de la classe. Notons $\overline{\gamma}(s)=\gamma(1-s)$ le lacet inverse de $\gamma$. Nous allons montrer que $\gamma\cdot\overline{\gamma}\simeq c$ et $\overline{\gamma}\cdot\gamma\simeq c$, ce qui suffit pour démontrer l'existance de l'inverse : $\alpha\cdot [\overline{\gamma}]=[c]$ et $[\overline{\gamma}]\cdot \alpha=[c]$.
+\bigskip \textit{(Inverse)} Soit $\alpha\in\pi_1(X,x_0)$ et soit $\gamma$ un lacet représentant de la classe. En rappelant que $\overline{\gamma}$ désigne le lacet en sens inverse de $\gamma$, montrons que $\gamma\cdot\overline{\gamma}\simeq c$ et $\overline{\gamma}\cdot\gamma\simeq c$, ce qui suffit pour démontrer l'existance de l'inverse : $\alpha\cdot [\overline{\gamma}]=[c]$ et $[\overline{\gamma}]\cdot \alpha=[c]$.
 
 Pour cela, on considère une première application, dans le but de vérifier $\gamma\cdot \overline{\gamma}\simeq c$ : \[t\in[0,1]\mapsto\gamma_t(s)=\left\{\begin{matrix}
 \gamma\big(2s(1-t)\big)&\text{si }0\leq s\leq \frac{1}{2}\\ 
@@ -310,86 +310,87 @@ Le terme "simplement" réfère directement à l'ensemble des classes d'homotopie
 Tout sous-espace convexe $X\subset\bb{R}^n$ est simplement connexe.
 \end{proposition}
 
-Nous avons déjà vu dans l'exemple à al suite de la définition \ref{def:homotopy-paths} qu'il existe une homotopie (linéaire) entre tout chemin partageant les mêmes extrémités. Ce résultat reste évidement vraie dans le cas des lacets, ce qui rend l'ensemble des classes réduit à un élément : d'où la proposition !
+Dans un espace convexe, il existe une homotopie linéaire (voir l'exemple qui suit la définition \ref{def:homotopy-paths}) entre toute paire de lacet. De ce fait, tous les lacets sont homotopes entre eux : d'où la proposition.
 
 \begin{proposition}
-Soit $X$ un espace, et soient $x_0,x_1\in X$ deux points reliés par un chemin. Les groupes fondamentaux $\pi_1(X,x_0)$ et $\pi_1(X,x_1)$ sont isomorphes.
+Soient $x_0,x_1\in X$ deux points reliés via un chemin. Les groupes fondamentaux $\pi_1(X,x_0)$ et $\pi_1(X,x_1)$ sont isomorphes.
 \end{proposition}
 
-
+La démonstration consiste à construire l'isomorphisme en fonction du chemin reliant les deux points de base. Intuitivement, l'isomorphisme utilise le chemin pour allonger les (classes de) lacets  aux extrémités, permettant le changement de point de base, tout en conservant la structure de groupe.
 
 \begin{proof}
-Soit $\zeta$ le chemin entre $x_0=\zeta(0)$ et $x_1=\zeta(1)$. Pour un lacet~$\gamma$ de $X$ ayant pour point de base $x_0$, nous avons $\zeta\cdot\gamma\cdot\overline{\zeta}$ qui est un lacet basé en~$x_1$. Nous pouvons alors définir l'application~$\Phi:\pi_1(X,x_0)\to\pi_1(X,x_1)$, qui envoie~$[\gamma]$ sur $[\zeta\cdot\gamma\cdot\overline{\zeta}]$. Montrons que cette application est un morphisme de groupes, puis qu'elle admet un morphisme réciproque, de telle sorte que ce soit un isomorphisme.
+Soit $\zeta$ un chemin reliant $x_0=\zeta(0)$ et $x_1=\zeta(1)$. Pour un lacet~$\gamma$ ayant pour point de base~$x_0$, la concaténation $\zeta\cdot\gamma\cdot\overline{\zeta}$ est un lacet basé en~$x_1$. L'idée de la démonstration est de construire un isomorphisme se basant sur cette idée, tout en utilisant les classes d'homotopies.
 
-Nous devons tout d'abord montrer que l'application est bien définie, c'est à dire pour $\gamma\simeq\gamma'$ deux lacets de $(X,x_0)$, nous avons $\zeta\cdot\gamma\cdot\overline{\zeta}\simeq\zeta\cdot\gamma'\cdot\overline{\zeta}$. En notant~$\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$, nous avons $\zeta\cdot\gamma_t\cdot\overline{\zeta}$ qui forme une homotopie entre $\zeta\cdot\gamma\cdot\overline{\zeta}$ et $\zeta\cdot\gamma'\cdot\overline{\zeta}$.
+Remarquons avant toute chose que pour deux lacets $\gamma\simeq\gamma'$ de $(X,x_0)$, les lacets $\zeta\cdot\gamma\cdot\overline{\zeta}$ et $\zeta\cdot\gamma'\cdot\overline{\zeta}$ sont eux aussi homotopes sur $(X,x_1)$. En effet, en considèrant $\gamma_t$ l'homotopie entre $\gamma$ et $\gamma'$, nous obtenons directement l'homotopie $\zeta\cdot\gamma_t\cdot\overline{\zeta}$ entre les lacets $\zeta\cdot\gamma\cdot\overline{\zeta}$ et $\zeta\cdot\gamma'\cdot\overline{\zeta}$.
 
-\bigskip Soient $\alpha,\alpha'\in\pi_1(X,x_0)$, montrons que $\Phi(\alpha\alpha')=\Phi(\alpha)\Phi(\alpha')$. Soient $\gamma,\gamma'$ deux lacets de $(X,x_0)$, représentants respectifs de $\alpha$ et $\alpha'$. Nous avons : \[\begin{split}
+De ce résultat en découle l'application bien définie~$\Phi:\pi_1(X,x_0)\to\pi_1(X,x_1)$, qui envoie~$[\gamma]$ sur $[\zeta\cdot\gamma\cdot\overline{\zeta}]$. Pour montrer qu'il s'agit d'un isomorphisme, nous allons tout d'abord montrer qu'il s'agit d'un morphisme de groupes, puis qu'il admet une réciproque.
+
+\bigskip \textit{(Morphisme)} Soient $\alpha,\alpha'\in\pi_1(X,x_0)$, montrons que $\Phi(\alpha\alpha')=\Phi(\alpha)\Phi(\alpha')$. Pour cela, on considère $\gamma,\gamma'$ deux lacets de $(X,x_0)$ représentants respectifs de $\alpha$ et $\alpha'$ : \[\begin{split}
 \Phi([\gamma][\gamma'])&=\Phi([\gamma\cdot\gamma'])\\
 &=[\zeta\cdot\gamma\cdot\gamma'\cdot\overline{\zeta}]\\
 &=[\zeta\cdot\gamma\cdot\overline{\zeta}\cdot\zeta\cdot\gamma'\cdot\overline{\zeta}]\\
 &=[\zeta\cdot\gamma\cdot\overline{\zeta}][\zeta\cdot\gamma'\cdot\overline{\zeta}]\\
 &=\Phi([\gamma])\Phi([\gamma']).
-\end{split}\] Nous pouvons alors en déduire qu'il s'agit d'un morphisme. Désormais, on considère l'application allant de $\pi_1(X,x_1)$ vers $\pi_1(X,x_0)$ par~$\Psi:[\gamma]\mapsto[\overline{\zeta}\cdot\gamma\cdot\zeta]$. Pour la même raison que pour $\Phi$, il s'agit d'un morphisme bien définit. Il est évident que $\Phi$ et $\Psi$ sont des morphismes réciproques l'un par rapport à l'autre, puisque~$[\zeta\cdot\overline{\zeta}]=[c]$ et~$[\overline{\zeta}\cdot\zeta]=[c]$. Nous pouvons en conclure que les deux groupes sont isomorphes.
+\end{split}\]
+
+\textit{(Réciproque)} Considérons l'application $\Psi:\pi_1(X,x_1)\to\pi_1(X,x_0)$ définit par~$\Psi([\gamma])=[\overline{\zeta}\cdot\gamma\cdot\zeta]$. Pour la même raison que pour $\Phi$, il s'agit d'un morphisme de groupes bien définit. Il est évident que $\Phi$ et $\Psi$ sont des morphismes réciproques l'un par rapport à l'autre. 
+
+Nous pouvons en conclure que les deux groupes sont isomorphes.
 \end{proof}
+
 \begin{remark}
-Autrement dit, le groupe fondamental d'un espace connexe par arc ne dépend pas du point choisi. Nous pouvons alors négliger la notation du point de base pour de tel espace.
+Il en découle que le groupe fondamental d'un espace connexe par arc ne dépend pas du point choisi. Nous pouvons, sans perte de rigueur, négliger le point de base lors de la désignation du groupe fondamental.
 \end{remark}
 
-\subsubsection{Morphisme induit}
+\subsubsection{Invariance}
 
-Le premier résultat qui nous intéresse est celui de l'invariance du groupe fondamental par homéomorphisme. Cela vient du fait de la bonne propriété que possède le groupe fondamental sur les inductions de morphismes :
+Le premier résultat qui nous intéresse est celui de l'invariance du groupe fondamental par homéomorphisme.
 
 \begin{definition}
-Soit $f:(X,x_0)\to(Y,y_0)$ une application entre deux espaces (le point $x_0$ est envoyé sur $y_0$ via $f$). Le \emph{morphisme de groupes induit} par $f$ se défini par $f_\ast:\pi_1(X,x_0)\to\pi_1(Y,y_0)$, qui à un élément $[\gamma]\in\pi_1(X,x_0)$ renvoie~$[f\gamma]\in\pi_1(Y,y_0)$. 
+Soit $f:(X,x_0)\to(Y,y_0)$ une application entre deux espaces, avec $f(x_0)=y_0$. Le \emph{morphisme de groupes induit} par $f$ est définit comme étant le morphisme $f_\ast:\pi_1(X,x_0)\to\pi_1(Y,y_0)$, envoyant $[\gamma]\in\pi_1(X,x_0)$ sur~$[f\gamma]\in\pi_1(Y,y_0)$. 
 \end{definition}
 
-En théorie des catégories \ref{chap:categories}, on dit que le groupe fondamental est un \emph{foncteur} entre la catégorie des espaces pointés et la catégorie des groupes. Cela signifie qu'il vérifie le théorème suivant.
+En théorie des catégories (voir annexe \ref{chap:categories}), on dit que le groupe fondamental est un \emph{foncteur} entre la catégorie des espaces pointés et la catégorie des groupes. Intuitivement, cela revient à dire qu'il est possible de faire un parallèle entre les relations sur les espaces pointés et leurs groupes fondamentaux.
 
 \begin{theorem}
 Nous avons $id_\ast=id$, et pour $f:Y\to Z, g:X\to Y$,  l'égalité $(fg)_\ast=f_\ast g_\ast$. En théorie des catégories, nous disons que le groupe fondamental est un foncteur \emph{covariant}.
 \end{theorem}
 \begin{proof}
-Le morphisme induit par l'identité $id:X\to X$, est défini par $[\gamma]\mapsto[id(\gamma)]=[\gamma]$, ce n'est rien d'autre que l'identité.
+Premièrement, le morphisme induit par l'identité est défini par $id_\ast:[\gamma]\mapsto[id(\gamma)]=[\gamma]$ : il s'agit du morphisme identité.
 
-En reprenant les notations de l'énoncé, nous avons l'égalité suivante : \[f_\ast(g_\ast([\gamma]))=f_\ast([g\gamma])=[fg\gamma]=(fg)_\ast([\gamma]).\]
+Deuxièmement, pour $f:X\to Y$ et $g:Y\to Z$, nous avons : \[f_\ast(g_\ast([\gamma]))=f_\ast([g\gamma])=[fg\gamma]=(fg)_\ast([\gamma]).\]
 \end{proof}
 
-
+Un foncteur covariant est un outil puissant, car il permet de converser les propriétés des fonctions (appelés flèches) et de les translater d'une catégorie à l'autre.
 
 \begin{theorem}
-Soit $X$ et $Y$ deux espaces homéomorphes, et soit $x_0\in X$. L'homéomorphisme~$f:X\to Y$ induit un isomorphisme entre les groupes fondamentaux $f_\ast:\pi_1(X,x_0)\to\pi_1(Y,f(x_0))$.
+Soient $X$ et $Y$ deux espaces homéomorphes par $f:X\to Y$, et soit $x_0\in X$. Le morphisme induit $f_\ast:\pi_1(X,x_0)\to\pi_1(Y,f(x_0))$ est un isomorphisme.
 \end{theorem}
 \begin{proof}
-Du fait que $f$ soit une bijection, elle admet une inverse. Cette inverse induit une inverse pour $f_\ast$, d'où le fait que les groupes fondamentaux soient isomorphes.
+Du fait que $f$ soit une bijection, elle admet une inverse. Cette inverse induit une inverse pour $f_\ast$. Il en découle alors que $f_\ast$ soit un isomorphisme.
 \end{proof}
 
-La contraposée est plus intéressante, puisqu'elle permet d'affirmer grâce au groupe fondamental si deux groupes sont non homéomorphes.
+En pratique, nous préférons utiliser la contraposée de ce résultat, permettant de discriminer les espaces pointés selon leurs groupes fondamentaux.
 
 \begin{corollary}
-Si deux espaces $X$ et $Y$ ne possèdent pas le même groupe fondamental, alors ils ne sont pas homéomorphes.
+Si deux espaces $(X,x_0)$ et $(Y,y_0)$ ne possèdent pas le même groupe fondamental, alors ils ne sont pas homéomorphes.
 \end{corollary}
-\begin{remark}
-Attention toutefois, la réciproque n'est pas vraie, comme nous pouvons le voir juste après.
-\end{remark}
 
-\begin{proposition}\label{prop:eq-homo-same-gr-fund}
-Une équivalence d'homotopie $\phi:X\to Y$ induit un isomorphisme  entre$\pi_1(X,x_0)$ et~$\pi_1(Y,\phi(x_0))$, pour tout $x_0\in X$.
-\end{proposition}
-\begin{proof}
-
-\end{proof}
+Attention, la réciproque n'est pas vrai, comme le montre les résultats suivants. 
 
 \begin{proposition}
-Si un espace $X$ se rétracte en $A$, alors l'inclusion induit un morphisme injectif~$i_\ast:\pi_1(A,x_0)\to\pi_1(X,x_0)$. Si c'est une déformation par rétraction, alors le morphisme induit est un isomorphisme.
+Si un espace $X$ se rétracte en $A$, alors le morphisme $i_\ast:\pi_1(A,x_0)\to\pi_1(X,x_0)$ induit par $i: A\hookrightarrow X$ est injectif. Si c'est une déformation par rétraction, alors le morphisme induit est un isomorphisme.
 \end{proposition}
 \begin{proof}
 Soient $r:X\to A$ et $i:A\hookrightarrow X$, tels que nous avons $ri=id_A$, ce qui induit~$r_\ast i_\ast=id$. Du fait qu'avoir un inverse à gauche implique être injectif, on en déduit que $i_\ast$ est un morphisme injectif.
-
-Une déformation par rétraction est un cas particulier d'équivalence d'homotopie, nous pouvons alors utiliser la proposition précédente.
 \end{proof}
 
-\begin{comment}
-\begin{remark}
-Le fait que l'on obtiennent des isomorphismes de groupes fondamentaux sur des espaces non homéomorphes posent problème sur l'efficacité de discrimination du groupe fondamental. Ce n'est pas une méthode efficace pour savoir si deux espaces sont homéomorphes, ou simplement homotopiquement équivalent, ou encore obtenu par déformation par rétraction. Un exemple facile serait le disque qui se rétracte par déformation en un point : les deux espace sont simplement connexes, mais ne sont pas homéomorphes.
-\end{remark}
-\end{comment}
+La seconde partie de la proposition est un cas particulier de la proposition qui suit.
+
+\begin{proposition}\label{prop:eq-homo-same-gr-fund}
+Une équivalence d'homotopie $\phi:X\to Y$ induit un isomorphisme  entre $\pi_1(X,x_0)$ et~$\pi_1(Y,\phi(x_0))$, pour tout $x_0\in X$.
+\end{proposition}
+
+L'idée de la démonstration est identique à celle préédente, à l'exception près qu'il ne s'agit pas d'égalités entre les compositions d'applications, mais d'équivalence d'homotopies. Cela demande légèrement plus de travail, et un résultat sur les homotopies et leurs morphismes induits. Nous avons décider de ne pas rentrer dans les détails ici, mais la démonstration se trouve en \cite{Hatcher} page 37.
+
+\bigskip Ces derniers résultats imposent une limite dans la discrimination des espaces : s'il en existe deux qui se "ressemblent" assez sans être homéomorphes, il est possible que le groupe fondamental ne suffise pas pour les distinguer.

@@ -16,9 +16,7 @@ Les complémentaires des éléments de $\mathcal{T}$ sont appelés les \emph{fer
 
 \begin{definition}
 Un espace topologique $X$ est dit \emph{Hausdroff}, ou séparable, si pour tout couple d'éléments distincts $(x,y)\in X^2$, il existe $U\in\vois(x)$ et~$V\in~\vois(y)$, tel que $U\cap V=\emptyset$.
-\end{definition}
-
-Sauf mention contraire, nous désignerons tout au long du mémoire par $X$ un espace topologique, que nous appelons par abus de langage simplement espace.
+\end{definition}.
 
 \subsubsection{Connexité}
 
@@ -40,12 +38,10 @@ On dit que deux points sont \emph{connectés} s'ils appartiennent à la même co
 En pratique, nous préférons utiliser une notions de connexité plus forte, qui est la connexité par arc.
 
 \begin{definition}\label{def:path}
-On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application $\gamma:[0,1]\to X$ continue, et telle que~$\gamma(0)=x_0$ et~$\gamma(1)=x_1$.
+On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application $\gamma:[0,1]\to X$ continue, et telle que~$\gamma(0)=x_0$ et~$\gamma(1)=x_1$. Nous noterons $\overline{\gamma}$ le chemin prenant le sens inverse, c'est à dire défini par $\overline{\gamma}(s)=\gamma(1-s)$ pour $s\in[0,1]$.
 \end{definition}
 
-\begin{remark}
-Il est important de noter que les chemins ont une direction, donnée par l'application associée (de~$\gamma(0)$ vers $\gamma(1)$).
-\end{remark}
+Les chemins ont une direction : allant de $\gamma(0)$ vers $\gamma(1)$.
 
 \begin{exemple}
 Sur l'espace euclidien $\bb{R}^n$, tout couple de point possède un chemin linéaire. Pour $x,y\in\bb{R}^n$, ce chemin est donné par l'application $t\mapsto (1-t)x+ty$.
