@@ -15,7 +15,7 @@ Les complémentaires des éléments de $\mathcal{T}$ sont appelés les \emph{fer
 \end{definition}
 
 \begin{definition}
-Un espace topologique $X$ est dit \emph{Hausdroff}, ou séparable, si pour tout couple d'éléments distincts $(x,y)\in X^2$, il existe $U\in\vois(x)$ et~$V\in~\vois(y)$, tel que $U\cap V=\emptyset$.
+Un espace topologique $X$ est dit \emph{Hausdorff}, ou séparé, si pour tout couple d'éléments distincts $(x,y)\in X^2$, il existe $U\in\vois(x)$ et~$V\in~\vois(y)$, tel que $U\cap V=\emptyset$.
 \end{definition}.
 
 \subsubsection{Connexité}
@@ -23,7 +23,7 @@ Un espace topologique $X$ est dit \emph{Hausdroff}, ou séparable, si pour tout 
 Intuitivement, un espace est dit connexe lorsqu'il est constituer d'un seul "morceau".
 
 \begin{definition}
-Un espace $X$ est dit \emph{connexe} s'il vérifie l'une des quatres propositions équivalentes : \begin{enumerate}
+Un espace $X$ est dit \emph{connexe} s'il vérifie l'une des quatre propositions équivalentes : \begin{enumerate}
     \item L'espace n'est pas la réunion de deux ouverts non vides disjoints.
     \item L'espace n'est pas la réunion de deux fermés non vides disjoints.
     \item Les seuls éléments à la fois ouverts et fermés sont $\emptyset$ et $X$.
@@ -38,23 +38,23 @@ On dit que deux points sont \emph{connectés} s'ils appartiennent à la même co
 En pratique, nous préférons utiliser une notions de connexité plus forte, qui est la connexité par arc.
 
 \begin{definition}\label{def:path}
-On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application $\gamma:[0,1]\to X$ continue, et telle que~$\gamma(0)=x_0$ et~$\gamma(1)=x_1$. Nous noterons $\overline{\gamma}$ le chemin prenant le sens inverse, c'est à dire défini par $\overline{\gamma}(s)=\gamma(1-s)$ pour $s\in[0,1]$.
+On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application $\gamma:[0,1]\to X$ continue, et telle que~$\gamma(0)=x_0$ et~$\gamma(1)=x_1$. Nous noterons $\overline{\gamma}$ le chemin prenant le sens inverse, c'est-à-dire défini par $\overline{\gamma}(s)=\gamma(1-s)$ pour $s\in[0,1]$.
 \end{definition}
 
 Les chemins ont une direction : allant de $\gamma(0)$ vers $\gamma(1)$.
 
 \begin{exemple}
-Sur l'espace euclidien $\bb{R}^n$, tout couple de point possède un chemin linéaire. Pour $x,y\in\bb{R}^n$, ce chemin est donné par l'application $t\mapsto (1-t)x+ty$.
+Sur l'espace euclidien $\bb{R}^n$, tout couple de points possèdent un chemin linéaire. Pour $x,y\in\bb{R}^n$, ce chemin est donné par l'application $t\mapsto (1-t)x+ty$.
 \end{exemple}
 
 \begin{definition}
-Un espace $X$ est dit \emph{connexe par arc} si pour tout couples de points il existe un chemin reliant ces deux points.
+Un espace $X$ est dit \emph{connexe par arc} si pour tout couple de points, il existe un chemin reliant ces deux points.
 \end{definition}
 
 Nous verrons que les espaces connexes par arc sont connexes, mais l'exemple suivant nous montre que la réciproque n'est pas vraie.
 
 \begin{exemple}
-On considère le graphe de l'application $x\mapsto\sin\left(\frac{1}{x}\right)$ pour $x\in]0,1]$, auquel on ajoute son adhérence~$\{0\}\times[-1,1]$. Cet espace est connexe, mais nous ne pouvons pas créer de chemin entre un point du graphe et un point de l'adhérence. L'espace est alors non connexe par arc.
+On considère le graphe de l'application $x\mapsto\sin\left(\frac{1}{x}\right)$ pour $x\in]0,1]$, auquel on ajoute son adhérence,~$\{0\}\times[-1,1]$. Cet espace est connexe, mais nous ne pouvons pas créer de chemin entre un point du graphe et un point de l'adhérence. L'espace est alors non connexe par arc.
 \begin{figure}[h]
     \centering
 \begin{tikzpicture}
@@ -91,7 +91,7 @@ On considère le graphe de l'application $x\mapsto\sin\left(\frac{1}{x}\right)$ 
 \begin{theorem}
 Un espace connexe par arc est connexe.
 \end{theorem}
-La preuve de ce théorème se déroule par l'absurde, en supposant que l'espace est non connexe. L'idée est alors de définir l'espace comme deux ouverts disjoints non vides., et de considérer un chemin continue entre un point d'un ouvert vers l'autre. La contradiction découle du fait que $[0,1]$ n'est pas l'union de deux ouverts disjoints.
+La preuve de ce théorème se déroule par l'absurde, en supposant que l'espace est non connexe. L'idée est alors de définir l'espace comme deux ouverts disjoints non vides, et de considérer un chemin continu entre un point d'un ouvert vers l'autre. La contradiction découle du fait que $[0,1]$ n'est pas l'union de deux ouverts disjoints.
 
 \subsubsection{Comparaisons d'espaces}
 
@@ -104,19 +104,19 @@ Un \emph{homéomorphisme} entre deux espaces $X$ et $Y$ est une application cont
 \begin{exemple}
 Le cercle $\s{1}$ auquel on supprime un point est homéomorphe à $\bb{R}$. De manière générale, la sphère~$\s{n}$ sur laquelle on supprime un point est homéomorphe à $\bb{R}^n$.
 
-Le cercle est le carré sont homéomorphes. Intuitivement, il suffit soit d'arrondir les côtés du carré, soit de "pincer" quatres points du cercle.
+Le cercle et le carré sont homéomorphes. Intuitivement, il suffit soit d'arrondir les côtés du carré, soit de "pincer" quatre points du cercle.
 \end{exemple}
 
 La seconde relation est à propos de l'homotopie. Moins puissante que l'homéomorphisme, elle conserve toutefois la continuité dans l'espace ainsi que la connexité.
 
 \begin{definition}\label{def:homotopy-spaces}
-Deux applications $f_0,f_1:X\to Y$ sont dites \emph{homotopes} s'il existe une application continue~$F:X\times [0,1]\to Y$ telle que $F(0,x)=~f_0(x)$ et~$F(1,x)=f_1(x)$. Intuitivement, cela signifie qu'il existe une famille d'application~$f_t$, continue en $t$, permettant de passer de $f_0$ à $f_1$.
+Deux applications $f_0,f_1:X\to Y$ sont dites \emph{homotopes} s'il existe une application continue~$F:X\times [0,1]\to Y$ telle que $F(0,x)=~f_0(x)$ et~$F(1,x)=f_1(x)$. Intuitivement, cela signifie qu'il existe une famille d'applications~$f_t$, continue en $t$, permettant de passer de $f_0$ à $f_1$.
 \end{definition}
 
 De cette définition découle un cas particulier, lorsque le premier espace se rétracte en le second.
 
 \begin{definition}\label{def:retracts}
-Une \emph{déformation par rétraction} d'un espace $X$ en un sous-espace $A$ est une homotopie entre $f_0=id_X$, et $f_1(X)=A$, qui vérifie $f_t|_A=id_A$ pour tout $t\in[0,1]$. Nous appelons dans ce cas l'application $f_1$ une \emph{rétraction}.
+Une \emph{déformation par rétraction} d'un espace $X$ en un sous-espace $A$ est une homotopie entre $f_0=id_X$ et $f_1(X)=A$, qui vérifie $f_t|_A=id_A$ pour tout $t\in[0,1]$. Nous appelons dans ce cas l'application $f_1$ une \emph{rétraction}.
 \end{definition}
 
 \begin{exemple}
@@ -157,7 +157,7 @@ Sauf mention contraire, nous désignerons par $G$ un groupe, et $H$ un sous-grou
 \subsubsection{Quotient}
 
 \begin{definition}
-On dit que le sous-groupe $H$ de $G$ est \emph{normal} s'il est stable par automorphisme intérieur, c'est à dire vérifiant pour tout $g\in G$ l'inclusion $gHg\inv\subset H$.
+On dit que le sous-groupe $H$ de $G$ est \emph{normal} s'il est stable par automorphisme intérieur, c'est-à-dire vérifiant pour tout $g\in G$ l'inclusion $gHg\inv\subset H$.
 \end{definition}
 
 Les sous-groupes normaux sont intéressants car permettent de pratiquer le quotient. Si un sous-groupe n'est pas normal pour un groupe, il peut l'être pour un sous-groupe.
@@ -171,7 +171,7 @@ Nous disons d'un élément $g$ qu'il \emph{normalise} $H$ s'il vérifie $gHg\inv
 Il arrive que le groupe que nous étudions ne soit pas commutatif. Dans ce cas, nous pouvons nous intéresser à son plus grand sous-groupe abélien.
 
 \begin{definition}
-Soient $g,h\in G$. On appelle \emph{commutateur} de $g$ et $h$ l'élément~$[g,h]=ghg\inv h\inv$. Le groupe généré par l'ensemble des commutateurs de $G$ est appelé \emph{groupe dérivé} et noté $[G,G]$, c'est le plus petit sous groupe normal tel que le quotient $G/[G,G]$ soit abélien. Ce dernier est appelé \emph{abélianisé} de $G$.
+Soient $g,h\in G$. On appelle \emph{commutateur} de $g$ et $h$ l'élément~$[g,h]=ghg\inv h\inv$. Le groupe généré par l'ensemble des commutateurs de $G$ est appelé \emph{groupe dérivé} et noté $[G,G]$, c'est le plus petit sous-groupe normal tel que le quotient $G/[G,G]$ soit abélien. Ce dernier est appelé \emph{abélianisé} de $G$.
 \end{definition}
 
 \subsubsection{Premier théorème d'isomorphisme}
@@ -193,7 +193,7 @@ Les diagrammes commutatifs sont aussi omniprésents en algèbre homologique, com
 
 \subsection{Algèbre et topologie}
 
-\subsubsection{Propriété universelle quotient}
+\subsubsection{Propriété universelle du quotient}
 
 \begin{definition}
 Soit $X$ un espace topologique, muni d'une relation d'équivalence $\sim$. On appelle \emph{topologie quotient} sur $X/\!\sim$, induite par $X$ et $\sim$, la topologie définie par :\[\forall\, U\!\subset\! X/\sim,\qquad U\ ouvert\Leftrightarrow\pi\inv(U)\ ouvert\ dans \ X.\]
@@ -202,7 +202,7 @@ Soit $X$ un espace topologique, muni d'une relation d'équivalence $\sim$. On ap
 \begin{theorem}[Propriété universelle de l'espace quotient]\label{th:quotient}
 Soient $X,Y$ deux espaces topologiques, et soit~$\sim$ une relation d'équivalence sur $X$. Pour $f:X\to Y$ une application continue vérifiant~${x\sim x'\Rightarrow f(x)=f(x')}$, il existe une unique application continue $\overline{f}:X/\!\sim\ \longrightarrow Y$, telle que~$f=\overline{f}\circ \pi$.
 
-De plus, si $f$ vérifie, pour tout $x,x'$ éléments de $X$, $f(x)=f(x')\Rightarrow x\sim x'$, alors $\overline{f}$ est injective.
+De plus, si $f$ vérifie $f(x)=f(x')\Rightarrow x\sim x'$ pour tout $(x,x')\in X^2$ éléments de $X$, alors $\overline{f}$ est injective.
 \end{theorem}
 
 Une preuve de la propriété universelle est donnée en \cite{Homeo-article}.
