@@ -1,26 +1,26 @@
 \section{Préliminaires}
 
-Nous supposerons ici que les notions de licence sur l'algèbre et la topologie sont acquises. Néanmoins, certains rappels sont effectués sur des notions essentielles pour le mémoire. Nous retrouverons également des notions complémentaires comme celles sur les homotopies.
+Nous supposerons ici que les notions de licence en algèbre et en topologie sont acquises. Néanmoins, certains rappels sont effectués sur des notions essentielles pour le mémoire. Nous retrouverons également des notions complémentaires comme celles sur les homotopies.
 
 \subsection{Topologie}
 \subsubsection{Espace topologique}
 
 \begin{definition}
 On appelle \emph{espace topologique} un couple $(X,\mathcal{T})$, où $X$ est un ensemble et $\mathcal{T}$ une famille de parties de $X$, appelées \emph{ouverts} de $X$, vérifiant : \begin{enumerate}
-    \item Les ensembles $\emptyset$ et $X$ sont des ouverts ;
-    \item Toute réunion d'ouverts est un ouvert ;
+    \item Les ensembles $\emptyset$ et $X$ sont des ouverts,
+    \item Toute réunion d'ouverts est un ouvert,
     \item Une intersection finie d'ouverts est un ouvert.
 \end{enumerate}
-Les complémentaires des éléments de $\mathcal{T}$ sont appelés les \emph{fermés} de $E$.
+Les complémentaires des éléments de $\mathcal{T}$ sont appelés les \emph{fermés} de $X$.
 \end{definition}
 
 \begin{definition}
 Un espace topologique $X$ est dit \emph{Hausdorff}, ou séparé, si pour tout couple d'éléments distincts $(x,y)\in X^2$, il existe $U\in\vois(x)$ et~$V\in~\vois(y)$, tel que $U\cap V=\emptyset$.
-\end{definition}.
+\end{definition}
 
 \subsubsection{Connexité}
 
-Intuitivement, un espace est dit connexe lorsqu'il est constituer d'un seul "morceau".
+Intuitivement, un espace est dit connexe lorsqu'il est constitué d'un seul "morceau".
 
 \begin{definition}
 Un espace $X$ est dit \emph{connexe} s'il vérifie l'une des quatre propositions équivalentes : \begin{enumerate}
@@ -35,7 +35,7 @@ Pour un espace $X$, on appelle \emph{composante connexe} de $x$ dans $X$ la réu
 On dit que deux points sont \emph{connectés} s'ils appartiennent à la même composante connexe.
 \end{definition}
 
-En pratique, nous préférons utiliser une notions de connexité plus forte, qui est la connexité par arc.
+En pratique, nous préférons utiliser une notion de connexité plus forte, dites par arc.
 
 \begin{definition}\label{def:path}
 On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application $\gamma:[0,1]\to X$ continue, et telle que~$\gamma(0)=x_0$ et~$\gamma(1)=x_1$. Nous noterons $\overline{\gamma}$ le chemin prenant le sens inverse, c'est-à-dire défini par $\overline{\gamma}(s)=\gamma(1-s)$ pour $s\in[0,1]$.
@@ -44,7 +44,7 @@ On appelle \emph{chemin} entre deux points $x_0$ et $x_1$ de $X$ une application
 Les chemins ont une direction : allant de $\gamma(0)$ vers $\gamma(1)$.
 
 \begin{exemple}
-Sur l'espace euclidien $\bb{R}^n$, tout couple de points possèdent un chemin linéaire. Pour $x,y\in\bb{R}^n$, ce chemin est donné par l'application $t\mapsto (1-t)x+ty$.
+Sur l'espace euclidien $\bb{R}^n$, tout couple de points possède un chemin linéaire. Pour $x,y\in\bb{R}^n$, ce chemin est donné par l'application $t\mapsto (1-t)x+ty$.
 \end{exemple}
 
 \begin{definition}
@@ -54,7 +54,7 @@ Un espace $X$ est dit \emph{connexe par arc} si pour tout couple de points, il e
 Nous verrons que les espaces connexes par arc sont connexes, mais l'exemple suivant nous montre que la réciproque n'est pas vraie.
 
 \begin{exemple}
-On considère le graphe de l'application $x\mapsto\sin\left(\frac{1}{x}\right)$ pour $x\in]0,1]$, auquel on ajoute son adhérence,~$\{0\}\times[-1,1]$. Cet espace est connexe, mais nous ne pouvons pas créer de chemin entre un point du graphe et un point de l'adhérence. L'espace est alors non connexe par arc.
+On considère le graphe de l'application $x\mapsto\sin\left(\frac{1}{x}\right)$ pour $x\in]0,1]$, auquel on ajoute son adhérence,~$\{0\}\times[-1,1]$. Cet espace est connexe, mais nous ne pouvons pas construire de chemin entre un point du graphe et un point de l'adhérence. L'espace est alors non connexe par arc.
 \begin{figure}[h]
     \centering
 \begin{tikzpicture}
@@ -95,14 +95,14 @@ La preuve de ce théorème se déroule par l'absurde, en supposant que l'espace 
 
 \subsubsection{Comparaisons d'espaces}
 
-Il existe plusieurs moyens de comparer les espaces par des relations d'équivalences. Nous commençons par la relation la plus forte entre espaces : l'homéomorphisme.
+Il existe plusieurs moyens de comparer les espaces par des relations d'équivalence. Nous commençons par la relation la plus forte entre espaces : l'homéomorphisme.
 
 \begin{definition}\label{def:homeo}
-Un \emph{homéomorphisme} entre deux espaces $X$ et $Y$ est une application continue, inversible, et d'inverse continue. S'il existe un homéomorphisme entre $X$ et $Y$, on dit alors qu'ils sont \emph{homéomorphes}.
+Un \emph{homéomorphisme} entre deux espaces $X$ et $Y$ est une application continue, inversible, et dont l'inverse est continue. S'il existe un homéomorphisme entre $X$ et $Y$, on dit alors qu'ils sont \emph{homéomorphes}.
 \end{definition}
 
 \begin{exemple}
-Le cercle $\s{1}$ auquel on supprime un point est homéomorphe à $\bb{R}$. De manière générale, la sphère~$\s{n}$ sur laquelle on supprime un point est homéomorphe à $\bb{R}^n$.
+Le cercle $\s{1}$ privé d'un point est homéomorphe à $\bb{R}$. De manière générale, la sphère~$\s{n}$ privé d'un point est homéomorphe à $\bb{R}^n$.
 
 Le cercle et le carré sont homéomorphes. Intuitivement, il suffit soit d'arrondir les côtés du carré, soit de "pincer" quatre points du cercle.
 \end{exemple}
@@ -113,14 +113,14 @@ La seconde relation est à propos de l'homotopie. Moins puissante que l'homéomo
 Deux applications $f_0,f_1:X\to Y$ sont dites \emph{homotopes} s'il existe une application continue~$F:X\times [0,1]\to Y$ telle que $F(0,x)=~f_0(x)$ et~$F(1,x)=f_1(x)$. Intuitivement, cela signifie qu'il existe une famille d'applications~$f_t$, continue en $t$, permettant de passer de $f_0$ à $f_1$.
 \end{definition}
 
-De cette définition découle un cas particulier, lorsque le premier espace se rétracte en le second.
+De cette définition découle un cas particulier, lorsque le premier espace se rétracte sur le second.
 
 \begin{definition}\label{def:retracts}
-Une \emph{déformation par rétraction} d'un espace $X$ en un sous-espace $A$ est une homotopie entre $f_0=id_X$ et $f_1(X)=A$, qui vérifie $f_t|_A=id_A$ pour tout $t\in[0,1]$. Nous appelons dans ce cas l'application $f_1$ une \emph{rétraction}.
+Une \emph{déformation par rétraction} d'un espace $X$ sur un sous-espace $A$ est une homotopie entre $f_0=id_X$ et $f_1(X)=A$, qui vérifie $f_t|_A=id_A$ pour tout $t\in[0,1]$. Nous appelons dans ce cas l'application $f_1$ une \emph{rétraction}.
 \end{definition}
 
 \begin{exemple}
-Le disque $D^{n}$ se déforme par rétraction en un point.
+Le disque $D^{n}$ se déforme par rétraction sur un point.
 
 \begin{figure}[H]
     \centering
@@ -160,18 +160,18 @@ Sauf mention contraire, nous désignerons par $G$ un groupe, et $H$ un sous-grou
 On dit que le sous-groupe $H$ de $G$ est \emph{normal} s'il est stable par automorphisme intérieur, c'est-à-dire vérifiant pour tout $g\in G$ l'inclusion $gHg\inv\subset H$.
 \end{definition}
 
-Les sous-groupes normaux sont intéressants car permettent de pratiquer le quotient. Si un sous-groupe n'est pas normal pour un groupe, il peut l'être pour un sous-groupe.
+Les sous-groupes normaux sont intéressants car permettent de passer au quotient. Si un sous-groupe n'est pas normal pour un groupe, il peut l'être pour un sous-groupe.
 
 \begin{definition}\label{def:normalizer}
-Nous disons d'un élément $g$ qu'il \emph{normalise} $H$ s'il vérifie $gHg\inv=H$. L'ensemble des éléments qui normalisent~$H$ est appelé \emph{normalisateur} de $H$, noté~$N(H)$. Le normalisateur est le plus petit sous-groupe normal contenant $H$, donc $H\subset N(H)$.
+Nous disons d'un élément $g$ qu'il \emph{normalise} $H$ s'il vérifie $gHg\inv=H$. L'ensemble des éléments qui normalisent~$H$ est appelé \emph{normalisateur} de $H$, noté~$N(H)$. Le normalisateur est le plus grand sous-groupe dans lequel $H$ est normal.
 \end{definition}
 
 \subsubsection{Abélianisation}
 
-Il arrive que le groupe que nous étudions ne soit pas commutatif. Dans ce cas, nous pouvons nous intéresser à son plus grand sous-groupe abélien.
+Il arrive que le groupe que nous étudions ne soit pas commutatif. Dans ce cas, nous pouvons nous intéresser à son plus grand quotient abélien.
 
 \begin{definition}
-Soient $g,h\in G$. On appelle \emph{commutateur} de $g$ et $h$ l'élément~$[g,h]=ghg\inv h\inv$. Le groupe généré par l'ensemble des commutateurs de $G$ est appelé \emph{groupe dérivé} et noté $[G,G]$, c'est le plus petit sous-groupe normal tel que le quotient $G/[G,G]$ soit abélien. Ce dernier est appelé \emph{abélianisé} de $G$.
+Soient $g,h\in G$. On appelle \emph{commutateur} de $g$ et $h$ l'élément~$[g,h]=ghg\inv h\inv$. Le groupe généré par l'ensemble des commutateurs de $G$ est appelé \emph{groupe dérivé} et noté $[G,G]$. C'est le plus petit sous-groupe normal tel que le quotient $G/[G,G]$ soit abélien, appelé \emph{abélianisé} de $G$.
 \end{definition}
 
 \subsubsection{Premier théorème d'isomorphisme}
@@ -179,7 +179,7 @@ Soient $g,h\in G$. On appelle \emph{commutateur} de $g$ et $h$ l'élément~$[g,h
 \begin{theorem}[Premier théorème d'isomorphisme]
 Soient $G$ et $G'$ deux groupes, et soit un morphisme de groupes $f:G\to G'$. Il existe une unique application $\overline{f}:G/\ker(f)\to \im(f)$, qui à~$\alpha\in G/\ker(f)$ associe~$f(x)$, où $x$ est un représentant de la classe $\alpha$.
 
-L'application $\overline{f}$ est un isomorphisme entre $G/\ker(f)$ et le groupe $\im(f)$. En notant $i:\im(f)\to~G'$ l'injection canonique et $\pi:G\to~\ker(f)$ la surjection canonique, nous avons le diagramme suivant commutatif :
+L'application $\overline{f}$ est un isomorphisme entre $G/\ker(f)$ et le groupe $\im(f)$. En notant $i:\im(f)\to~G'$ l'injection canonique et $\pi:G\to~G/\ker(f)$ la surjection canonique, nous avons le diagramme suivant commutatif :
 \begin{figure}[H]
     \centering
     \begin{tikzcd}
@@ -202,7 +202,7 @@ Soit $X$ un espace topologique, muni d'une relation d'équivalence $\sim$. On ap
 \begin{theorem}[Propriété universelle de l'espace quotient]\label{th:quotient}
 Soient $X,Y$ deux espaces topologiques, et soit~$\sim$ une relation d'équivalence sur $X$. Pour $f:X\to Y$ une application continue vérifiant~${x\sim x'\Rightarrow f(x)=f(x')}$, il existe une unique application continue $\overline{f}:X/\!\sim\ \longrightarrow Y$, telle que~$f=\overline{f}\circ \pi$.
 
-De plus, si $f$ vérifie $f(x)=f(x')\Rightarrow x\sim x'$ pour tout $(x,x')\in X^2$ éléments de $X$, alors $\overline{f}$ est injective.
+De plus, si $f$ vérifie $f(x)=f(x')\Rightarrow x\sim x'$ pour tout $(x,x')\in X^2$, alors $\overline{f}$ est injective.
 \end{theorem}
 
 Une preuve de la propriété universelle est donnée en \cite{Homeo-article}.
