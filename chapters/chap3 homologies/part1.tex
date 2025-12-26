@@ -1,12 +1,12 @@
 %delta complexe, homologie simpliciale 
 
-Nous avons vu au chapitre précédent le groupe fondamental, qui nous le rappelons nécessite de manipuler des groupes non nécessairement abélien. Dans ce chapitre, nous allons introduire le concept d'homologie, qui nous permet notamment d'éliminer cette contrainte. Un autre avantage par rapport aux groupes fondamentaux est que les groupes d'homologies sont triviales lorsque l'on dépasse la dimension de l'espace. En contre-partie, ces outils possèdent une construction algébrique complexe, rendant l'abstraction peu accessible.
+Nous avons vu au chapitre précédent le groupe fondamental, qui nous le rappelons nécessite de manipuler des groupes non nécessairement abéliens. Dans ce chapitre, nous allons introduire le concept d'homologie, qui nous permet notamment d'éliminer cette contrainte. Un autre avantage par rapport aux groupes fondamentaux est que les groupes d'homologies sont triviaux lorsque l'on dépasse la dimension de l'espace. En contrepartie, ces outils possèdent une construction algébrique complexe, rendant l'abstraction peu accessible.
 
-Nous introduirons dans un premier temps l'\emph{homologie simpliciale}, la plus géométrique de toutes. Nous effectuerons quelques calculs, pour comprendre son fonctionnement. Nous poursuivrons par l'\emph{homologie singulière}, moins intuitive mais plus pratique en terme d'usage. Nous présenterons plusieurs bonnes propriétés, utile en algèbre homologique ou dans notre cas d'étude. Nous verrons par la suite que ces \textbf{deux homologies sont fondamentalement identiques}, et qu'elles sont l'\textbf{abélianisation du groupe fondamental}. Nous finirons par l'\emph{homologie cellulaire}, plus restrictive mais bien plus efficace sur les \emph{complexes cellulaires}. Evidemment, cette homologie est équivalente aux autres, ce qui nous permet d'ajouter une corde à notre arc.
+Nous introduirons dans un premier temps l'\emph{homologie simpliciale}, la plus géométrique de toutes. Nous effectuerons quelques calculs, pour comprendre son fonctionnement. Nous poursuivrons par l'\emph{homologie singulière}, moins intuitive mais plus pratique en terme d'usage. Nous présenterons plusieurs bonnes propriétés, utiles en algèbre homologique ou dans notre cas d'étude. Nous verrons par la suite que ces \textbf{deux homologies sont fondamentalement identiques}, et qu'elles sont l'\textbf{abélianisation du groupe fondamental}. Nous finirons par l'\emph{homologie cellulaire}, plus restrictive mais bien plus efficace sur les \emph{complexes cellulaires}. Évidemment, cette homologie est équivalente aux autres, ce qui nous permet d'ajouter une corde à notre arc.
 
 \section{Homologie simpliciale : triangularisation}
 
-Nous commençons ce chapitre par introduire l'homologie simpliciale, la plus intuitive des trois. Elle se calcule après avoir effectuer une triangularisation de l'espace, dont nous allons introduire le formalisme.
+Nous commençons ce chapitre par introduire l'homologie simpliciale, la plus intuitive des trois. Elle se calcule après avoir effectué une triangularisation de l'espace, dont nous allons introduire le formalisme.
 
 \subsection{Des simplexes et des $\Delta$-complexes}\label{sect:simplices}
 
@@ -51,11 +51,11 @@ Intuitivement, un \emph{simplexe} est une généralisation du triangle pour une 
 \phantom{cyrille le goat}
 
 \begin{definition}
-Étant donné $n+1$ points~$v_0,...,v_n\in\bb{R}^m$ tels que les vecteurs~$v_i-v_0$ soient linéairement indépendant, un \emph{$n$-simplexe} est le plus petit ensemble convexe contenant tout ces points, que l'on note $[v_0,...,v_n]$. Les points $v_i$ sont appelés les \emph{sommets} du simplexe, et les sous-simplexes obtenu par le retrait d'un ou plusieurs sommets sont appelés les \emph{faces} du simplexe.
+Étant donné $n+1$ points~$v_0,...,v_n\in\bb{R}^m$ tels que les vecteurs~$v_i-v_0$ soient linéairement indépendants, un \emph{$n$-simplexe} est le plus petit ensemble convexe contenant tout ces points, que l'on note $[v_0,...,v_n]$. Les points $v_i$ sont appelés les \emph{sommets} du simplexe, et les sous-simplexes obtenus par le retrait d'un ou plusieurs sommets sont appelés les \emph{faces} du simplexe.
 \end{definition}
 
 \begin{remark}
-Les simplexes possèdent des faces orientés. Par convention, l'ordre indiqué dans le nom de simplexe indique le sens des flèches. Par exemple, $[v_0,v_1]$ est un segment orienté de $v_0$ et $v_1$.
+Les simplexes possèdent des faces orientées. Par convention, l'ordre indiqué dans le nom de simplexe indique le sens des flèches. Par exemple, $[v_0,v_1]$ est un segment orienté de $v_0$ et $v_1$.
 \end{remark}
 
 \begin{exemple}
@@ -63,10 +63,10 @@ On définit le \emph{simplexe standard} par : \[\Delta^n=\left\{(t_0,...,t_n)\in
 \end{exemple}
 
 \begin{definition}
-Un $\Delta$-simplexe est un espace obtenu par une union de simplexes de différentes dimensions, auquel on identifie des faces via un homéomorphisme laissant invariant l'ordre les côtés.
+Un $\Delta$-simplexe est un espace obtenu par une union de simplexes de différentes dimensions, auquel on identifie des faces via un homéomorphisme laissant invariant l'ordre des côtés.
 \end{definition}
 
-Notons qu'il n'y a pas unicité dans la décomposition d'un espace donné en $\Delta$-simplexe. Il en existe même une infinité, en remarquant en particulier qu'un segment peut être diviser en deux autres.
+Notons qu'il n'y a pas unicité dans la décomposition d'un espace donné en $\Delta$-simplexe. Il en existe même une infinité, en remarquant en particulier qu'un segment peut être divisé en deux autres.
 
 \begin{exemple}
 Les trois Figures ci-dessous représentent les représentations, en tant que $\Delta$-complexes, du tore~$T^2$, du plan projectif $\realproj^2$ et de la bouteille de Klein.
@@ -143,18 +143,18 @@ Les trois Figures ci-dessous représentent les représentations, en tant que $\D
 \end{figure}
 \end{exemple}
 
-Les $\Delta$-complexes, construit à base de simplexes, possède une structure de groupes, menant vers le calcul d'homologie.
+Les $\Delta$-complexes, construit à base de simplexes, possèdent une structure de groupes, menant vers le calcul d'homologie.
 
 \subsubsection{Chaînes et bordures}
 Soit $X$ un $\Delta$-complexe $X$. Nous avons en plus de l'espace une représentation de ce dernier par les simplexes, disons sous forme de liste triée par dimension. Nous pouvons alors porter notre attention sur le groupe libre abélien formé des combinaisons de simplexes de même dimension, que l'on note $\Delta_n(X)$, et nommé \emph{n-chaînes}, écrit sous la forme de sommes de~$n$-simplexes.
 
-Nous utiliserons la notation $e_i^n$ pour désigner un $n$-simplexe de dimension $n$. Par extension, les  $n$-chaînes se notent $\sum_in_ie_i^n$, avec $n_i\in\bb{Z}$. Dans certains cas, il sera préférable d'utiliser la notation $\sum_in_i\sigma_i$, utilisant \emph{l'application caractéristique}~${\sigma_i:\Delta^n\to X}$ de $e_i^n$, permettant d'unifier les notations avec celles utilisées dans l'homologie singulière (voir Section \ref{sect:singular-homology}).
+Nous utiliserons la notation $e_i^n$ pour désigner un $n$-simplexe. Par extension, les  $n$-chaînes se notent~$\sum_in_ie_i^n$, avec $n_i\in\bb{Z}$. Dans certains cas, il sera préférable d'utiliser la notation $\sum_in_i\sigma_i$, utilisant \emph{l'application caractéristique}~${\sigma_i:\Delta^n\to X}$ de $e_i^n$, permettant d'unifier les notations avec celles utilisées dans l'homologie singulière~(voir Section \ref{sect:singular-homology}).
 
 \begin{exemple}
 Pour un $2$-simplexe $X=[v_0,v_1,v_2]$, nous avons :$$\Delta_1(X)=\{\alpha_0[v_1,v_2]+\alpha_1[v_0,v_2]+\alpha_2[v_0,v_1],\,\alpha_0,\alpha_1,\alpha_2\in\bb{Z}\}.$$
 \end{exemple}
 
-Nous remarquerons que les faces d'un simplexe sont des simplexes, de la même manière que les contours d'un triangles sont des segments. Autrement dit, la \emph{frontière} d'un simplexe permet de le lier avec les simplexes de dimensions inférieures.
+Nous remarquerons que les faces d'un simplexe sont des simplexes, de la même manière que les contours d'un triangle sont des segments. Autrement dit, la \emph{frontière} d'un simplexe permet de le lier avec les simplexes de dimensions inférieures.
 
 \begin{definition}
 On définit l'application bordure $\partial:[v_0,\ldots,v_n]\mapsto\sum_i(-1)^i[v_0,\ldots,\hat{v_i},\ldots,v_n]$ où $\hat{v_i}$ désigne l'omission du sommet $v_i$. Cette application s'étend par linéarité sur les $n$-chaînes, de telle sorte que l'on définisse un \emph{morphisme bordure} sur les groupes de chaînes $\partial_n:\Delta_n(X)\to\Delta_{n-1}(X)$. Cette dernière est définie sur les éléments $\sigma$ de la base de $\Delta_n(X)$ par : \[\partial_n(\sigma)=\sum_i(-1)^i\sigma|_{[v_0,...,\hat{v_i},...,v_n]}.\]
@@ -174,7 +174,7 @@ Pour $n\geq0$, $\partial_{n-1}\partial_n=0$.
 
 \subsection{Homologie}\label{sect:simpl-homology}
 
-Soit $(C_n)_n$ une famille de groupe abéliens. On dit que ces groupes sont \emph{chaînés} s'il existe une famille de morphismes $\partial_i: C_{i}\to C_{i-1}$. On appelle cela un \emph{complexe de chaînes}, représenté par le diagramme suivant :
+Soit $(C_n)_n$ une famille de groupes abéliens. On dit que ces groupes sont \emph{chaînés} s'il existe une famille de morphismes $\partial_i: C_{i}\to C_{i-1}$. On appelle cela un \emph{complexe de chaînes}, représenté par le diagramme suivant :
 
 \[\begin{tikzcd}
 \cdots\arrow[r]& C_{n+1}\arrow[r, "\partial_{n+1}"]&C_n\arrow[r,"\partial_n"]&C_{n-1}\arrow[r] & \cdots.
@@ -182,7 +182,7 @@ Soit $(C_n)_n$ une famille de groupe abéliens. On dit que ces groupes sont \emp
 Supposons que ce complexe de chaînes vérifie $\partial_n\partial_{n-1}=0$ pour tout $n$ et $\partial_0=0$. Nous en déduisons l'inclusion~$\im(\partial_{n+1})\subset\ker(\partial_n)$ qui permet de passer au quotient, et enfin définir l'\textbf{homologie}.
 
 \begin{definition}\label{def:homology}
-Le $n$-ième \emph{groupe d'homologie} d'un complexe de chaînes est défini comme étant le groupe quotient $H_n=\ker\partial_n/\im\partial_{n+1}$. Les éléments de~$\ker\partial_n$ sont nommés les \emph{cycles} et les éléments de $\partial_{n+1}$ sont appelés les \emph{bordures}. Les \emph{classes d'homologies} correspondent aux éléments de $H_n$. Deux cycles qui représentent la même classe d'homologie sont dit \emph{homologues}.
+Le $n$-ième \emph{groupe d'homologie} d'un complexe de chaînes est défini comme étant le groupe quotient $H_n=\ker\partial_n/\im\partial_{n+1}$. Les éléments de~$\ker\partial_n$ sont nommés les \emph{cycles} et les éléments de $\im\partial_{n+1}$ sont appelés les \emph{bordures}. Les \emph{classes d'homologies} correspondent aux éléments de $H_n$. Deux cycles qui représentent la même classe d'homologie sont dits \emph{homologues}.
 \end{definition}
 
 Dans le cas des $\Delta$-complexes, les complexes de chaînes sont donnés par $C_n=\Delta_n(X)$. Nous notons~$\homsimp_n(X)$ le $n$-ième groupe d'homologie \emph{simpliciale}. 
@@ -212,18 +212,18 @@ D'une part, nous avons encore $\partial_2=0$ et $\partial_0=0$. D'autre part, no
 \end{split}\]
 \end{exemple}
 
-L'homologie simpliciale est efficace lorsque les espace que l'on étudie sont simple. Nous proposons en Annexe \ref{chap:annexe-simp-homo} d'autres exemples de calculs d'homologie, dont le ruban de Möbius et le plan projectif réel.
+L'homologie simpliciale est efficace lorsque les espaces que l'on étudie sont simple. Nous proposons en Annexe \ref{chap:annexe-simp-homo} d'autres exemples de calculs d'homologie, dont le ruban de Möbius et le plan projectif réel.
 
 \begin{remark}
-Dans l'exemple précédent, les deuxeux structures de $\Delta$-complexes pour $\s{1}$ donnent les mêmes groupes d'homologies simpliciales. Il n'est pas si évident, par la définition même, que les groupes d'homologie soient indépendants de la structure de $\Delta$-complexe choisie. Même si cela est vraie, elle peut être plus facilement vérifiée par l'isomorphisme avec l'homologie singulière.
+Dans l'exemple précédent, les deux structures de $\Delta$-complexes pour $\s{1}$ donnent les mêmes groupes d'homologies simpliciales. Il n'est pas si évident, par la définition même, que les groupes d'homologie soient indépendants de la structure de $\Delta$-complexe choisie. Même si cela est vrai, elle peut être plus facilement vérifiée par l'isomorphisme avec l'homologie singulière.
 \end{remark}
 
 \section{Homologie singulière : la théorie}\label{sect:singular-homology}
 
-Désormais, nous nous intéressons à la seconde homologie, dites \emph{singulière}. Nous verrons qu'elle est plus commode pour les résultats théorique, grâce à sa définition plus légère et n'impliquant pas de construction simpliciale.
+Désormais, nous nous intéressons à la seconde homologie, dite \emph{singulière}. Nous verrons qu'elle est plus commode pour les résultats théoriques, grâce à sa définition plus légère et n'impliquant pas de construction simpliciale.
 
 \begin{definition}\label{def:homology-sing}
-Un \emph{n-simplexe singulier}\footnote{Le qualificatif "singulier" se justifie par l'autorisation à l'application est autorisée de posséder des singularités.} est une application $\sigma:\Delta^n\to X$ continue. Nous notons~$C_n(X)$ le groupe abélien libre ayant comme base l'ensemble des $n$-simplexes singulier sur l'espace $X$. 
+Un \emph{n-simplexe singulier}\footnote{Le qualificatif "singulier" se justifie car l'application est autorisée de posséder des singularités.} est une application $\sigma:\Delta^n\to X$ continue. Nous notons~$C_n(X)$ le groupe abélien libre ayant comme base l'ensemble des $n$-simplexes singulier sur l'espace $X$. 
 
 De même que pour les $\Delta$-complexes, nous appellerons \emph{n-chaîne singulière} ou seulement \emph{$n$-chaîne} un élément de~$C_n(X)$, qui s'écrit sous la forme $\sum_in_i\sigma_i$, avec~$\sigma_i$ un $n$-simplexe singulier. Nous pouvons également définir une application bordure $\partial_n:C_n(X)\to C_{n-1}(X)$ sur les $n$-chaînes, par : \[\partial_n(\sigma)=\sum_i(-1)^i\sigma|_{[v_0,\cdots,\hat{v_i},\cdots,v_n]},\] où l'on identifie  $[v_0,\cdots,\hat{v_i},\cdots,v_n]$ comme étant $\Delta^{n-1}$, tout en préservant l'ordre des sommets.
 
@@ -232,7 +232,7 @@ De même que pour l'homologie simpliciale, nous avons $\partial_n\partial_{n+1}=
 
 Nous avons fini la section sur l'homologie simpliciale par la remarque suivante : l'unicité des groupes d'homologies qu'importe la décomposition $\Delta$-complexe n'est clairement pas trivial. Dans le cas présent, aucune structure n'est utilisée pour les groupes d'homologies singuliers, à l'exception de l'espace en question. En particulier, elle est invariante par homéomorphisme, ce qui n'est pas aussi évident avec l'homologie simpliciale.
 
-Toutefois, nous noterons qu'il est impossible d'utiliser cette homologie par l'exaustif. En effet, la plupart des espaces possède une infinité de simplexes singuliers, impliquant la même remarque sur les $n$-chaînes. Mais ceci n'est pas un problème, dès lors que ce n'était pas l'objectif de cette homologie. Elle est en effet conçue pour rendre les démonstration plus agréable, comme nous le verrons par la suite.
+Toutefois, nous noterons qu'il est impossible d'utiliser cette homologie par l'exhaustif. En effet, la plupart des espaces possède une infinité de simplexes singuliers, impliquant la même remarque sur les $n$-chaînes. Mais ceci n'est pas un problème, dès lors que ce n'était pas l'objectif de cette homologie. Elle est en effet conçue pour rendre les démonstration plus agréable, comme nous le verrons par la suite.
 
 \subsection{Premières propriétés sur l'homologie singulière}
 
@@ -242,7 +242,7 @@ Nous commençons avec une proposition intuitive : l'homologie singulière d'un e
 Soit $X$ un espace, avec comme décomposition en composante connexe par arc~$(X_i)_{i\in I}$. Alors $H_n(X)\cong\oplus_{i\in I} H_n(X_i)$.
 \end{proposition}
 \begin{proof}
-Comme l'image d'un simplexe singulier est connexe par arc,  nous pouvons définir~$C_n(X)$ comme somme directe des $C_n(X_i)$. De plus, la somme directe est conservée par le morphisme de bordure puisqu'elle envoie les éléments de chaque $C_n(X_i)$ vers $C_{n-1}(X_{i})$. Il s'en suit alors que~$\ker\partial_n$ et $\im\partial_{n+1}$ se décompose en somme directe, de telle sorte qu'il en est de même pour~$H_n(X)$.
+Comme l'image d'un simplexe singulier est connexe par arc,  nous pouvons définir~$C_n(X)$ comme somme directe des $C_n(X_i)$. De plus, la somme directe est conservée par le morphisme de bordure puisqu'elle envoie les éléments de chaque $C_n(X_i)$ vers $C_{n-1}(X_{i})$. Il s'en suit alors que~$\ker\partial_n$ et $\im\partial_{n+1}$ se décomposent en somme directe, de telle sorte qu'il en est de même pour~$H_n(X)$.
 \end{proof}
 
 En particulier, lorsque l'espace possède une unique composante connexe par arc, nous tombons dans la proposition qui suit. 
@@ -253,8 +253,8 @@ Si $X$ est non vide et connexe par arc, alors $H_0(X)\cong\bb{Z}$.
 \begin{proof}
 Avant de commencer, remarquons que $\partial_0=0$, qui permet de définir le groupe d'homologie par $H_0(X)=C_0(X)/\im\partial_1$. Nous voulons montrer que ce quotient est isomorphe à $\bb{Z}$. Pour cela, on défini l'application~${\varepsilon:C_0(X)\to \bb{Z}}$ par $\varepsilon(\sum_in_i\sigma_i))=\sum_in_i$. Cette dernière est clairement un morphisme, et nous allons montrer l'égalité $\ker\varepsilon=\im\partial_1$ pour achever la preuve.
 
-Tout d'abord, ce morphisme est surjectif lorsque $X\neq\emptyset$ : pour un entier $n\in \bb{Z}$ nous pouvons associer un~1-simplexe singulier $\sigma$ tel que $\varepsilon(n\sigma)=n$. De plus, nosu avons $\im\partial_1\subset\ker\varepsilon$, par l'égalité suivante, où $\sigma$ est un 1-simplexe singulier : \[\varepsilon\partial_1(\sigma)=\varepsilon(\sigma|_{[v_1]}-\sigma|_{[v_0]})=1-1=0.\]
-Enfin, montrons l'inclusion $\ker\varepsilon\subset\im\partial_1$. Soit $\sigma\in \ker\varepsilon$, c'est à dire $\sigma=\sum_in_i\sigma_i$ avec $\sum_in_i=0$. Les $\sigma_i$ sont des points de l'espace, il est don possibel de les relier par des chemins. On défini alors~$\tau_i$ le chemin allant de $\sigma_0$ vers $\sigma_i$. Ces chemins sont en particuliers des 1-simplexes singuliers\footnote{Nous pouvons observer le lien entre le groupe fondamental et le premier groupe d'homologie.}, étant donné que $\Delta^1$ est homéomorphe à~$[0,1]$, vérifiant~$\partial_1\tau_i=\sigma_i-\sigma_0$. Nous avons donc l'égalité suivante, montrant que $\sigma\in\im\partial_1$ :\[\partial_1\left(\sum_in_i\tau_i\right)=\sum_in_i(\sigma_i-\sigma_0)=\sum_in_i\sigma_i-\sum_in_i\sigma_0=\sum_in_i\sigma_i=\sigma,\]du fait que $\sum_in_i=0$. Nous en concluons finalement que~${\ker\varepsilon\subset\im\partial_1}$.
+Tout d'abord, ce morphisme est surjectif lorsque $X\neq\emptyset$ : pour un entier $n\in \bb{Z}$ nous pouvons associer un~1-simplexe singulier $\sigma$ tel que $\varepsilon(n\sigma)=n$. De plus, nous avons $\im\partial_1\subset\ker\varepsilon$, par l'égalité suivante, où $\sigma$ est un 1-simplexe singulier : \[\varepsilon\partial_1(\sigma)=\varepsilon(\sigma|_{[v_1]}-\sigma|_{[v_0]})=1-1=0.\]
+Enfin, montrons l'inclusion $\ker\varepsilon\subset\im\partial_1$. Soit $\sigma\in \ker\varepsilon$, c'est à dire $\sigma=\sum_in_i\sigma_i$ avec $\sum_in_i=0$. Les $\sigma_i$ sont des points de l'espace, il est donc possible de les relier par des chemins. On défini alors~$\tau_i$ le chemin allant de $\sigma_0$ vers $\sigma_i$. Ces chemins sont en particuliers des 1-simplexes singuliers\footnote{Nous pouvons observer le lien entre le groupe fondamental et le premier groupe d'homologie.}, étant donné que $\Delta^1$ est homéomorphe à~$[0,1]$, vérifiant~$\partial_1\tau_i=\sigma_i-\sigma_0$. Nous avons donc l'égalité suivante, montrant que $\sigma\in\im\partial_1$ :\[\partial_1\left(\sum_in_i\tau_i\right)=\sum_in_i(\sigma_i-\sigma_0)=\sum_in_i\sigma_i-\sum_in_i\sigma_0=\sum_in_i\sigma_i=\sigma,\]du fait que $\sum_in_i=0$. Nous en concluons finalement que~${\ker\varepsilon\subset\im\partial_1}$.
 \end{proof}
 
 La prochaine proposition s'intéresse à l'homologie de l'espace $\s{0}$, le point.
@@ -263,7 +263,7 @@ La prochaine proposition s'intéresse à l'homologie de l'espace $\s{0}$, le poi
 Pour $X$ un point, nous avons $H_0(X)=\bb{Z}$ et $H_n(X)=0$ pour $n>0$.
 \end{proposition}
 \begin{proof}
-Comme $X=\{x_0\}$ est réduit à un singleton, les simplexes singuliers sont unique à dimension~$n$ donné : l'application constante, que l'on note $\sigma_n$. Ce dernier vérifie $\partial_n(\sigma)=\sum_i(-1)^i\sigma_{n-1}$, une somme de $n+1$ termes. Alors, $\partial_n(\sigma)=0$ pour $n$ impair, et $\partial_n(\sigma)=\sigma_{n-1}$, si $n$ est pair. Nous obtenons ainsi le complexe de chaînes suivant : 
+Comme $X=\{x_0\}$ est réduit à un singleton, les simplexes singuliers sont uniques à dimension~$n$ donné : l'application constante, que l'on note $\sigma_n$. Ce dernier vérifie $\partial_n(\sigma)=\sum_i(-1)^i\sigma_{n-1}$, une somme de $n+1$ termes. Alors, $\partial_n(\sigma)=0$ pour $n$ impair, et $\partial_n(\sigma)=\sigma_{n-1}$, si $n$ est pair. Nous obtenons ainsi le complexe de chaînes suivant : 
 \[\begin{tikzcd}
 \centering
 \cdots\arrow[r]&\bb{Z}\arrow[r,"\cong"]&\bb{Z}\arrow[r,"0"]&\bb{Z}\arrow[r,"\cong"]&\bb{Z}\arrow[r,"0"]&\bb{Z}\arrow[r]&0.
@@ -283,7 +283,7 @@ Il est temps d'étudier les propriétés d'invariance sur l'homologie singulièr
 Nous avons introduit l'homologie comme étant un outil algébrique et topologique plus performant que le groupe fondamental, de part sa commutativité principalement. Si tel est le cas, il semble raisonnable d'attendre de l'homologie de posséder au moins les mêmes propriétés que le groupe fondamental. Dans cette section, nous allons montrer que l'homologie est invariante par homotopie.
 
 \begin{definition}\label{def:chain-map}
-Soit $f:X\to Y$ une application entre deux espaces. Le morphisme induit sur les groupes de chaînes~$f_\#:C_n(X)\to C_n(Y)$ est défini par $f_\#(\sigma)=f\sigma:\Delta^n\to Y$, où $\sigma:\Delta^n\to X$ désigne un $n$-simplexe singulier. En étandant linéairement la définition, nous obtenons : \[f_\#\left(\sum_in_i\sigma_i\right)=\sum_in_if_\#(\sigma_i)=\sum_in_if\sigma_i.\]On appelle $f_\#$ une \emph{application de chaîne}.
+Soit $f:X\to Y$ une application entre deux espaces. Le morphisme induit sur les groupes de chaînes~$f_\#:C_n(X)\to C_n(Y)$ est défini par $f_\#(\sigma)=f\sigma:\Delta^n\to Y$, où $\sigma:\Delta^n\to X$ désigne un $n$-simplexe singulier. En étendant linéairement la définition, nous obtenons : \[f_\#\left(\sum_in_i\sigma_i\right)=\sum_in_if_\#(\sigma_i)=\sum_in_if\sigma_i.\]On appelle $f_\#$ une \emph{application de chaîne}.
 \end{definition}
 
 Avec les mêmes notations, nous avons la propriété $\partial f_\#=f_\#\partial$, du fait que l'on étende linéairement l'application $f$. Nous obtenons ainsi le \emph{diagramme commutatif} suivant :
@@ -308,7 +308,7 @@ Nous pouvons facilement montrer que l'application induite sur les groupes d'homo
     \end{tikzcd}
 \end{itemize}
 
-En temps que foncteur covariant, le morphisme induit vérifie l'invariance par homotopie, énoncer dans le théorème suivant. %Attention, la démonstration n'est pas si simple, notamment car elle utilise des outils eclusivement créé pour la démonstration.
+En temps que foncteur covariant, le morphisme induit vérifie l'invariance par homotopie, énoncé dans le théorème suivant. %Attention, la démonstration n'est pas si simple, notamment car elle utilise des outils eclusivement créé pour la démonstration.
 
 \begin{theorem}
 Si deux applications $f,g:X\to Y$ sont homotopes, alors elles induisent le même morphisme de groupes $f_\ast=g_\ast:H_n(X)\to H_n(Y)$.
@@ -418,15 +418,15 @@ Notre but est de calculer les groupes d'homologies de $\s{n}$. Bien que nous ne 
 Nous rappelons que par définition, l'homologie relative étudie l'espace $X$ "modulo" $A$. Cela signifie entre autres que l'on fait abstraction de l'intérieur de $A$, pour se concentrer exclusivement sur son voisinage. Le théorème qui suit en est la formalisation.
 
 \begin{theorem}\label{th:excision}
-Soit $Z\subset A\subset X$ tel que $adh(Z)\subset int(A)$. Alors, ${H_n(X,A)\cong H_n(X\setminus Z,A\setminus Z)}$.
+Soient $Z\subset A\subset X$ tels que $adh(Z)\subset int(A)$. Alors, ${H_n(X,A)\cong H_n(X\setminus Z,A\setminus Z)}$.
 
-Il en découle que pour $A,B\subset X$ tel que $X=int(A)\cup int(B)$, l'inclusion $(B,A\cap B)\hookrightarrow(X,A)$ induit un isomorphisme entre~$H_n(X,A)$ et~$H_n(B, A\cap B)$.
+Il en découle que pour $A,B\subset X$ tels que $X=int(A)\cup int(B)$, l'inclusion $(B,A\cap B)\hookrightarrow(X,A)$ induit un isomorphisme entre~$H_n(X,A)$ et~$H_n(B, A\cap B)$.
 \end{theorem}
 \begin{remark}
 Pour passer d'un résultat à l'autre, il suffit de prendre $Z=X\setminus B$.
 \end{remark}
 \begin{proof}
-Traitons tout d'abord le cas où $X$ est un $\Delta$-complexe. On s'intéresse dans ce cas à la composition $\Phi:\Delta_n(X\setminus Z)\to \Delta_n(X)\to \Delta_n(X,A)$. Etant donné que~$\Delta_n(X,A)=\Delta_n(X)/\Delta_n(A)$, une base de cet espace est donné par les éléments exclus de $A$, tout comme les éléments d'une base de~$\Delta_n(X\setminus Z)$. De plus, son noyau est réduit aux éléments de la base vivant dans~$A$ mais pas dans $Z$, ce qui veut dire que~$\ker\Phi=\Delta_n(A\setminus Z)$. Nous en déduisons l'isomorphisme souhaité.
+Traitons tout d'abord le cas où $X$ est un $\Delta$-complexe. On s'intéresse dans ce cas à la composition $\Phi:\Delta_n(X\setminus Z)\to \Delta_n(X)\to \Delta_n(X,A)$. Étant donné que~$\Delta_n(X,A)=\Delta_n(X)/\Delta_n(A)$, une base de cet espace est donné par les éléments exclus de $A$, tout comme les éléments d'une base de~$\Delta_n(X\setminus Z)$. De plus, son noyau est réduit aux éléments de la base vivant dans~$A$ mais pas dans $Z$, ce qui veut dire que~$\ker\Phi=\Delta_n(A\setminus Z)$. Nous en déduisons l'isomorphisme souhaité.
 
 \bigskip Le cas général n'est pas aussi simple, mais nous souhaitons nous y ramener. Il est nécessaire de procéder à une subdivision des simplexes singuliers en morceaux qui vivent soit dans $A$ soit dans $X\setminus Z$. Cela donne un recouvrement $\mathcal{U}$ de $X$, puisque les simplexes sont compacts. On défini $C_n^\mathcal{U}(X)$ le groupe libre des $n$-simplexes singuliers appartenant à $\mathcal{U}$. Notre objectif est de montrer que l'inclusion $C_n^\mathcal{U}(X)\hookrightarrow C_n(X)$ induit un isomorphisme sur les groupes d'homologies~${H_n^\mathcal{U}(X)\cong H_n(X)}$. Nous verrons en fin de démonstration comment cela permet de conclure.
 
@@ -435,16 +435,16 @@ La subdivision se fait par l'introduction de deux applications sur les chaînes,
 \item pour $f:X\to Y$, nous avons $Sf_\#=f_\#S$ et $Tf_\#=f_\#T$,
 \item pour tout $\sigma:\Delta^n\to X$, il existe $m\in\bb{N}$ tel que $S^m\sigma\in C_n^\mathcal{U}(X)$.
 \end{enumerate} 
-Il est possible de trouver leur construction dans \cite[][Proposition~2.21]{Hatcher}, nous nous contenterons de l'admettre ici. Montrons que l'inclusion induise un isomorphisme $i_\ast$ entre $H_n^\mathcal{U}(X)$ et $H_n(X)$. Soit $[c]\in H_n(X)$, c'est à dire~$c\in C_n(X)$ tel que $\partial c=0$. Il existe $m$ tel que $S^mc\in C_n^\mathcal{U}(X)$. Nous avons les deux égalités suivantes : \[\partial T^mc+T^m\partial c=\partial T_mc=c-S^mc,\quad \partial S^mc=S^m\partial c=0.\]On en déduit alors que $S^mc$ est un cycle, d'où $S^mc\in H_n^\mathcal{U}(X)$. On en déduit dès lors que $i_\ast$ est surjectif. Il nous reste à montrer l'injectivité par l'égalité $i_\ast([c])=0$, c'est à dire qu'il existe $b\in C_{n+1}(X)$ tel que $c=\partial b$. En notant $b'=S^mb+T^mc\in C_{n+1}^\mathcal{U}(X)$, nous avons : \[\partial b'=\partial S^mb+\partial T^mc=S^mc+c-S^mc-T^m\partial c=c.\]Nous en concluons alors que $i_\ast$ est un isomorphisme.
+Il est possible de trouver leur construction dans \cite[][Proposition~2.21]{Hatcher}, nous nous contenterons de l'admettre ici. Montrons que l'inclusion induit un isomorphisme $i_\ast$ entre $H_n^\mathcal{U}(X)$ et $H_n(X)$. Soit $[c]\in H_n(X)$, c'est à dire~$c\in C_n(X)$ tel que $\partial c=0$. Il existe $m$ tel que $S^mc\in C_n^\mathcal{U}(X)$. Nous avons les deux égalités suivantes : \[\partial T^mc+T^m\partial c=\partial T_mc=c-S^mc,\quad \partial S^mc=S^m\partial c=0.\]On en déduit alors que $S^mc$ est un cycle, d'où $S^mc\in H_n^\mathcal{U}(X)$. On en déduit dès lors que $i_\ast$ est surjectif. Il nous reste à montrer l'injectivité par l'égalité $i_\ast([c])=0$, c'est à dire qu'il existe $b\in C_{n+1}(X)$ tel que $c=\partial b$. En notant $b'=S^mb+T^mc\in C_{n+1}^\mathcal{U}(X)$, nous avons : \[\partial b'=\partial S^mb+\partial T^mc=S^mc+c-S^mc-T^m\partial c=c.\]Nous en concluons alors que $i_\ast$ est un isomorphisme.
 
-\bigskip Montrons comment l'isomorphisme $i_\ast:H_n^\mathcal{U}(X)\to H_n(X)$ permet de conclure. D'une part, on remarquera que $\mathcal{U}=\{int(A),X\setminus Z\}$ est un recouvrement car $int(A)\cup int(X\setminus Z)=int(A)\cup X\setminus int(Z)$. De même que pour les $\Delta$-complexes, on s'intéresse à la composition suivante :\[C_n(X\setminus Z)\to C_n^\mathcal{U}(X)\to C_n^\mathcal{U}(X)/C_n^\mathcal{U}(A).\]Tout comme nous l'avons montrer avec les $\Delta$-complexes, nous avons l'isomorphisme $H_n(X\setminus Z)\cong H_n^\mathcal{U}(X, A)$. Avec $i_\ast$, nous avons l'isomorphisme $H_n^\mathcal{U}(X, A)\cong H_n(X,A)$. La preuve s'achève en combinant ses deux isomorphismes.
+\bigskip Montrons comment l'isomorphisme $i_\ast:H_n^\mathcal{U}(X)\to H_n(X)$ permet de conclure. D'une part, on remarquera que $\mathcal{U}=\{int(A),X\setminus Z\}$ est un recouvrement car $int(A)\cup int(X\setminus Z)=int(A)\cup X\setminus int(Z)$. De même que pour les $\Delta$-complexes, on s'intéresse à la composition suivante :\[C_n(X\setminus Z)\to C_n^\mathcal{U}(X)\to C_n^\mathcal{U}(X)/C_n^\mathcal{U}(A).\]Tout comme nous l'avons montré avec les $\Delta$-complexes, nous avons l'isomorphisme $H_n(X\setminus Z)\cong H_n^\mathcal{U}(X, A)$. Avec $i_\ast$, nous avons l'isomorphisme $H_n^\mathcal{U}(X, A)\cong H_n(X,A)$. La preuve s'achève en combinant ces deux isomorphismes.
 \end{proof}
 
 \subsubsection{Applications de l'excision}
 
 La première conséquence de ce théorème s'applique aux quotient $X/A$.
 
-On dit d'un couple $(X,A)$ qu'elle est une \emph{bonne paire} si $A$ est un sous-espace fermé non vide, tel qu'il existe un voisinage dans $X$ qui se rétracte par déformation en $A$.
+On dit d'un $(X,A)$ qu'il est une \emph{bonne paire} si $A$ est un sous-espace fermé non vide, tel qu'il existe un voisinage dans $X$ qui se rétracte par déformation en $A$.
 
 \begin{proposition}
 Si $(X,A)$ est une bonne paire, alors l'application quotient $q:(X,A)\to (X/A,A/A)$ induit un isomorphisme~$q_\ast$ entre~$H_n(X,A)$ et~$H_n(X/A,A/A)$ pour tout $n$.
@@ -462,8 +462,8 @@ Nous pouvons, avec cette proposition, achever le calcul de l'homologie de la sph
 \begin{exemple}
 Pour rappel, nous avons montré dans l'exemple précédent que~${\Tilde{H}_k(D^n,\partial D^n)\cong \Tilde{H}_{k-1}(\s{n-1})}$.
 De plus, $(D_n,\partial D_n)$ est une bonne paire. Il est clair que $\partial D_n$ est un fermé non vide, et $U=\{x\in D_n, \|x\|>\frac{1}{2}\}$ est un voisinage ouvert qui se rétracte par déformation en celui-ci. Nous pouvons alors appliquer la proposition précédente dans notre cas, qui donne la relation $\Tilde{H}_k(\s{n})\cong \Tilde{H}_{k-1}(\s{n-1})$. En sachant que $\Tilde{H}_0(\s{0})\cong\bb{Z}$ et~$\Tilde{H}_k(\s{0})=0$ pour $k>0$ (car $\s{0}=\{x_0,x_1\}$), nous obtenons par récurrence le résultat suivant : \[ \Tilde{H}_k(\s{n})\cong\left\{\begin{matrix}
-\bb{Z}&si\ k=n\\
-0&sinon.
+\bb{Z}&\text{si}\ k=n\\
+0&\text{sinon}.
 \end{matrix}\right.\]
 \end{exemple}
 
@@ -489,7 +489,7 @@ Pour une variété $V$, l'homologie locale de $V$ en $x\in V$ permet de calculer
 
 \subsection{Simpliciale et singulière : même combat}
 
-Jusqu'à présent, nous avons confronter l'homologie simpliciale et la singulière. La première possède un avantage calculatoire mais une limite dans l'usage théorique, alors que la seconde nous a permit d'obtenir de nombreux résultats importants, mais l'usage pratique en est limité. Désormais, nous allons montrer qu'elles sont fondamentalement identiques, dans le sens où elles sont isomorphes entre elles. Autrement dit, il est possible d'obtenir le meilleur des deux mondes. En particulier, cela veut dire que les groupes d'homologie simpliciales est indépendante de la structure $\Delta$-complexe choisie.
+Jusqu'à présent, nous avons confronté l'homologie simpliciale et la singulière. La première possède un avantage calculatoire mais une limite dans l'usage théorique, alors que la seconde nous a permit d'obtenir de nombreux résultats importants, mais son usage pratique en est limité. Désormais, nous allons montrer qu'elles sont fondamentalement identiques, dans le sens où elles sont isomorphes entre elles. Autrement dit, il est possible d'obtenir le meilleur des deux mondes. En particulier, cela veut dire que les groupes d'homologie simpliciales sont indépendantes de la structure $\Delta$-complexe choisie.
 
 \bigskip Nous définissons l'homologie simpliciale relative de la même manière que pour l'homologie relative singulière. Pour $(X,A)$ une bonne paire de $\Delta$-complexes, il existe un morphisme canonique $\Delta_n(X,A)\to C_n(X,A)$, envoyant chaque simplexe sur leur application caractéristique~$\sigma$. Cela permet entre autre de définir un morphisme $\homsimp_n(X,A)\to H_n(X,A)$. 
 
@@ -564,7 +564,7 @@ Pour tout espace $X$ et point $x_0\in X$ et en considérant les lacets comme des
 \end{proposition}
 
 \begin{proof}
-Nous commençons la démonstration par l'élément neutre, le chemin constant $c$ : montrons que son image est envoyé sur le neutre du groupe d'homologie 0. Pour cela, il suffit de montrer que $c$ est homologue à une bordure. Soit $c_2$ le 2-simplexe constant : chacune de ces bordures correspond à $c$ en tant que simplexe. Par conséquent, sa bordure vaut $\partial c_2=c-c+c=c$, c'est à dire~$c\in\im\partial$, ce qui nous permet de conclure.
+Nous commençons la démonstration par l'élément neutre, le chemin constant $c$ : montrons que son image est envoyée sur le neutre du groupe d'homologie 0. Pour cela, il suffit de montrer que $c$ est homologue à une bordure. Soit $c_2$ le 2-simplexe constant : chacune de ces bordures correspond à $c$ en tant que simplexe. Par conséquent, sa bordure vaut $\partial c_2=c-c+c=c$, c'est à dire~$c\in\im\partial$, ce qui nous permet de conclure.
 
 \begin{figure}[H]
 \centering
@@ -610,20 +610,20 @@ Nous commençons la démonstration par l'élément neutre, le chemin constant $c
 \end{subfigure}
 \end{figure}
 
-Ensuite, montrons que l'image ne dépende pas du représentant de la classe d'homotopie. Pour cela, montrons que pour $\gamma,\gamma'$ deux chemins homotopes par $\gamma_t$, ils sont également homologues. Nous considérons pour cela les deux 2-simplexes $\sigma_1=[\gamma(0),\gamma(1),\gamma'(1)]$ et~$\sigma_2=[\sigma(0), \sigma'(0),\sigma'(1)]$, de telle sorte que l'on obtienne la Figure \ref{tkz:homotopy-as-homology}. Par égalité des extrémités, le calcul de la bordure donne : \[\begin{split}
+Ensuite, montrons que l'image ne dépend pas du représentant de la classe d'homotopie. Pour cela, montrons que pour $\gamma,\gamma'$ deux chemins homotopes par $\gamma_t$, ils sont également homologues. Nous considérons pour cela les deux 2-simplexes $\sigma_1=[\gamma(0),\gamma(1),\gamma'(1)]$ et~$\sigma_2=[\sigma(0), \sigma'(0),\sigma'(1)]$, de telle sorte que l'on obtienne la Figure \ref{tkz:homotopy-as-homology}. Par égalité des extrémités, le calcul de la bordure donne : \[\begin{split}
 \partial(\sigma_1-\sigma_2)&=[\gamma(1),\gamma'(1)]-[\gamma(0),\gamma'(1)]+\gamma-\gamma'+[\gamma(0),\gamma'(1)]-[\gamma(0),\gamma'(0)]\\
 &=0-[\gamma(0),\gamma'(1)]+\gamma-\gamma'+[\gamma(0),\gamma'(1)]-0\\
 &=\gamma-\gamma'.
 \end{split}\]Nous avons alors $\gamma-\gamma'\sim 0$, ce qui nous permet de conclure que $\gamma\sim \gamma'$.
 
-\bigskip Il reste à montrer que l'application est compatible avec les lois de groupe. Soient deux chemins $\gamma,\gamma'$ tel que $\gamma(1)=\gamma'(0)$. On considère le 2-simplexe $\sigma$ dont les restrictions aux arêtes correspondent respectivement à $\sigma,\sigma'$, et $\sigma\cdot \sigma'$ (voir Figure \ref{tkz:simplex-for-cdot}). Le calcul du bord donne $\partial \sigma=\gamma-\gamma\cdot\gamma'+\gamma'$, ce qui nous permet de conclure que $\gamma\cdot\gamma'\sim \gamma+\gamma'$.
+\bigskip Il reste à montrer que l'application est compatible avec les lois de groupe. Soient deux chemins $\gamma,\gamma'$ tels que $\gamma(1)=\gamma'(0)$. On considère le 2-simplexe $\sigma$ dont les restrictions aux arêtes correspondent respectivement à $\sigma,\sigma'$, et $\sigma\cdot \sigma'$ (voir Figure \ref{tkz:simplex-for-cdot}). Le calcul du bord donne $\partial \sigma=\gamma-\gamma\cdot\gamma'+\gamma'$, ce qui nous permet de conclure que $\gamma\cdot\gamma'\sim \gamma+\gamma'$.
 
 Enfin, montrons que l'application est compatible avec l'inverse. Soit $\gamma$ un chemin de $X$. Il suffit de montrer que $\overline{\gamma}\sim -\gamma$. Par la compatibilité de la loi, nous avons $\gamma\cdot\overline{\gamma}\sim \gamma+\overline{\gamma}$. De plus, par définition de l'inverse, nous avons $\gamma\cdot\overline{\gamma}\sim c\sim 0$. Nous pouvons en conclure que $\overline{\gamma}\sim -\gamma$. 
 
 \bigskip La démonstration est identique pour les lacets. Nous en concluons alors que l'application est un morphisme bien défini.
 \end{proof}
 
-Désormais, il nous reste à montrer que ce morphisme induise un isomorphisme, entre l'abélianisé du groupe fondamental et le proemier groupe d'homologie.
+Désormais, il nous reste à montrer que ce morphisme induise un isomorphisme, entre l'abélianisé du groupe fondamental et le premier groupe d'homologie.
 
 \subsubsection{Isomorphisme}
 
@@ -633,22 +633,22 @@ La Définition \ref{def:abelian} introduit les termes commutateur, groupe dériv
 Le morphisme $h:\pi_1(X,x_0)\to H_1(X)$, qui à une classe d'homotopie $[\gamma]_{\pi_1}$ renvoie la classe d'homologie $[\gamma]_H$, est surjectif et induit un isomorphisme entre l'abélianisé de $\pi_1(X,x_0)$ et~$H_1(X)$, pour tout espace $X$ connexe par arc, et $x_0\in X$.
 \end{theorem}
 
-Intuitivement, la surjectivité se démontre en construisant un lacet pour tout 1-simplexe en ajoutant deux chemins, reliant les extrémités du simplexe au point $x_0$. Pour la suite, il suffira de montrer l'égalité entre le noyau de $h$ est le groupe dérivé $[\pi_1,\pi_1]$ du groupe fondamental. Bien qu'il soit facile de vérifier que le groupe dérivé est inclut dans le noyau, l'autre inclusion est bien moins évidente.
+Intuitivement, la surjectivité se démontre en construisant un lacet pour tout 1-simplexe en ajoutant deux chemins, reliant les extrémités du simplexe au point $x_0$. Pour la suite, il suffira de montrer que le noyau de $h$ est le groupe dérivé $[\pi_1,\pi_1]$ du groupe fondamental. Bien qu'il soit facile de vérifier que le groupe dérivé est inclus dans le noyau, l'autre inclusion est bien moins évidente.
 
 \begin{proof}
 Tout d'abord, montrons que $h$ est surjectif, c'est à dire qu'à tout 1-simplexe on peut associer un lacet.
-Soit $[\sigma]\in H_1(X)$, avec $\sigma$ un 1-cycle, tel que $\sigma=\sum_in_i\sigma_i$, pour $\sigma_i:[0,1]\to X$ des 1-simplexes. Étant donné que $\sigma$ est un cycle, nous avons : \[0=\partial\sigma=\sum_in_i\partial\sigma_i=\sum_in_i\big(\sigma_i(1)-\sigma_i(0)\big)=\sum_{p\in S}m_pp,\]avec $S=\{\sigma_i(0),\sigma_i(1),\forall i\}$. La dernière égalité implique que $m_p=0$ pour tout~$p\in S$. Nous pouvons supposer, par continuité de $\sigma$, que les $\sigma_i$ sont ordonnés de telle sorte que $\sigma_i(1)=\sigma_{i+1}(0)$. Comme~$X$ est connexe par arc, nous pouvons construire un chemin entre $x_0$ et $p\in X$, que nous noterons $\beta_p$. Ainsi, nous pouvons construire un lacet parcourant $\sigma_i$, par $\eta_i=\beta_{\sigma_i(0)}\cdot\sigma_i\cdot\overline{\beta_{\sigma_i(1)}}$. En choisissant $\beta_{\sigma_i(1)}=\beta_{\sigma_{i+1}(0)}$, la concaténation de deux lacets consécutifs donne~$\eta_i\cdot\eta_{i+1}\simeq \beta_{\sigma_i(0)}\cdot\sigma_i\cdot\sigma_{i+1}\cdot\overline{\beta_{\sigma_{i+1}(1)}}$. En prodédant de même sur tout les $\sigma_i$, nous pouvons construire le lacet~$\prod_i\eta_i^{n_i}$ ayant comme image par $h$ : \[\begin{split}
+Soit $[\sigma]\in H_1(X)$, avec $\sigma$ un 1-cycle, tel que $\sigma=\sum_in_i\sigma_i$, pour $\sigma_i:[0,1]\to X$ des 1-simplexes. Étant donné que $\sigma$ est un cycle, nous avons : \[0=\partial\sigma=\sum_in_i\partial\sigma_i=\sum_in_i\big(\sigma_i(1)-\sigma_i(0)\big)=\sum_{p\in S}m_pp,\]avec $S=\{\sigma_i(0),\sigma_i(1),\forall i\}$. La dernière égalité implique que $m_p=0$ pour tout~$p\in S$. Nous pouvons supposer, par continuité de $\sigma$, que les $\sigma_i$ sont ordonnés de telle sorte que $\sigma_i(1)=\sigma_{i+1}(0)$. Comme~$X$ est connexe par arc, nous pouvons construire un chemin entre $x_0$ et $p\in X$, que nous noterons $\beta_p$. Ainsi, nous pouvons construire un lacet parcourant $\sigma_i$, par $\eta_i=\beta_{\sigma_i(0)}\cdot\sigma_i\cdot\overline{\beta_{\sigma_i(1)}}$. En choisissant $\beta_{\sigma_i(1)}=\beta_{\sigma_{i+1}(0)}$, la concaténation de deux lacets consécutifs donne~$\eta_i\cdot\eta_{i+1}\simeq \beta_{\sigma_i(0)}\cdot\sigma_i\cdot\sigma_{i+1}\cdot\overline{\beta_{\sigma_{i+1}(1)}}$. En procédant de même sur tout les $\sigma_i$, nous pouvons construire le lacet~$\prod_i\eta_i^{n_i}$ ayant comme image par $h$ : \[\begin{split}
 h\Bigg(\Big[\prod_i\eta_i^{n_i}\Big]_{\pi_1}\Bigg)&=\Big[\sum_in_i\eta_i\Big]_H\\
 &=\Big[\sum_in_i\big(\beta_{\sigma_i(0)}+\sigma_i-\beta_{\sigma_i(1)}\big)\Big]_H\\
 &=\Big[\sum_in_i\sigma_i+\sum_in_i(\beta_{\sigma_i(0)}-\beta_{\sigma_i(1)})\Big]_H\\
 &=\Big[\sigma+\sum_{p\in S}m_p\beta_p\Big]_H=[\sigma]_H.
 \end{split}\]Autrement dit, à une classe $[\sigma]\in H_1(X)$, on peut associer une classe de lacet qui a pour image $[\sigma]$ par $h$, ce qui démontre bien la surjectivité.
 
-\bigskip Ensuite, montrons l'égalité entre le noyau et le groupe dérivé $[\pi_1,\pi_1]$, par double inclusion. Comme rappelé sous la Définition \ref{def:abelian}, les mots du groupe dérivé s'exprime sous forme de produit, dont la somme des puissances de chaque terme est nulle. Comme $H_1(X)$ est abélien, il est clair que chaque mot du groupe dérivé est envoyé sur 0, impliquant $[\pi_1,\pi_1]\subset \ker h$. Il nous reste à montrer l'inclusion $\ker h\subset [\pi_1,\pi_1]$.
+\bigskip Ensuite, montrons l'égalité entre le noyau et le groupe dérivé $[\pi_1,\pi_1]$, par double inclusion. Comme rappelé sous la Définition \ref{def:abelian}, les mots du groupe dérivé s'expriment sous forme de produit, dont la somme des puissances de chaque terme est nulle. Comme $H_1(X)$ est abélien, il est clair que chaque mot du groupe dérivé est envoyé sur 0, impliquant $[\pi_1,\pi_1]\subset \ker h$. Il nous reste à montrer l'inclusion $\ker h\subset [\pi_1,\pi_1]$.
 
  Soit $[\gamma]_{\pi_1}\in\ker h$, ce qui veut dire que le 1-simplexe associé est un bord dans $C_1(X)$. Il existe alors un~2-simplexe~$\sigma=\sum_in_i\sigma_i$ tel que $\partial\sigma$ corresponde à $\gamma$ en tant que simplexe. En notant $\partial\sigma_i=\lambda_i-\mu_i+\nu_i$ où ces derniers désignent des 1-simplexes, nous obtenons l'égalité : \[\gamma=\partial\left(\sum_in_i\sigma_i\right)=\sum_in_i\partial\sigma_i=\sum_in_i(\lambda_i-\mu_i+\nu_i).\]
 
-Reprenons la construction de lacet à partir de 1-simplexe, que nous avons introduit en début de démonstration. On considère $\beta_{\lambda_i(0)}\cdot\lambda_i\cdot\overline{\beta_{\lambda_i(1)}}$, idem pour $\mu_i$ et $\nu_i$, et on note $\eta_i$ la concaténation de ces trois lacets~(voir Figure \ref{fig:eta_i}) :\[\eta_i=\big(\beta_{\lambda_i(0)}\cdot\lambda_i\cdot\overline{\beta_{\lambda_i(1)}}\big)\cdot\big(\beta_{\mu_i(1)}\cdot\overline{\mu_i}\cdot\overline{\beta_{\mu_i(0)}}\big)\cdot\big(\beta_{\nu_i(0)}\cdot\nu_i\cdot\overline{\beta_{\nu_i(1)}}\big).\]Le lacet $\eta_i$ est le bord d'un 2-simplexe singulier, donc sa classe est nulle dans $H_1(X)$. On remarquera de plus que $\eta_i$ est un produit de commutateur d'une part avec les conjugués $\beta_p$, et d'autres part avec les 1-simplexes qui forment la bordure de $\sigma_i$. Nous pouvons en déduire $\eta_i$ appartient au groupe dérivé, et par stabilité par produit nous avons $\prod_i\eta_i^{n_i}$ dans le groupe dérivé. D'autre part, par construction même des $\eta_i$, nous avons égalité des classes dh'homotopies $[\gamma]_{\pi_1}=\left [\prod_i\eta_i^{n_i}\right ]$.
+Reprenons la construction de lacet à partir de 1-simplexe, que nous avons introduit en début de démonstration. On considère $\beta_{\lambda_i(0)}\cdot\lambda_i\cdot\overline{\beta_{\lambda_i(1)}}$, idem pour $\mu_i$ et $\nu_i$, et on note $\eta_i$ la concaténation de ces trois lacets~(voir Figure \ref{fig:eta_i}) :\[\eta_i=\big(\beta_{\lambda_i(0)}\cdot\lambda_i\cdot\overline{\beta_{\lambda_i(1)}}\big)\cdot\big(\beta_{\mu_i(1)}\cdot\overline{\mu_i}\cdot\overline{\beta_{\mu_i(0)}}\big)\cdot\big(\beta_{\nu_i(0)}\cdot\nu_i\cdot\overline{\beta_{\nu_i(1)}}\big).\]Le lacet $\eta_i$ est le bord d'un 2-simplexe singulier, donc sa classe est nulle dans $H_1(X)$. On remarquera de plus que $\eta_i$ est un produit de commutateur d'une part avec les conjugués $\beta_p$, et d'autres part avec les 1-simplexes qui forment la bordure de $\sigma_i$. Nous pouvons en déduire $\eta_i$ appartient au groupe dérivé, et par stabilité par produit nous avons $\prod_i\eta_i^{n_i}$ dans le groupe dérivé. D'autre part, par construction même des $\eta_i$, nous avons égalité des classes d'homotopies $[\gamma]_{\pi_1}=\left [\prod_i\eta_i^{n_i}\right ]$.
 
 En regroupant ces deux arguments, nous pouvons en conclure que $[\gamma]_{\pi_1}\in [\pi_1,\pi_1]$.
 \end{proof}
@@ -683,4 +683,4 @@ En regroupant ces deux arguments, nous pouvons en conclure que $[\gamma]_{\pi_1}
 
 %phrase de conclusion
 
-Au cours de cette section, nous avons pu introduire l'homologie simpliciale et l'homologie singulière, ainsi que leur équivalent relatives. Nous avons explorer leurs propriétés, comme l'invariance par homotopie ou l'excision. Nous avons également montré que ces deux homologies sont identiques, et que leur premiers groupes sont l'abélianisé du groupe fondamental. Pour la prochaine section, nous nous tournerons sur une troisième homologie que nous introduirons.
+Au cours de cette section, nous avons pu introduire l'homologie simpliciale et l'homologie singulière, ainsi que leurs équivalents relatifs. Nous avons exploré leurs propriétés, comme l'invariance par homotopie ou l'excision. Nous avons également montré que ces deux homologies sont identiques, et que leurs premiers groupes sont l'abélianisé du groupe fondamental. Pour la prochaine section, nous nous tournerons vers une troisième homologie que nous introduirons.

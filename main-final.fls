@@ -575,6 +575,8 @@ INPUT ./chapters/chap3 homologies/part1.tex
 INPUT ./chapters/chap3 homologies/part1.tex
 INPUT chapters/chap3 homologies/part1.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0700.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0500.tfm
 INPUT ./chapters/chap3 homologies/part2.tex
 INPUT ./chapters/chap3 homologies/part2.tex
 INPUT ./chapters/chap3 homologies/part2.tex
@@ -590,8 +592,6 @@ INPUT ./chapters/chap3 homologies/cell-homology.tex
 INPUT ./chapters/chap3 homologies/cell-homology.tex
 INPUT ./chapters/chap3 homologies/cell-homology.tex
 INPUT chapters/chap3 homologies/cell-homology.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0700.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0500.tfm
 INPUT ./chapters/annexes/simplicial-computation.tex
 INPUT ./chapters/annexes/simplicial-computation.tex
 INPUT ./chapters/annexes/simplicial-computation.tex

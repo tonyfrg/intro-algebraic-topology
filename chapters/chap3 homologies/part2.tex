@@ -2,9 +2,9 @@
 
 \section{Homologie cellulaire : la pratique}
 
-L'\emph{homologie cellulaire} est probablement l'homologie la plus utilisée en pratique, lors des calculs. Contrairement à l'homologie singulière, elle est calculable de manière algorithmique. Elle est aussi plus efficace que l'homologie simpliciale car elle est effective sur une plus grande quantité d'espaces : les \emph{complexes cellulaires}, ou CW-complex en anglais. En effet, ces espaces sont plus permissifs que les $\Delta$-complexes dans leur construction, contenant ces derniers.
+L'\emph{homologie cellulaire} est probablement l'homologie la plus utilisée en pratique, lors des calculs. Contrairement à l'homologie singulière, elle est calculable de manière algorithmique. Elle est aussi plus efficace que l'homologie simpliciale car elle est effective sur une plus grande quantité d'espaces : les \emph{complexes cellulaires}, ou CW-complex en anglais. En effet, ces espaces sont plus permissifs que les $\Delta$-complexes dans leur construction, et contiennent ces derniers.
 
-\bigskip Pour définir l'homologie cellulaire, nous devons dans un premier temps définir les complexes cellulaires, pour ensuite introduire le concept de degré d'une application sur $\s{n}$. Ce degré nous permettra de démontrer le théorème de Brouwer, mais également de définir le dégré local. Ce sera ce dernier qui pourra nous permettre de calculer les groupes d'homologies cellulaires sur les complexes cellulaires. Nous finirons la section sur quelques exemples pratiques.
+\bigskip Pour définir l'homologie cellulaire, nous devons dans un premier temps définir les complexes cellulaires, pour ensuite introduire le concept de degré d'une application sur $\s{n}$. Ce degré nous permettra de démontrer le théorème de Brouwer, mais également de définir le degré local. Ce sera ce dernier qui pourra nous permettre de calculer les groupes d'homologies cellulaires sur les complexes cellulaires. Nous finirons la section sur quelques exemples pratiques.
 
 \subsection{Qu'est-ce qu'un complexe cellulaire ?}
 
@@ -14,7 +14,7 @@ Pour comprendre la construction d'un complexe cellulaire, nous commençons avec 
 En tant que complexe cellulaire, voici comment il est possible de construire le tore $T^2$ :
 \begin{enumerate}
     \item On commence par prendre un point, que l'on appelle 0-cellule ;
-    \item On considère ensuite deux cercles, appelé 1-cellule : le premier faisant le tour horizontalement, et le second verticalement. Ces cercles "attachent" le point à lui-même ;
+    \item On considère ensuite deux cercles, appelés 1-cellules : le premier faisant le tour horizontalement, et le second verticalement. Ces cercles "attachent" le point à lui-même ;
     \item On considère une 2-cellule, qui consiste à recouvrir le tore entièrement. Intuitivement, c'est comme si nous déroulions le cercle vertical tout le long du tore, en suivant le cercle horizontal.
 \end{enumerate}
 \begin{figure}[H]
@@ -36,12 +36,12 @@ On commence avec un ensemble discret $X^0$, des points, que l'on appelle 0-cellu
 Intuitivement, on attache chaque $(n-1)$-cellules avec une $n$-cellule. Avec l'exemple du tore, la 2-cellule permet de rattacher les deux cercles.
 
 \begin{exemple}
-Les complexes cellulaires peuvent être définis de manière intrinsèque avec le polygone fondamental. Dans cette configuration, les sommets sont des~0-cellules, les arêtes des 1-cellules, les faces des 2-cellules, et ainsi de suite. Ainsi, le ruban de Möbius et le plan projectif réel sont des complexes cellulaires. Nous pouvons aussi généraliser ceci à des polygones qui ne sont pas représentable en~2 ou 3 dimensions. Nous pouvons notamment citer le tore à $n$ dimensions, les espaces projectifs réels, et les espaces projectifs complexes.
+Les complexes cellulaires peuvent être définis de manière intrinsèque avec le polygone fondamental. Dans cette configuration, les sommets sont des~0-cellules, les arêtes des 1-cellules, les faces des 2-cellules, et ainsi de suite. Ainsi, le ruban de Möbius et le plan projectif réel sont des complexes cellulaires. Nous pouvons aussi généraliser ceci à des polygones qui ne sont pas représentables en~2 ou 3 dimensions. Nous pouvons notamment citer le tore à $n$ dimensions, les espaces projectifs réels, et les espaces projectifs complexes.
 \end{exemple}
 
 \subsection{Le degré}
 
-Une application $f:\s{n}\to \s{n}$ induit un morphisme sur les groupes d'homologies. On rappelle dans ce cas que seul le~$n$-ième groupe d'homologie est isomorphe à $\bb{Z}$, les autres sont tous trivaux.
+Une application $f:\s{n}\to \s{n}$ induit un morphisme sur les groupes d'homologies. On rappelle dans ce cas que seul le~$n$-ième groupe d'homologie est isomorphe à $\bb{Z}$, les autres sont tous triviaux.
 
 \begin{proposition}
 Un morphisme $\bb{Z}\to\bb{Z}$ est donné par $1\mapsto d$, pour $d$ un entier.
@@ -99,11 +99,11 @@ Nous venons de voir quelques applications pratiques du calcul du degré d'une ap
 
 Nous avons vu que nous avons pu calculer les degrés d'applications connus sur $\s{n}$, ainsi que leurs homotopes. Néanmoins, toute les applications ne sont pas concernées ici. Une problématique se lève ici : comment nous pouvons calculer le degré d'une application quelconque ? Pour répondre à cette question, nous devons prendre un point de vue local.
 
-On considère une application $f:\s{n}\to \s{n}$ tel que la préimage de certains $y\in\s{n}$ soit en nombre fini, c'est à dire~$|f\inv(y)|<+\infty$. Notons $f\inv(y)=\{x_0,\ldots,x_m\} $ l'ensemble des préimages, et $U_0,\ldots,U_m$ des voisinages disjoints correspondant aux points de même indice, tel que leur image est inclut dans $V\in\vois(y)$. Nous obtenons alors l'inclusion $f(U_i\setminus\{x_i\})\subset V\setminus\{y\}$ pour tout $0\leq i\leq m$, permettant de faire commuter le diagramme suivant  :\[\begin{tikzcd}
+On considère une application $f:\s{n}\to \s{n}$ tel que la préimage de certains $y\in\s{n}$ soit en nombre fini, c'est à dire~$|f\inv(y)|<+\infty$. Notons $f\inv(y)=\{x_0,\ldots,x_m\} $ l'ensemble des préimages, et $U_0,\ldots,U_m$ des voisinages disjoints correspondant aux points de même indice, tels que leur image est incluse dans $V\in\vois(y)$. Nous obtenons alors l'inclusion $f(U_i\setminus\{x_i\})\subset V\setminus\{y\}$ pour tout $0\leq i\leq m$, permettant de faire commuter le diagramme suivant  :\[\begin{tikzcd}
 &H_n(U_i,U_i\setminus\{x_i\})\arrow[r,"f_\ast"]\arrow[d,"k_i"]&H_n(V,V\setminus\{y\})\arrow[d,"\cong"]\\
 H_n(\s{n},\s{n}\setminus\{x_i\})\arrow[ur, "\cong"]\arrow[dr,"\cong"]&H_n(\s{n},\s{n}\setminus\{f\inv(y)\})\arrow[l,"p_i"]\arrow[r,"f_\ast"]&H_n(\s{n},\s{n}\setminus\{y\})\\
 &H_n(\s{n})\arrow[u,"q"]\arrow[r,"f_\ast"]&H_n(\s{n}).\arrow[u,"\cong"]
-\end{tikzcd}\]Toutes les applications sont celles qui semblent évidentes : Les applications $p_i$ et $k_i$ sont induites des inclusions, et $q$ induit par le quotient. Les isomorphismes de la partie supérieur proviennent du théorème d'excision, tandis que ceux du bas  proviennent des suites exactes associées. Ainsi, les deux groupes en hauts sont isomorphes à $H_n(\s{n})\cong \bb{Z}$, faisant de $f_\ast$ en haut un endomorphisme de $\bb{Z}$. Le degré de ce dernier est nommé \emph{degré local} de $f$ en $x_i$, noté $\deg f|_{x_i}$. 
+\end{tikzcd}\]Toutes les applications sont celles qui semblent évidentes : Les applications $p_i$ et $k_i$ sont induites des inclusions, et $q$ induit par le quotient. Les isomorphismes de la partie supérieur proviennent du théorème d'excision, tandis que ceux du bas proviennent des suites exactes associées. Ainsi, les deux groupes en hauts sont isomorphes à $H_n(\s{n})\cong \bb{Z}$, faisant de $f_\ast$ en haut un endomorphisme de $\bb{Z}$. Le degré de ce dernier est nommé \emph{degré local} de $f$ en $x_i$, noté $\deg f|_{x_i}$. 
 
 La proposition suivante stipule que l'on peut retrouver, ou calculer, le degré d'une application grâce à la somme de ces degrés locaux. Une démonstration de cette proposition se trouve en \cite[][Prop.~2.30]{Hatcher}.
 
@@ -114,9 +114,9 @@ Avec les mêmes notations, $\deg f=\sum_i\deg f|_{x_i}$.
 Nous allons voir une application immédiate de cette proposition avec l'exemple qui suit.
 
 \begin{exemple}
-En considérant le cercle $\s{1}$ dans le plan complexe, l'application $f:z\mapsto z^k$ est de degré~$k$. Cela ce démontre par récurrence. Pour $k=0$, c'est évident car elle est non surjective. Le cas~$k<0$ s'obtient directement après avoir montré le cas $k>0$, avec la composition $z\mapsto z\inv$. Il reste à calculer alors le degré pour~$k>0$.
+En considérant le cercle $\s{1}$ dans le plan complexe, l'application $f:z\mapsto z^k$ est de degré~$k$. Cela se démontre par récurrence. Pour $k=0$, c'est évident car elle est non surjective. Le cas~$k<0$ s'obtient directement après avoir montré le cas $k>0$, avec la composition $z\mapsto z\inv$. Il reste à calculer alors le degré pour~$k>0$.
 
-Soit $y\in\s{n}$. Nous remarquerons d'une part que sa préimage se définie par $k$ point $f\inv(y)=\{x_1,\ldots,x_k\}$, et d'autre part que $f$ est un homéomorphisme local en chacun de ses points. Plus particulièrement, proche de chaque $x_i$, l'application $f$ est homotope à une restriction de rotation en étirant d'un facteur $k$ (voir Figure~\ref{fig:deg-loc-circle}), ce qui ne change pas le degré local. Or une rotation est homotope à l'identité et un homéomorphisme, il s'en suit que le degré local de $f$ est $+1$ en chacun des $x_i$. On en conclut que $\deg f=\sum_{i=1}^k\deg f|_{x_i}=k$.
+Soit $y\in\s{n}$. Nous remarquerons d'une part que sa préimage se définit par $k$ point $f\inv(y)=\{x_1,\ldots,x_k\}$, et d'autre part que $f$ est un homéomorphisme local en chacun de ses points. Plus particulièrement, au voisinage de chaque $x_i$, l'application $f$ est homotope à une restriction de rotation en étirant d'un facteur $k$ (voir Figure~\ref{fig:deg-loc-circle}), ce qui ne change pas le degré local. Or une rotation est homotope à l'identité et un homéomorphisme, il s'en suit que le degré local de $f$ est $+1$ en chacun des $x_i$. On en conclut que $\deg f=\sum_{i=1}^k\deg f|_{x_i}=k$.
 \end{exemple}
 
 \begin{figure}[H]
@@ -154,7 +154,7 @@ Si $X$ est un complexe cellulaire, alors : \begin{enumerate}[label=(\alph*)]
 \begin{proof}
 La propriété $(a)$ est obtenue de manière analogue avec l'homologie simpliciale. Les autres propriétés utilisent la suite exacte longue suivante, de la paire $(X^n,X^{n-1})$ : \[\begin{tikzcd}
 H_{k+1}(X^n,X^{n-1})\arrow[r]&H_k(X^{n-1})\arrow[r]&H_k(X^n)\arrow[r]&H_k(X^n,X^{n-1}).
-\end{tikzcd}\]Nous nous intéressons au cas où $k$ est différent de $n$, donnant un isomorphisme au centre de la suite. Dans le cas où $k>n$, l'isomorphisme peut être répétée par récurrence jusqu'à obtenir $H_k(X^n)\cong H_k(X^0)=0$, prouvant la propriété $(b)$. Dans le cas où $k<n$, l'isomorphisme donne~$H_k(X^n)\cong H_k(X^{n+m})$ par récurrence, pour tout $m>0$. En particulier, nous avons $H_k(X^n)\cong H_k(X^{\dim(X)})\cong H_k(X)$, prouvant la propriété~$(c)$.
+\end{tikzcd}\]Nous nous intéressons au cas où $k$ est différent de $n$, donnant un isomorphisme au centre de la suite. Dans le cas où $k>n$, l'isomorphisme peut être répété par récurrence jusqu'à obtenir $H_k(X^n)\cong H_k(X^0)=0$, prouvant la propriété $(b)$. Dans le cas où $k<n$, l'isomorphisme donne~$H_k(X^n)\cong H_k(X^{n+m})$ par récurrence, pour tout $m>0$. En particulier, nous avons $H_k(X^n)\cong H_k(X^{\dim(X)})\cong H_k(X)$, prouvant la propriété~$(c)$.
 \end{proof}
 
 Le diagramme suivant, grâce au lemme, est composé de différentes suites exactes.
@@ -164,9 +164,9 @@ Le diagramme suivant, grâce au lemme, est composé de différentes suites exact
 }
 
 
-Les applications $d_{n+1}$ et $d_n$ sont simplement définies comme étant les compositions respectives~$q_n\partial_{n+1}$ et~$q_{n-1}\partial_n$, que l'on peut voir intuitivement comme une "relativisation" de l'application bordure. La composition vérifie encore $d_nd_{n+1}=0$, si bien que la ligne horizontale du diagramme définisse le \emph{complexe de chaîne cellulaire} de $X$. En effet, nous pouvons voir avec le premier point du lemme~\ref{lemma:cell-homology}, que les groupes~$H_n(X^n,X^{n-1})$ sont composés des combinaisons linéaires des $n$-cellules de $X$. Les groupes d'homologies de ce complexe de chaîne cellulaire sont appelés les \emph{groupes d'homologies cellulaires} de $X$.
+Les applications $d_{n+1}$ et $d_n$ sont simplement définies comme étant les compositions respectives~$q_n\partial_{n+1}$ et~$q_{n-1}\partial_n$, que l'on peut voir intuitivement comme une "relativisation" de l'application bordure. La composition vérifie encore $d_nd_{n+1}=0$, si bien que la ligne horizontale du diagramme définit le \emph{complexe de chaîne cellulaire} de $X$. En effet, nous pouvons voir avec le premier point du lemme~\ref{lemma:cell-homology}, que les groupes~$H_n(X^n,X^{n-1})$ sont composés des combinaisons linéaires des $n$-cellules de $X$. Les groupes d'homologies de ce complexe de chaîne cellulaire sont appelés les \emph{groupes d'homologies cellulaires} de $X$.
 
-Le résultat qui suit est sûrement le plus important : il permet de relier l'homologie cellulaire aux deux autres homologies que nous avons introduites précédemment, à savoir la singulière et la simpliciale. Autrement dit, pour un complexe ceullaire, nous pouvons calculer ses groupes d'homologies singulières en passant par l'homologie cellulaire, en calculant les degrés locaux.
+Le résultat qui suit est sûrement le plus important : il permet de relier l'homologie cellulaire aux deux autres homologies que nous avons introduites précédemment, à savoir la singulière et la simpliciale. Autrement dit, pour un complexe cellulaire, nous pouvons calculer ses groupes d'homologies singulières en passant par l'homologie cellulaire, en calculant les degrés locaux.
 
 \begin{theorem}
 Les groupes d'homologies cellulaires et les groupes d'homologies singulières sont isomorphes.
@@ -185,10 +185,10 @@ Nous pouvons remarquer que la somme de la formule est finie, étant donné que l
 
 \subsection{Quelques exemples}
 
-Cette dernière section donne des exemples pratiques de calculs d'homologies cellulaires. Nous commençons avec un exemple simple, le tore de dimension 2. Son calcul pourra être généralisé s'une part avec celui du tore à $n$ trous, et d'autres part avec celui du tore de dimension 3. Nous nous intéresserons également aux espaces projectifs réels et complexes, puis nous finirons par des résultats plus généraux sur les calculs.
+Cette dernière section donne des exemples pratiques de calculs d'homologies cellulaires. Nous commençons avec un exemple simple, le tore de dimension 2. Son calcul pourra être généralisé d'une part avec celui du tore à $n$ trous, et d'autre part avec celui du tore de dimension 3. Nous nous intéresserons également aux espaces projectifs réels et complexes, puis nous finirons par des résultats plus généraux sur les calculs.
 
 \begin{exemple}
-Dans l'exemple en début de section sur l'homologie cellulaire, nous avons donné la construction en complexe cellulaire suivante : une 0-cellule, de deux 1-cellules $\{a,b\}$, et d'une 2-cellule $T$. Cette dernière est attachée par le mot commutateur $[a,b]=aba\inv b\inv$. Le complexe de chaîne ceullaire obtenu est donc : \[\begin{tikzcd}
+Dans l'exemple en début de section sur l'homologie cellulaire, nous avons donné la construction en complexe cellulaire suivante : une 0-cellule, de deux 1-cellules $\{a,b\}$, et d'une 2-cellule $T$. Cette dernière est attachée par le mot commutateur $[a,b]=aba\inv b\inv$. Le complexe de chaîne cellulaire obtenu est donc : \[\begin{tikzcd}
 0\arrow[r]&\bb{Z}\arrow[r,"d_2"]&\bb{Z}^2\arrow[r,"d_1"]&\bb{Z}\arrow[r]&0.
 \end{tikzcd}\] Comme le tore $T^2$ est connexe et composé d'une unique 0-cellule, alors~$d_1=0$. Le degré $d_2(T)$ est donné par la somme $d_{Ta}+d_{Tb}$, avec~${aba\inv b\inv}$ comme fonction d'attachement de $T$. Pour le calcul du degré $d_{T_a}$, le quotient $q_a$ permet de passer de $b$ au chemin constant $c$. Nous obtenons $aca\inv c\inv\simeq c$, ce qui nous permet de déduire $d_{Ta}=0$. Le même raisonnement s'applique pour $b$, si bien que nous en concluons que $d_2=0$. Nous pouvons alors calculer les groupes d'homologies cellulaires : \[H_k(T^2)= \left\{\begin{matrix}
 \bb{Z} &k=0,2  \\
@@ -247,7 +247,7 @@ Nous passons à un exemple d'espace avec son polygone fondamental représenté e
 Nous passons désormais aux espace projectifs.
 
 \begin{exemple}
-L'espace projectif réel $\realproj^n$ de dimension $n$ se construit par induction. On part d'une 0-cellule, et pour chaque $k\leq n$ le $k$-squelette est constitué d'une cellule $e^k$, que l'on attache à la $k-1$-cellule par la projection du revêtement à deux feuillets de la sphère de dimension $k$, c'est à dire~${\varphi:\s{k-1}\to\realproj^{k-1}}$. Avec cette construction, nous pouvons comprendre que le $k$-squelette correspond à l'espace projectif~$\realproj^k$. Le calcul du morphisme $d_k$ revient à calculer le degré de la composition~${\s{k-1}\to \realproj^{k-1}\to\realproj^{k-1}/\realproj^{k-2}=\s{k-1}}$, de la fonction d'attachement $\varphi$ et du quotient de squelette $X^k/X^{k-1}$. Si l'on restrient cette composition à chaqu'un des hémisphère de $\s{k-1}\setminus\s{k-2}$, cette dernière est composée de deux homéomorphismes antipodales l'une de l'autre. Il s'en suit que les degrés sont inversibles dans $\bb{Z}$, c'est à dire appartiennent à $\{-1,1\}$.
+L'espace projectif réel $\realproj^n$ de dimension $n$ se construit par induction. On part d'une 0-cellule, et pour chaque $k\leq n$ le $k$-squelette est constitué d'une cellule $e^k$, que l'on attache à la $k-1$-cellule par la projection du revêtement à deux feuillets de la sphère de dimension $k$, c'est à dire~${\varphi:\s{k-1}\to\realproj^{k-1}}$. Avec cette construction, nous pouvons comprendre que le $k$-squelette correspond à l'espace projectif~$\realproj^k$. Le calcul du morphisme $d_k$ revient à calculer le degré de la composition~${\s{k-1}\to \realproj^{k-1}\to\realproj^{k-1}/\realproj^{k-2}=\s{k-1}}$, de la fonction d'attachement $\varphi$ et du quotient de squelette $X^k/X^{k-1}$. Si l'on restreint cette composition à chacun des hémisphère de $\s{k-1}\setminus\s{k-2}$, cette dernière est composée de deux homéomorphismes antipodaux l'un de l'autre. Il s'en suit que les degrés sont inversibles dans $\bb{Z}$, c'est à dire appartiennent à $\{-1,1\}$.
 
 Grâce à cette construction, le degré se calcule alors par la formule ${d_k=\deg id+\deg (-id)=1+(-1)^k}$, qui vaut 0 pour $k$ impair et 2 pour $k$ pair, donnant les suites suivantes, selon la parité de $n$ : \[\begin{tikzcd}
     0\arrow[r]&\bb{Z}\arrow[r,"2"]&\bb{Z}\arrow[r,"0"]&\bb{Z}\arrow[r,"2"]&\cdots\arrow[r,"0"]&\bb{Z}\arrow[r,"2"]&\bb{Z}\arrow[r,"0"]&0.\text{ si $n$ est pair,}
@@ -255,17 +255,17 @@ Grâce à cette construction, le degré se calcule alors par la formule ${d_k=\d
 et
 \[\begin{tikzcd}
     0\arrow[r]&\bb{Z}\arrow[r,"0"]&\bb{Z}\arrow[r,"2"]&\bb{Z}\arrow[r,"0"]&\cdots\arrow[r,"0"]&\bb{Z}\arrow[r,"2"]&\bb{Z}\arrow[r,"0"]&0.\text{ si $n$ est impair.}
-\end{tikzcd}\]Lors des calculs de l'homologie, nous nous retrouvons avec el quotient $\ker d_k/2\im d_{k+1}$, ce qui se retrouve dans les groupes d'homologie cellulaire : \[H_k(\realproj^n)=\left\{\begin{matrix}
-\bb{Z}&si\ k=0,\ et\ k=n\text{ si n impair}\\
-\bb{Z}_2&si\  k\ impair,\,0<k<n\\
+\end{tikzcd}\]Lors des calculs de l'homologie, nous nous retrouvons avec le quotient $\ker d_k/2\im d_{k+1}$, ce qui se retrouve dans les groupes d'homologie cellulaire : \[H_k(\realproj^n)=\left\{\begin{matrix}
+\bb{Z}&\text{si}\ k=0,\ et\ k=n\text{ si n impair}\\
+\bb{Z}_2&\text{si}\  k\ \text{impair},\,0<k<n\\
 0&sinon.
 \end{matrix}\right.\]
 \end{exemple}
 
 \begin{exemple}
 L'espace projectif complexe de dimension $n$, noté $\compproj^n$, est défini comme étant l'ensemble des droites vectorielles de l'espace complexe $\bb{C}^{n+1}$. De même que pour l'espace projectif réel, il est construit par induction, avec une seule cellule toute les dimensions paires jusqu'à $2n$. Cela donne donc une suite de groupe de chaînes, alternativement 0 et $\bb{Z}$. On en déduit donc que les morphismes $d_k$ sont tous triviaux, donnant les groupes d'homologie cellulaire suivants : \[H_k(\compproj^n)=\left\{\begin{matrix}
-\bb{Z}&si\ k\ pair\\
-0&sinon.
+\bb{Z}&\text{si}\ k\ \text{pair}\\
+0&\text{sinon}.
 \end{matrix}\right.\]
 \end{exemple}
 
@@ -280,7 +280,7 @@ Si les cellules d'un complexe cellulaire $X$ n'ont pas de dimensions adjacentes,
 Dans ce cas, les morphismes $d_k$ sont tous triviaux.
 \end{proof}
 
-Un autre résultat très pratique est le suivant. Nous avons une condition qui permet de déduire directement lors qu'un groupe d'homologie est trivial, sans effectuer de calculs.
+Un autre résultat très pratique est le suivant. Nous avons une condition qui permet de déduire directement lorsqu'un groupe d'homologie est trivial, sans effectuer de calculs.
 
 \begin{proposition}
 Si un complexe cellulaire $X$ ne possède pas de $n$-cellule, alors $H_n(X)=0$.
@@ -293,6 +293,6 @@ Si $X$ est un complexe cellulaire avec $k$ $n$-cellules, alors $H_n(X)$ est gén
 Avec les mêmes notations, cela vient du fait que $H_n(X^n,X^{n-1})$ est un groupe libre avec $k$ générateurs. Ainsi, le sous-groupe $\ker d_n$ possède un maximum de $k$ générateurs, ce qui vaut également pour le quotient $\ker d_n/\im d_{n+1}$.
 \end{proof}
 
-Nous venons de voir quelques exemples de calculs pratique de l'homologie cellulaire. Il est clair qu'elle est diablement plus efficace que l'homologie simpliciale, cette dernière nous aurait demandé un effort considérable de structure de $\Delta$-complexe.
+Nous venons de voir quelques exemples de calculs pratiques de l'homologie cellulaire. Il est clair qu'elle est plus efficace que l'homologie simpliciale, cette dernière nous aurait demandé un effort considérable de structure de $\Delta$-complexe.
 
-\bigskip Au cours de ce chapitre, nous avons pu introduire le concept d'homologie, qui est un outil pratique pour la catégorisation des espaces. Ce dernier possède nombreux avantages : il implique uniquement des groupes abéliens, il peut se calculer à l'aide d'algorithmes, possède différentes construction équivalentes permettant de pousser l'accent à la fois sur la théorie et sur la pratique. Néanmoins, les espaces que nous pouvons traiter sont limités aux CW-complexes ou à certains espaces simples. Pour pouvoir étudier des espaces plus complexes, cela requiert d'introduire d'autres concepts, telles que la \emph{cohomologie}.
+\bigskip Au cours de ce chapitre, nous avons pu introduire le concept d'homologie, qui est un outil pratique pour la catégorisation des espaces. Ce dernier possède de nombreux avantages : il implique uniquement des groupes abéliens, il peut se calculer à l'aide d'algorithmes, possède différentes construction équivalentes permettant de mettre l'accent à la fois sur la théorie et sur la pratique. Néanmoins, les espaces que nous pouvons traiter sont limités aux CW-complexes ou à certains espaces simples. Pour pouvoir étudier des espaces plus complexes, cela requiert d'introduire d'autres concepts, telles que la \emph{cohomologie}.
